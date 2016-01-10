@@ -1,27 +1,33 @@
 # kiddom-frontend
 
 # Download
-git clone git@github.com:kiddom/kiddom-frontend.git
-cd kiddom-frontend
+
+    git clone git@github.com:kiddom/kiddom-frontend.git
+    cd kiddom-frontend
 
 # Copy
-cp .env.template .env
-# ... go configure your environment
+
+    cp .env.template .env
+    # ... go configure your environment
 
 # Install dependencies
-npm install
-bower install
+
+    npm install
+    bower install
 
 # Adding dependencies
 
-`npm install --save|--save-dev foobar` locally installs the foobar package,
-and adds a line to `package.json` so it is installed by anyone else who
-runs the code.
+`npm install --save|--save-dev foobar`
+
+This locally installs the package 'foobar', and adds a line
+to `package.json` so it is installed by anyone else who runs the code.
 
 # Start developing (starts a webserver at localhost:)
-npm run develop
+
+    npm run develop
 
 # Project Structure
+
     <PROJECT_ROOT>/
       app/
       .... assets/
