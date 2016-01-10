@@ -1,0 +1,6 @@
+{
+  "name": "kiddom-frontend",
+  "dependencies": {
+    "jquery": "~1.9.x"
+  }
+}
