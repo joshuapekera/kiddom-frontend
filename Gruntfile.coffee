@@ -5,7 +5,6 @@ AssetManager = gruntutils.AssetManager
 extend = gruntutils.extend
 
 module.exports = (grunt) ->
-  bowerConf = grunt.file.readJSON '.bowerrc'
   defaults = grunt.file.readJSON 'defaults.json'
   locals = {}
   if fs.existsSync './locals.json'
@@ -19,7 +18,7 @@ module.exports = (grunt) ->
     dist: 'dist/'
     assets: settings.ASSET_ROOT
     views: 'app/views/'
-    components: bowerConf.directory
+    vendor: '<%= paths.assets %>vendor/'
     scripts: '<%= paths.assets %>scripts/'
     scriptsources: '<%= paths.assets %>scriptsources/'
     stylesheets: '<%= paths.assets %>styles/'
@@ -94,15 +93,9 @@ module.exports = (grunt) ->
             '<%= paths.dist + paths.scripts %>respond.min.js':
               '<%= paths.components %>respond/respond.min.js'
           }
-          # package bower-installed dependencies
-          '<%= paths.dist + paths.scripts %>bundle.js': [
-            '<%= paths.components %>jquery/jquery.js'
-            # CHECKPOINT: [js] list the modules you want to include into the
-            # js application bundle here. This includes third party modules,
-            # compiled coffee files and any other js modules you manually
-            # included in the project tree
-            # NOTE: ordering matters
-          ]
+          # package vendor libs
+          '<%= paths.dist + paths.scripts %>bundle.js':
+            '<%= paths.vendor %>**/*.js'
         ]
       css:
         files: [
