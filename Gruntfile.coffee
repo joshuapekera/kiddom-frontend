@@ -21,7 +21,7 @@ module.exports = (grunt) ->
     views: 'app/views/'
     components: bowerConf.directory
     scripts: '<%= paths.assets %>scripts/'
-    sourcemaps: '<%= paths.assets %>sourcemaps/'
+    scriptsources: '<%= paths.assets %>scriptsources/'
     stylesheets: '<%= paths.assets %>styles/'
     images: '<%= paths.assets %>images/'
     fonts: '<%= paths.assets %>fonts/'
@@ -51,26 +51,23 @@ module.exports = (grunt) ->
         ]
 
     coffee:
-      options:
-        sourceMap: true
-        sourceMapIncludeSources: true
       build:
         files: [
           {
             expand: true
             cwd: '<%= paths.scripts %>'
             src: '**/*.coffee'
-            dest: '<%= paths.temp + paths.sourcemaps %>'
+            dest: '<%= paths.temp + paths.scriptsources %>'
             rename: (dest, src) ->
               dest + src.split('.').slice(0,-1).join('.') + '.js'
           }
         ]
 
     # Combines Source Map files while concatenating JavaScript source files.
-    mapcat:
-      default:
-        files:
-          "<%= paths.temp + paths.scripts %>app.js": ["<%= paths.temp + paths.sourcemaps %>*.js.map"]
+    concat:
+      scriptsources:
+        src: ["<%= paths.temp + paths.scriptsources %>*.js"]
+        dest: "<%= paths.temp + paths.scripts %>app.js"
 
 
     less:
@@ -147,20 +144,7 @@ module.exports = (grunt) ->
 
     # generates the js application bundle both minified and unminified versions
     uglify:
-      buildApp:
-        options:
-          mangle: false
-          compress: false
-          beautify: true
-          sourceMap: '<%= paths.dist + paths.scripts %>app.js.map'
-          sourceMapIn: '<%= paths.temp + paths.scripts %>app.js.map'
-          sourceMapIncludeSources: true
-          preserveComments: 'all'
-        files: [
-          '<%= paths.dist + paths.scripts %>app.js':
-            '<%= paths.temp + paths.scripts %>app.js'
-        ]
-      buildOther:
+      build:
         options:
           mangle: false
           compress: false
@@ -169,7 +153,7 @@ module.exports = (grunt) ->
           {
             expand: true
             cwd: '<%= paths.temp + paths.scripts %>'
-            src: ['**/*.js', '!app.js']
+            src: ['**/*.js']
             dest: '<%= paths.dist + paths.scripts %>'
           }
         ]
@@ -222,7 +206,7 @@ module.exports = (grunt) ->
 
     clean:
       all: ['<%= paths.temp %>', '<%= paths.dist %>']
-      scripts: ['<%= paths.temp + paths.scripts %>', '<%= paths.dist + paths.scripts %>']
+      scripts: ['<%= paths.temp + paths.scripts %>', '<%= paths.dist + paths.scripts %>', '<%= paths.temp + paths.scripts %>']
       temp: ['<%= paths.temp %>']
 
     watch:
@@ -249,12 +233,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-text-replace'
-  grunt.loadNpmTasks 'grunt-mapcat'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.registerTask 'stylesheets', ['less', 'copy:css', 'copy:dist',
     'replace:css', 'cssmin']
-  grunt.registerTask 'scripts', ['clean:scripts', 'coffee', 'mapcat', 'copy:js', 'uglify:buildOther', 'uglify:buildApp',
+  grunt.registerTask 'scripts', ['clean:scripts', 'coffee', 'concat:scriptsources', 'copy:js', 'uglify:build',
     'uglify:dist']
   grunt.registerTask 'images', ['imagemin', 'copy:images']
   grunt.registerTask 'default', ['clean:all', 'images', 'copy:fonts', 'stylesheets',
-    'scripts', 'jade', 'clean:temp']
+    'scripts', 'jade']#, 'clean:temp']
 
