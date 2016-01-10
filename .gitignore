@@ -5,3 +5,5 @@ client/styles/css
 dist/
 .sass-cache/
 docs/
+.env
+temp/
