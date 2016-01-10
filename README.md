@@ -22,6 +22,8 @@
 This locally installs the package 'foobar', and adds a line
 to `package.json` so it is installed by anyone else who runs the code.
 
+Learn about [--save vs --save-dev](http://stackoverflow.com/a/31358981/311901)
+
 # Start developing (starts a webserver at localhost:)
 
     npm run develop
