@@ -1,1 +1,1 @@
-web: ./node_modules/.bin/http-server -c-1 dist/app -p$PORT
+web: ./node_modules/.bin/http-server $DEV_FLAG_IGNORE_CACHE dist/app -p$PORT
