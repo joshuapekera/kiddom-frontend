@@ -1,0 +1,27 @@
+{
+  "name": "kiddom-frontend",
+  "version": "1.0.0",
+  "description": "Serves www.kiddom.co (with new branding)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiddom/kiddom-frontend.git"
+  },
+  "author": "Kiddom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiddom/kiddom-frontend/issues"
+  },
+  "homepage": "https://github.com/kiddom/kiddom-frontend#readme",
+  "dependencies": {
+    "grunt-cli": "^0.1.13",
+    "http-server": "^0.8.5"
+  },
+  "devDependencies": {
+    "generator-static": "0.0.8",
+    "yo": "^1.6.0"
+  }
+}
