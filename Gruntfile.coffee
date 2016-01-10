@@ -21,6 +21,7 @@ module.exports = (grunt) ->
     views: 'app/views/'
     components: bowerConf.directory
     scripts: '<%= paths.assets %>scripts/'
+    sourcemaps: '<%= paths.assets %>sourcemaps/'
     stylesheets: '<%= paths.assets %>styles/'
     images: '<%= paths.assets %>images/'
     fonts: '<%= paths.assets %>fonts/'
@@ -50,17 +51,27 @@ module.exports = (grunt) ->
         ]
 
     coffee:
+      options:
+        sourceMap: true
+        sourceMapIncludeSources: true
       build:
         files: [
           {
             expand: true
             cwd: '<%= paths.scripts %>'
             src: '**/*.coffee'
-            dest: '<%= paths.temp + paths.scripts %>'
+            dest: '<%= paths.temp + paths.sourcemaps %>'
             rename: (dest, src) ->
               dest + src.split('.').slice(0,-1).join('.') + '.js'
           }
         ]
+
+    # Combines Source Map files while concatenating JavaScript source files.
+    mapcat:
+      default:
+        files:
+          "<%= paths.temp + paths.scripts %>app.js": ["<%= paths.temp + paths.sourcemaps %>*.js.map"]
+
 
     less:
       build:
@@ -86,6 +97,15 @@ module.exports = (grunt) ->
             '<%= paths.dist + paths.scripts %>respond.min.js':
               '<%= paths.components %>respond/respond.min.js'
           }
+          # package bower-installed dependencies
+          '<%= paths.dist + paths.scripts %>bundle.js': [
+            '<%= paths.components %>jquery/jquery.js'
+            # CHECKPOINT: [js] list the modules you want to include into the
+            # js application bundle here. This includes third party modules,
+            # compiled coffee files and any other js modules you manually
+            # included in the project tree
+            # NOTE: ordering matters
+          ]
         ]
       css:
         files: [
@@ -127,26 +147,40 @@ module.exports = (grunt) ->
 
     # generates the js application bundle both minified and unminified versions
     uglify:
-      build:
+      buildApp:
         options:
           mangle: false
           compress: false
           beautify: true
-        files:
-          '<%= paths.dist + paths.scripts %>bundle.js': [
-            '<%= paths.components %>jquery/jquery.js'
-            # CHECKPOINT: [js] list the modules you want to include into the
-            # js application bundle here. This includes third party modules,
-            # compiled coffee files and any other js modules you manually
-            # included in the project tree
-            # NOTE: ordering matters
-          ]
+          sourceMap: '<%= paths.dist + paths.scripts %>app.js.map'
+          sourceMapIn: '<%= paths.temp + paths.scripts %>app.js.map'
+          sourceMapIncludeSources: true
+          preserveComments: 'all'
+        files: [
+          '<%= paths.dist + paths.scripts %>app.js':
+            '<%= paths.temp + paths.scripts %>app.js'
+        ]
+      buildOther:
+        options:
+          mangle: false
+          compress: false
+          beautify: true
+        files: [
+          {
+            expand: true
+            cwd: '<%= paths.temp + paths.scripts %>'
+            src: ['**/*.js', '!app.js']
+            dest: '<%= paths.dist + paths.scripts %>'
+          }
+        ]
       dist:
         options:
           preserveComments: 'some'
         files:
           '<%= paths.dist + paths.scripts %>bundle.min.js':
             '<%= paths.dist + paths.scripts %>bundle.js'
+          '<%= paths.dist + paths.scripts %>app.min.js':
+            '<%= paths.dist + paths.scripts %>app.js'
 
     jade:
       dist:
@@ -188,6 +222,8 @@ module.exports = (grunt) ->
 
     clean:
       all: ['<%= paths.temp %>', '<%= paths.dist %>']
+      scripts: ['<%= paths.temp + paths.scripts %>', '<%= paths.dist + paths.scripts %>']
+      temp: ['<%= paths.temp %>']
 
     watch:
       images:
@@ -213,11 +249,12 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-text-replace'
+  grunt.loadNpmTasks 'grunt-mapcat'
   grunt.registerTask 'stylesheets', ['less', 'copy:css', 'copy:dist',
     'replace:css', 'cssmin']
-  grunt.registerTask 'scripts', ['coffee', 'copy:js', 'uglify:build',
+  grunt.registerTask 'scripts', ['clean:scripts', 'coffee', 'mapcat', 'copy:js', 'uglify:buildOther', 'uglify:buildApp',
     'uglify:dist']
   grunt.registerTask 'images', ['imagemin', 'copy:images']
   grunt.registerTask 'default', ['clean:all', 'images', 'copy:fonts', 'stylesheets',
-    'scripts', 'jade']
+    'scripts', 'jade', 'clean:temp']
 

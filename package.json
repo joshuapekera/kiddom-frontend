@@ -12,6 +12,7 @@
     "grunt-contrib-less": "~0.7.0",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-watch": "~0.5.2",
+    "grunt-mapcat": "^0.3.0",
     "grunt-text-replace": "~0.3.6",
     "http-server": "^0.8.5"
   },
