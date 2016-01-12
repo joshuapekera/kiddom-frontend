@@ -1,0 +1,108 @@
+// Social Icon Layout
+.social {
+	padding: 0;
+	margin: 0;
+	li {
+		display: inline-block;
+	}
+	.footer &, .appnav-footer & {
+		font-size: 24px;
+		@media (min-width: @screen-lg-min) {
+			font-size: 20px;
+		}
+		li {
+			margin: 0 4px;
+			@media (min-width: @screen-sm-min) {
+				margin: 0 2px;
+			}
+		}
+	}
+	.appnav-footer & {
+		margin-top: 40px;
+		text-align: center;
+		visibility:hidden;
+		.animation-name(fadeOutDown);
+		.animation-duration(50ms);
+		.transition-timing-function(ease-in);
+		.animation-fill-mode(both);
+		.shift & {
+			visibility:visible;
+			.animation-name(fadeInUp);
+			.animation-duration(400ms);
+			.animation-delay(450ms);
+		}
+		@media (min-width: @screen-sm-min) {
+			text-align: center;
+		}
+	}
+	.footer & {
+		display: inline-block;
+  	vertical-align: middle;
+  	line-height: normal;
+	}
+}
+
+// Social Icon Color
+.social {
+	a {
+		color: fade(@white, 60%);
+		.transition(all 250ms linear);
+		&:hover {
+			color: @white;
+		}
+	}
+}
+.social--color {
+	a.dribbble {
+		&:hover {
+			color: @bc-dribbble-2;
+			.dark & {
+				color: @white;
+			}
+		}
+	}
+	a.linkedin {
+		&:hover {
+			color: @bc-linkedin;
+			.dark & {
+				color: @white;
+			}
+		}
+	}
+	a.facebook {
+		&:hover {
+			color: @bc-facebook;
+			.dark & {
+				color: @white;
+			}
+		}
+	}
+	a.twitter {
+		&:hover {
+			color: @bc-twitter;
+			.dark & {
+				color: @white;
+			}
+		}
+	}
+	a.mail {
+		&:hover {
+			color: @print-black;
+			.dark & {
+				color: @white;
+			}
+		}
+	}
+}
+
+.social {
+	.footer & {
+		a {
+			color: #cccccc;
+			&:hover {
+				color: @print-black;
+			}
+		}
+		.social--color();
+	}
+}

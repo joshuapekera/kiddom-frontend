@@ -1,9 +1,5 @@
-node_modules/
-client/bower_components/
-client/styles/css
-.idea/
-dist/
-.sass-cache/
-docs/
-.env
-temp/
+node_modules
+dist
+.tmp
+.grunt
+bower_components

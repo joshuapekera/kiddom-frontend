@@ -1,0 +1,53 @@
+// Cursor Grab
+
+.grab() {
+    cursor: move;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.grabbing() {
+    cursor: move;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.scale3D(@ratioX; @ratioY; @ratioZ) {
+  -webkit-transform: scale3d(@ratioX, @ratioY, @ratioZ);
+      -ms-transform: scale3d(@ratioX, @ratioY, @ratioZ); // IE9 only
+       -o-transform: scale3d(@ratioX, @ratioY, @ratioZ);
+          transform: scale3d(@ratioX, @ratioY, @ratioZ);
+}
+
+.transform(@transform) {
+  -webkit-transform: @transform;
+     -moz-transform: @transform;
+       -o-transform: @transform;
+          transform: @transform;
+}
+
+.noDrag(){
+  -webkit-user-drag: none;
+   //-moz-user-select: none;
+          user-drag: none;
+}
+
+.cover-auto(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+}
+
+.cover-hidden(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}

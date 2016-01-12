@@ -1,0 +1,214 @@
+body.dragging * {
+	.user-select(none);
+	.noDrag();
+	.grabbing();
+}
+
+.boards * {
+	.box-sizing(border-box);
+	padding: 0;
+	margin: 0;
+}
+
+#wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+#slides {
+	//position: relative;
+	//height: 100%;
+	//width: 100%;
+	//padding: 0;
+	//margin: 0;
+	//z-index: -48;
+	//.grab();
+}
+
+#slides li {
+	position: fixed;
+	display: inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	top: 30px;
+	right: 0;
+	bottom: 30px;
+	left: 0;
+	.backface-visibility(hidden);
+	.user-select(none);
+	.grab();
+	@media (min-width: @screen-md-min) {
+		top: 20px;
+		bottom: 50px;
+	}
+	.dragging & {
+		.grabbing();
+	}
+	
+	&.awwwards {
+		background-image: url('../images/slide-awwwards-sm.jpg');
+		@media (min-width: @screen-md-min) {
+			top: 30px;
+			background-image: url('../images/slide-awwwards-md.jpg');
+		}
+		@media (min-width: @screen-lg-min) {
+			background-image: url('../images/slide-awwwards-lg.jpg');
+		}
+	}
+	
+img {
+		position: absolute;
+		max-width: 100%;
+		max-height: 100%;
+		//top: 10%;
+		//left: 10%;
+		top: 50%;
+		left: 50%;
+		.translate(-50%, -50%);
+		
+		// fix ipad jank
+		.backface-visibility(hidden);
+		-webkit-perspective: 1000px;
+		//z-index: -1;
+		.user-select(none);
+		.noDrag();
+		.grab();
+		&:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+		}
+		&:empty {
+			// top: 50%;
+			// left: 50%;
+			// .translate(-50%, -50%);
+		}
+		.dragging & {
+			.grabbing();
+		}
+	}
+}
+
+// #slides.dragging li {
+// 	.grabbing();
+// }
+
+#slides p {
+	font-size: 11px;
+}
+
+.caption {
+	color: @theme-gray;
+	font-weight: 300;
+	font-style: normal;
+	position: absolute;
+	bottom: 0;
+	pointer-events: none;
+	padding-left: 13px;
+	z-index: 2;
+	
+	// js will display once poistion is calculated
+	visibility: hidden;
+	.btn {
+		color: @theme-gray;
+		font-size: @font-size-base + 18;
+		line-height: 16px;
+		padding: 0;
+		text-align: center;
+		pointer-events: all;
+		.user-select(none);
+		.transition(all 150ms linear);
+		&:hover {
+			color: @link-hover-color;
+		}
+	}
+}
+
+.fade {
+	position: fixed;
+	bottom: 0;
+	height: 58px;
+	width: 150px;
+	pointer-events: none;
+}
+
+.right_fade {
+	right: 0;
+	z-index: 1;
+	#gradient > .directional(fade(@white, 90%), fade(@white, 0%), -90deg);
+}
+
+.left_fade {
+	left: 0;
+	z-index: 1;
+	#gradient > .directional(fade(@white, 90%), fade(@white, 0%), 90deg);
+}
+
+#nav {
+	text-align: center;
+	position: absolute;
+	font-size: 0;// resets inline block children default padding
+	bottom: 15px;
+	left: 50%;
+	padding: 0;
+	margin: 0;
+	white-space: nowrap;
+	@media (min-width: @screen-sm-min) {
+		bottom: 30px;
+	}
+}
+
+#nav li {
+	display: inline-block;
+	font-weight: 400;
+	font-size: 18px;
+	padding: 0 20px;
+	cursor: pointer;
+	position: relative;
+	@media (min-width: @screen-md-min) {
+		font-size: 20px;
+		padding: 0 20px;
+	}
+	// iPad in portrait & landscape
+	@media only screen and (min-device-width : @ipad-min) and (max-device-width : @ipad-max) {
+		font-size: 22px;
+	}
+	
+	span {
+		display: block;
+		@media (min-width: @screen-sm-min) {
+			display: block;
+		}
+	}
+	.btn {
+		color: @theme-gray;
+		font-size: @font-size-base + 18;
+		line-height: 16px;
+		padding: 0;
+		text-align: center;
+		pointer-events: all;
+		.user-select(none);
+		.transition(all 150ms linear);
+		&:hover {
+			color: @link-hover-color;
+		}
+	}
+	a {
+		display: inline-block;
+		position: absolute;
+		top: -60px;
+		left: 50%;
+		.translate(-50%, -50%);
+		text-align:center;
+		color: @black;
+		text-decoration: none;
+		@media (min-width: @screen-sm-min) {
+			margin-top: 20px;
+		}
+	}
+}

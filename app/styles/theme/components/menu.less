@@ -1,0 +1,129 @@
+/* Off Canvas Nav Menu
+---------------------------------- */
+/* Reset Navs */
+nav ul {
+	padding: 0;
+	margin: 0;
+	li {
+		list-style: none;
+	}
+}
+
+.menu {
+	position: absolute;
+	background-color: transparent;
+	top: 50%;
+	right: 50%; //menu is on the right
+	.translate(50%, -50%);
+	.backface-visibility(hidden);
+	width: 100%;
+	//width: @menu-width;
+	// @media (min-width: @screen-sm-min) {
+	// 	width: 420px;
+	// }
+	// @media (min-width: @screen-md-min) {
+	// 	width: 500px;
+	// }
+	// @media (min-width: @screen-lg-min) {
+	// 	width: 800px;
+	// }
+	.shift & {
+		z-index: 10;
+	}
+	h4 {
+		display: none;
+		text-align: center;
+		color: fade(@white, 60%);
+		font-size: @font-size-h6;
+		font-weight: 600;
+		text-transform:uppercase;
+		visibility:hidden;
+		.animation-name(fadeOutDown);
+		.animation-duration(50ms);
+		.transition-timing-function(ease-in);
+		.animation-fill-mode(both);
+		.shift & {
+			visibility:visible;
+			.animation-name(fadeInUp);
+			.animation-duration(400ms);
+			.animation-delay(400ms);
+		}
+		@media (min-width: @screen-sm-min) {
+			text-align: center;
+		}
+	}
+}
+.nav {
+	position: relative;
+	text-align: center;
+	a {
+		font-size: @font-size-large + 10;
+		font-weight: 400;
+		text-align: center;
+		color: @white;
+		.transition(color 250ms);
+		&:hover, &:active, &:focus {
+			color: fade(@white, 60%);
+		}
+		@media (min-width: @screen-md-min) {
+			font-size: @font-size-large + 10;
+		}
+	}
+	li:last-of-type {
+		padding-bottom: 0;
+		margin-bottom: 20px;
+	}
+}
+
+.nav li {
+	text-align: center;
+	opacity: 0;
+	margin-bottom: 30px;
+	.transition-transform(~"400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms ease-in");
+	.transform(translateY(1000px));
+	.backface-visibility(hidden);
+	@media (min-width: @screen-sm-min) {
+		display: inline-block;
+		margin: 0 30px 10px;
+	}
+	.shift & {
+		opacity: 1;
+		.transition-delay(400ms);
+		.transition-transform(~"opacity 300ms ease-in, 400ms cubic-bezier(0.165, 0.84, 0.44, 1)");
+		.transform(translateX(0px));
+	}
+}
+
+// Animate menu items on open
+.shift {
+	.nav li:nth-of-type(1) {
+			.transition-delay(0ms);
+	}
+
+	.nav li:nth-of-type(2) {
+			.transition-delay(75ms);
+	}
+
+	.nav li:nth-of-type(3) {
+			.transition-delay(150ms);
+	}
+
+	.nav li:nth-of-type(4) {
+			.transition-delay(225ms);
+	}
+
+	.nav li:nth-of-type(5) {
+			.transition-delay(300ms);
+	}
+}
+
+.appnav-footer {
+	position: absolute;
+	bottom: 0px;
+	right: 50%; //menu is on the right
+	.translate(50%, -50%);
+	width: 100%;
+	.shift & {
+		z-index: 10;
+	}
+}
