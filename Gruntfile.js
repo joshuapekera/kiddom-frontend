@@ -252,9 +252,8 @@ module.exports = function (grunt) {
       app: {
         //ignorePath: /^\/|\.\.\//,
         ignorePath: '../../../',
-        src: ['<%= config.app %>/templates/layouts/base-parent.hbs'],
+        src: ['<%= config.app %>/templates/layouts/base.hbs'],
         exclude: [
-        'bower_components/zoom/*',
         'bower_components/modernizr/modernizr.js'
         ]
       },
