@@ -5,8 +5,7 @@ keywords: kiddom, styleguide
 author: Joshua Pekera
 layout: default-layout.hbs
 ---
-<!-- {{#each}}
-  {{data.components}}
-{{/each}} -->
 
-{{> hero}}
+{{#each components}}
+	{{renderPartial this}}
+{{/each}}
