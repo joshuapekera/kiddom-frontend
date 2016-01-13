@@ -148,6 +148,7 @@ module.exports = function (grunt) {
         flatten: true,
         layoutdir: '<%= config.app %>/templates/layouts',
         layout: 'base.hbs',
+        data: '<%= config.app %>/templates/data/*.json',
         partials: ['<%= config.app %>/templates/partials/**/*.hbs'],
         assets: '/',
         backbutton: false
