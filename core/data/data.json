@@ -1,6 +1,7 @@
 {
   "components": [
     "hero",
-		"slider"
+		"slider",
+		"typography"
   ]
 }
