@@ -1,0 +1,66 @@
+
+//could use extend to have a general pill shaped button builder
+//which would be built upon with all the general kinds
+//i.e. a mixin for general use
+//		 a mixin for emphasized
+//		 etc...
+
+
+.pill-button-gen(@pill-color: @red; @button-font-size: @btn-font-size){
+
+
+	@button-color: @pill-color;
+
+	&:extend(.btn-gen);
+
+	.button-variant(@button-color, @white-1, @button-color);
+	background: 0;
+
+	&:hover, &:active, &:focus {
+		.button-variant(@white-1, @button-color, @button-color);
+	}
+}
+
+
+//change to take in string and boost
+.pill-button-emphasized(@pill-color: @red-5; @button-font-size: @btn-font-size){
+	&:extend(.btn-gen);
+
+	@button-color: @pill-color;
+
+	.button-variant(@white-1, @button-color, @button-color);
+
+	&:hover, &:active, &:focus {
+		.button-variant(@white-1, darken(@button-color, 10%), darken(@button-color, 10%));
+	}
+}
+
+.pill-button-flexible1(@pill-color: @red-5; @button-font-size: @btn-font-size){
+	&:extend(.btn-gen);
+
+	@button-color: @pill-color;
+
+	.button-variant(@white-1, @button-color, @button-color);
+
+	&:hover, &:active, &:focus {
+		.button-variant(@white-1, darken(@button-color, 10%), darken(@button-color, 10%));
+	}
+
+}
+.pill-button-flexible2(@pill-color: @white-1, @button-font-size: @btn-font-size, @bg-color: @black-1){
+
+	//may need text
+	&:extend(.btn-gen);
+
+
+	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%));
+	//perhaps use contrast function in conjunciton with bg-color to find optimal color mix?
+	//(e.g mayabe a darken'd or lighten'd version of the background colour would suit better?)
+	.button-variant(@pill-color, @bg-color, @white-1);
+
+	&:hover, &:active, &:focus {
+
+		.button-variant(@font-bg-color, @pill-color, @white-1);
+	}
+
+}
