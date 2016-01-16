@@ -1,0 +1,67 @@
+
+
+.kiddom-forms{
+	@font-color: @black-1;
+	@border-color: @gray-8;
+	@background-color: @gray-9;
+	color: @font-color;
+	border-color: @border-color;
+	background-color: @background-color;
+	border-width: 2px;
+	// .k-form-text{
+
+	// }
+
+	// .k-form-select{
+
+	// }
+
+	// .k-form-checkbox{
+
+	// }
+
+	// .k-form-radio{
+
+	// }
+
+	&:disabled{
+		color: lighten(@font-color, 90%);
+		border: none;
+		background-color: lighten(@background-color, 25%);
+	}
+
+	&:active, &:focus{
+		border-color: @blue-5;
+		// outline-style: solid;
+		// outline-width: 2px;
+		// outline-color: @blue-5;
+	}
+
+	&:invalid{
+		border-color: @red-5;
+
+		// outline-style: solid;
+		// outline-width: 2px;
+		// outline-color: @red-5;
+	}
+
+	input[type='checkbox']:hover&{
+		outline: solid;
+    outline-offset: -3px;
+    outline-color: @blue-1;;
+	}
+
+
+
+}
+
+
+//for display purposes
+.invalid{
+	border-color: @red-5;
+
+	span&{//using span
+		font-size: .5rem;
+		color: @red-5;
+	}
+}

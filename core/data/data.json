@@ -3,6 +3,8 @@
     "hero",
 		"slider",
 		"typography",
-		"buttonstyles"
+		"buttonstyles",
+		"inputs",
+		"headers"
   ]
 }
