@@ -31,6 +31,17 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+  	
+  	// Override "newer" disabling partial updates. 
+  	// Rebuild everything every time. 
+  	newer: {
+	    options: {
+	      override: function(details, include) {
+	        // decide if the file should be included
+	        include(true); // include everything!
+	      }
+	    }
+	  },
 
     // Project settings
     config: config,
@@ -83,7 +94,7 @@ module.exports = function (grunt) {
          files: {
          		src: [
          			'app/*.less',
-         			'app/templates/partials/*.hbs'
+         			'dist/index.html'
 
          		]
          }
