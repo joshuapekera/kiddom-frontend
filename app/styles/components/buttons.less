@@ -1,0 +1,86 @@
+
+@btn-font-size: 1.25rem;
+
+
+//rename to rows-button-style (as it doesn't have anything to do with buttons in particular)
+.btn-gen{
+	border-radius: 2*@btn-font-size;
+	font-weight: bold;
+	font-size: @btn-font-size;
+	width: 12rem;
+	border-width: .25rem;
+}
+
+.row-bg1{
+	background-color: @lake-6;
+}
+.row-bg2{
+
+	background-color: @yellow-5;
+}
+.row-bg3{
+ 	background-color: @turq-6;
+}
+.row-bg4{
+	background-color: @blue-7;
+}
+.btn-style-rows{
+	padding-top: @btn-font-size*.25;
+	padding-bottom: @btn-font-size*.25;
+}
+
+.btn-pill{
+	.pill-button-gen(@red-5, @btn-font-size);
+}
+
+.btn-pill-teacher{
+	.pill-button-gen(@blue-5, @btn-font-size);
+
+}
+.btn-pill-student{
+	.pill-button-gen(@purple-5, @btn-font-size);
+}
+.btn-pill-academy{
+	.pill-button-gen(@grass-5, @btn-font-size);
+}
+
+
+.btn-pill-emph{
+	.pill-button-emphasized(@red-5, @btn-font-size);
+}
+.btn-pill-emph-teacher{
+	.pill-button-emphasized(@blue-5, @btn-font-size);
+}
+.btn-pill-emph-student{
+	.pill-button-emphasized(@purple-5, @btn-font-size);
+}
+.btn-pill-emph-academy{
+	.pill-button-emphasized(@grass-5, @btn-font-size);
+}
+
+
+.btn-pill-flex1-a{
+	.pill-button-flexible1(@plum-4, @btn-font-size);
+}
+.btn-pill-flex1-b{
+	.pill-button-flexible1(@blue-4, @btn-font-size);
+}
+.btn-pill-flex1-c{
+	.pill-button-flexible1(@purple-4, @btn-font-size);
+}
+.btn-pill-flex1-d{
+	.pill-button-flexible1(@red-6, @btn-font-size);
+}
+
+.btn-pill-flex2-bg1{
+	.pill-button-flexible2(@white-1, @btn-font-size, @lake-6);
+}
+.btn-pill-flex2-bg2{
+	.pill-button-flexible2(@white-1, @btn-font-size, @yellow-5);
+}
+.btn-pill-flex2-bg3{
+	.pill-button-flexible2(@white-1, @btn-font-size, @turq-6);
+}
+.btn-pill-flex2-bg4{
+	.pill-button-flexible2(@white-1, @btn-font-size, @blue-7);
+}

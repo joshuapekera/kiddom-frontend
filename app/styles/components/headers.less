@@ -20,19 +20,27 @@
 
 .btn-pill-login{
 	height: 40px;
-	width: 120px;
+	width: 100px;
+	font-weight: bold;
 }
 .btn-pill-register{
 	.btn-pill-login;
+	margin-top: 16px;
 	border-width: 2px;
 	border-color: #EBF0EF;
 	background-color: @white-1;
 	border-radius: 40px;
 	color: #FF6252;
+	.header-text(@white-1);
+
 
 	&:hover{
 		background-color: #FF6252;
 		border-color: #FF6252;
 		colour: @white-1;
 	}
+}
+
+.desktop-nav{
+	min-width: 761px;
 }

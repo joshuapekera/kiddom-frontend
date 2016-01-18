@@ -47,20 +47,26 @@
 	}
 
 }
+
+
+
 .pill-button-flexible2(@pill-color: @white-1, @button-font-size: @btn-font-size, @bg-color: @black-1){
 
 	//may need text
 	&:extend(.btn-gen);
 
 
+	//TODO - As contrast requires knowledge of the background colour, perhaps just set the font to black with a low opacity level
 	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%));
-	//perhaps use contrast function in conjunciton with bg-color to find optimal color mix?
-	//(e.g mayabe a darken'd or lighten'd version of the background colour would suit better?)
+
 	.button-variant(@pill-color, @bg-color, @white-1);
 
 	&:hover, &:active, &:focus {
 
-		.button-variant(@font-bg-color, @pill-color, @white-1);
+		background-color: @white-1;
+		color: @font-bg-color;
+		border-color: @white-1;
+	//	.button-variant(@font-bg-color, @pill-color, @white-1);
 	}
 
 }
