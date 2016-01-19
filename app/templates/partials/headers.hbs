@@ -5,14 +5,20 @@ component: Headers
 
 <h2>{{component}}</h2>
 
+
+<!-- <<TODO>> - need to override 768px media query for both navbars
+	alternatively restructure code so media query switches stylesheets and navbar stays same
+
+	using hidden-xs and visible xs to flip right now
+ -->
 <div id="headers" class="row row-buffer">
 	<h1>Headers</h1>
 </div>
 <div class="row">
-	<nav class="nav navbar-default desktop-nav">
+	<div class="navbar navbar-default hidden-xs desktop-header">
 		<div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Kiddom</a>
+	      <a class="navbar-brand" href="#"><img src="images/logo-kiddom@2x.png"></a>
 	    </div>
 	    <div class="nav navbar-right">
 		    <ul class="nav navbar-nav">
@@ -21,10 +27,32 @@ component: Headers
 		      <li><a href="#" class="admin-link">Admin</a></li>
 		      <li><a class="btn btn-pill-login">Log in</a></li>
 		      <li><button class="btn btn-pill-register">Sign Up</button></li>
-		    </div>
-	  </div>
-	</nav>
-
+		    </ul>
+		  </div>
+	 	</div>
 	</div>
+</div>
 
+<div class="row mobile-header visible-xs">
+
+  <div class="container-fluid">
+		<div class="navbar mobile">
+    	<div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      	<!-- TODO - JavaScript change glyphicon when opened -->
+	        <span class="glyphicon glyphicon-menu-down"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><img src="images/logo-kiddom@2x.png"></a>
+    	</div>
+    	<div class="collapse navbar-collapse">
+	      <ul class="nav navbar-nav">
+		      <li><a href="#">Teacher</a> </li><hr>
+		      <li><a href="#">Student</a></li><hr>
+		      <li><a href="#">Admin</a></li><hr>
+		      <li><a href="">Log in</a></li><hr>
+		      <li><a href="">Sign Up</a></li>
+	      </ul>
+   	 	</div><!--/.nav-collapse-->
+  	</div>
+	</div>
 </div>

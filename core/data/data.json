@@ -5,6 +5,7 @@
 		"typography",
 		"buttons",
 		"inputs",
-		"headers"
+		"headers",
+		"footers"
   ]
 }

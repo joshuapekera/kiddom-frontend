@@ -1,6 +1,7 @@
 .header1440{
 	width: 1440px;
 	height: 80px;
+
 }
 
 .header976{
@@ -8,6 +9,18 @@
 	height: 80px;
 }
 
+.desktop-header{
+	max-width: 1440px;
+	min-width: 761px;
+}
+
+.mobile-header{
+	position: absolute;
+	min-width: 500px;
+	width: 760px;
+}
+
+//TODO - Nest all of this within nav-desktop
 .teacher-link{
 	.header-text(#1DBAFF);
 }
@@ -43,4 +56,54 @@
 
 .desktop-nav{
 	min-width: 761px;
+	max-width: 1440px;
 }
+
+.navbar-brand > img{
+		height: 40px;
+		margin-top: -10px;//<<TODO>> - Obviously not idea
+}
+
+
+
+
+.mobile{
+		.nav{
+			text-align: center;
+			background-color: #3F4C4C;
+		}
+		.navbar .navbar-nav {
+		  display: inline-block;
+		  float: none;
+
+		}
+
+		.navbar-header{
+			background-color: @white-1;
+		}
+
+		.navbar .navbar-collapse {
+		  text-align: center;
+		  padding: 0 0 0 0;
+		}
+		.nav > li{
+		  vertical-align: center;
+		}
+		.nav > li > a{
+		  font-weight: bold;
+		  color: @white-1;
+
+			background-color: #3F4C4C;
+		}
+		.nav > li > a:hover{
+			background-color: #293333;
+		}
+		.nav hr{
+			background-color: #637070;
+			width: 90%;
+			height: 1px;
+			margin-top: 0;
+			margin-bottom: 0;
+			border: none;
+		}
+	}

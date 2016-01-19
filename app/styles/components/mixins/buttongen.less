@@ -4,7 +4,7 @@
 //i.e. a mixin for general use
 //		 a mixin for emphasized
 //		 etc...
-
+//*
 
 .pill-button-gen(@pill-color: @red; @button-font-size: @btn-font-size){
 
@@ -16,8 +16,10 @@
 	.button-variant(@button-color, @white-1, @button-color);
 	background: 0;
 
-	&:hover, &:active, &:focus {
-		.button-variant(@white-1, @button-color, @button-color);
+	&:hover, &:active, &:focus, .hoverer& {
+		border-color: @button-color;
+		background-color: @button-color;
+		color: @white-1;
 	}
 }
 
@@ -30,8 +32,10 @@
 
 	.button-variant(@white-1, @button-color, @button-color);
 
-	&:hover, &:active, &:focus {
-		.button-variant(@white-1, darken(@button-color, 10%), darken(@button-color, 10%));
+	&:hover, &:active, &:focus, .hoverer& {
+		background-color: darken(@button-color, 10%);
+		border-color: darken(@button-color, 10%);
+
 	}
 }
 
@@ -42,8 +46,9 @@
 
 	.button-variant(@white-1, @button-color, @button-color);
 
-	&:hover, &:active, &:focus {
-		.button-variant(@white-1, darken(@button-color, 10%), darken(@button-color, 10%));
+	&:hover, &:active, &:focus, .hoverer& {
+		border-color: darken(@button-color, 10%);
+		background-color: darken(@button-color, 10%);
 	}
 
 }
@@ -61,7 +66,7 @@
 
 	.button-variant(@pill-color, @bg-color, @white-1);
 
-	&:hover, &:active, &:focus {
+	&:hover, &:active, &:focus, .hoverer& {
 
 		background-color: @white-1;
 		color: @font-bg-color;
