@@ -1,13 +1,9 @@
 
-
 .kiddom-forms{
 	@font-color: @black-1;
 	@border-color: @gray-8;
 	@background-color: @gray-9;
-	color: @font-color;
 	border-color: @border-color;
-	background-color: @background-color;
-	border-width: 2px;
 	// .k-form-text{
 
 	// }
@@ -24,11 +20,6 @@
 
 	// }
 
-	&:disabled{
-		color: lighten(@font-color, 90%);
-		border: none;
-		background-color: lighten(@background-color, 25%);
-	}
 
 	&:active, &:focus{
 		border-color: @blue-5;
@@ -39,25 +30,60 @@
 
 	&:invalid{
 		border-color: @red-5;
-
+		color: @red-5;
 		// outline-style: solid;
 		// outline-width: 2px;
 		// outline-color: @red-5;
 	}
 
-	input[type='checkbox']:hover&{
-		outline: solid;
-    outline-offset: -3px;
-    outline-color: @blue-1;;
+	///<<DISPLAY>>
+	&.active-email{
+		border-color: @blue-5;
 	}
 
 
+	.hovered{
+		outline: solid;
+    outline-offset: -2px;
+    outline-color: @blue-5;
+    outline-width: 2px;
+	}
+	input[type='checkbox']:hover{
+		// <<TODO>> switch this style over for hover and apply it to one checkbox for display purposes
+		&:extend(.kiddom-forms .hovered);
+	}
+	label{
 
+		font-weight: normal;
+	}
+
+	input[type='radio']{
+
+		font-weight: normal;
+		:hover&{
+			outline: solid;
+	    outline-offset: -3px;
+	    outline-color: @blue-1;;
+		}
+	}
+	.form-select-invalid{
+		&:extend(select:invalid);
+	}
+
+	.active-email{
+		&:extend(input[type=email]:focus);
+	}
 }
 
 
+.form-control[disabled]{
+	opacity: .8;
+}
+
+
+
 //for display purposes
-.invalid{
+.invalids{
 	border-color: @red-5;
 
 	span&{//using span

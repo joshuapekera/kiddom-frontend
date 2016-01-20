@@ -4,14 +4,17 @@ Modues consist of a class for each type and nested 'module-content' class
 
 */
 
+
+//temp class to highlight edges easily
 .outlining-modules{
-	border-width: 1px;
+	border-width: 2px;
+	border-style: solid;
 	border-color: @black-1;
 }
 .vertically-center{
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .module-small{
@@ -23,6 +26,8 @@ Modues consist of a class for each type and nested 'module-content' class
 		background-color: @white-1;
 		width: 25%;
 	}
+
+	&:extend(.outlining-modules);
 }
 
 /// <<FLAG>> Is this meant to be three columns? The usage of module content doesn't work otherwise in this setup
@@ -40,12 +45,16 @@ Modues consist of a class for each type and nested 'module-content' class
 		padding-top: 10px;
 		padding-bottom: 10px;
   }
+
+	&:extend(.outlining-modules);
 }
 
 
 //Using mixin to create generic builder, need new class in here for each new background though
 .module-section-head{
 	.module-head();
+	background-color: @gray-8;
+	&:extend(.outlining-modules);
 }
 
 
@@ -56,4 +65,8 @@ Modues consist of a class for each type and nested 'module-content' class
 	height: 670px;
   background-position:right top;
 	overflow: visible;
+	background-color: @gray-8;
+
+	&:extend(.outlining-modules);
 }
+

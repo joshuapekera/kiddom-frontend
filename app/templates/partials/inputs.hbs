@@ -13,27 +13,27 @@ component: Inputs
 		<div class="col-md-4">
 			<h5>Section title</h5>
 			<input type="email"  class="form-control kiddom-forms" placeholder="Email address" disabled> </br>
-			<input type="email"  class="form-control kiddom-forms" placeholder="Email address"> </br>
-			<input type="email"  id="wrongun" class="form-control kiddom-forms invalid" placeholder="Email address">
-			<label for="wrongun"><span class="invalid">Please enter something valid</label></br>
+			<input type="email"  class="form-control kiddom-forms active-email" placeholder="Email address"> </br>
+			<input type="email"  id="wrongun" class="form-control kiddom-forms invalid" placeholder="Email address" value="anemail.com">
+			<label for="wrongun"><span class="invalids">Please enter something valid</label></br>
 		</div>
 		<div class="col-md-4">
 			<h5>Dropdown box</h5>
-			<select id="selectBox1" class="form-control  kiddom-forms" disabled>
+			<select id="selectBox1" class="form-control kiddom-forms" disabled>
 				<option value="" disabled="disabled" selected>Where are you from?</option>
 				<option value="Portugal">Portugal</option>
 				<option value="Longford">Longford</option>
 			</select> </br>
 			<select id="selectBox2" class="form-control kiddom-forms">
 				<option value="" disabled="disabled" selected>Where are you from?</option>
-				<option value="Portugal">Portugal</option>
+				<option value="Portugal" selected>Portugal</option>
 				<option value="Longford">Longford</option>
 			</select> </br>
-			<select id="selectBox3" class="form-control invalid" id="wrongselect">
+			<select id="selectBox3" class="form-control kiddom-forms form-select-invalid">
 				<option value="" disabled="disabled" selected>Where are you from?</option>
 				<option value="Portugal">Portugal</option>
 				<option value="Longford">Longford</option>
-			</select> <label for="wrongselect"> <span class="invalid">Please enter something valid </span> </label> </br>
+			</select> <label for="selectBox3"> <span class="invalids">Please enter something valid </span> </label> </br>
 		</div>
 		<div class="col-md-2">
 			<h5>Checkboxes</h5>
@@ -41,10 +41,10 @@ component: Inputs
 				<label><input id="uncheckedbox" type="checkbox" value="unchecked"> Unchecked</label>
 			</div>
 			<div class="checkbox kiddom-forms">
-				<label><input id="hovercheckedbox" type="checkbox" value=""> Hover</label>
+				<label><input id="hovercheckedbox" class="hovered" type="checkbox" value=""> Hover</label>
 			</div>
 			<div class="checkbox kiddom-forms">
-				<label><input id="checkedbox" type="checkbox" value=""> Checked</label>
+				<label><input id="checkedbox" type="checkbox" value="" checked> Checked</label>
 			</div>
 			<div class="checkbox kiddom-forms">
 				<label><input id="disabledcheckedbox" type="checkbox" disabled> Disabled</label>
@@ -56,10 +56,10 @@ component: Inputs
 				<input name="styles" type="radio">Unselected
 			</label>
 			<label class="radio kiddom-forms">
-				<input name="styles" type="radio">Hover
+				<input name="styles" class="hovered" type="radio">Hover
 			</label>
 			<label class="radio kiddom-forms">
-				<input name="styles" type="radio" selected>Selected
+				<input name="styles" type="radio" checked>Selected
 			</label>
 			<label class="radio kiddom-forms">
 				<input name="styles" type="radio" disabled>Disabled <!-- List values with JavaScript to have relationship between radio and text -->
