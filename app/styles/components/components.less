@@ -6,6 +6,7 @@
 @import "inputs.less";
 @import "headers.less";
 @import "footers.less";
+@import "modules.less";
 @import url(https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic);
 
 
@@ -23,4 +24,9 @@
 	text-transform: uppercase;
 	//need to sort out margin here
 
+}
+
+//using mixin to allow variety of colours, can probably be done better
+.default-hr{
+	.headline-hr(@red-5);
 }

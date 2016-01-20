@@ -1,0 +1,59 @@
+/*
+
+Modues consist of a class for each type and nested 'module-content' class
+
+*/
+
+.outlining-modules{
+	border-width: 1px;
+	border-color: @black-1;
+}
+.vertically-center{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.module-small{
+	height: 80px;
+	background-color: @blue-4;
+	.module-content{
+		&:extend(.vertically-center);
+		margin: 0 auto;
+		background-color: @white-1;
+		width: 25%;
+	}
+}
+
+/// <<FLAG>> Is this meant to be three columns? The usage of module content doesn't work otherwise in this setup
+.module-flex-height{
+	overflow: hidden;
+	width: 100%;
+	background-color: @green-7;
+	padding-bottom: 80px;
+	padding-top: 40px;
+	min-height: 275px;
+  .module-content{
+		background-color: @white-1;
+  	.make-md-column(2);
+		.make-md-column-offset(1);
+		padding-top: 10px;
+		padding-bottom: 10px;
+  }
+}
+
+
+//Using mixin to create generic builder, need new class in here for each new background though
+.module-section-head{
+	.module-head();
+}
+
+
+//<<TODO -- figure out this overflow stuff -- and get rid of that image I plucked randomly off google >>
+.module-large{
+	.module-head("/images/Drain-Mate-Product-Panel-Grey-1500px.jpg");
+	padding: 40px;
+	height: 670px;
+  background-position:right top;
+	overflow: visible;
+}

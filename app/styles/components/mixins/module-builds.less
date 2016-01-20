@@ -1,0 +1,16 @@
+.module-head(@image: '/images/bg-testing.png'){
+	background-image: url(@image);
+  height: 466px;
+
+  .module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  	vertical-align: middle;
+  	background-color: @white-1;
+  	min-height: 100px;
+  	min-width: 200px;
+  	&:extend(.vertically-center);
+  }
+
+
+}

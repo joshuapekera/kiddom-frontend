@@ -1,11 +1,10 @@
 {
   "components": [
-    "hero",
-		"slider",
 		"typography",
 		"buttons",
 		"inputs",
 		"headers",
-		"footers"
+		"footers",
+		"modules"
   ]
 }
