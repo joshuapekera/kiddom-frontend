@@ -16,7 +16,6 @@
 }
 
 .module-large-build(@image: '/images/bg-testing.png'){
-	background-image: url(@image);
   height: 670px;
 
   .module-content{
@@ -40,12 +39,15 @@
 	&.withOverflowingBackground::before {
 	   content: " ";
 	   position: absolute;
-	   width: 1500px;
+	   margin-left: -50%;
+	   width: 150%;
 	   height: 670px;
 	   border-image-outset: top right;
 	   z-index: -1;
-	   background-image: url(/images/Drain-Mate-Product-Panel-Grey-1500px.jpg);
+	   background-image: url(@image);
 	   background-position: right top;
+	   background-repeat: no-repeat;
+	   background-size: auto 670px;
 	}
 
 
