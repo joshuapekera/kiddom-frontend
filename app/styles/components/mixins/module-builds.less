@@ -14,3 +14,40 @@
 
 
 }
+
+.module-large-build(@image: '/images/bg-testing.png'){
+	background-image: url(@image);
+  height: 670px;
+
+  .module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  	vertical-align: middle;
+  	background-color: @white-1;
+  	min-height: 100px;
+  	min-width: 200px;
+  	&:extend(.vertically-center);
+  }
+
+	padding: 40px;
+	background-color: @gray-8;
+	overflow: visible;
+	&.withOverflowingBackground {
+	   position: relative;
+	   background-color: transparent;
+		padding: 0px;
+	}
+	&.withOverflowingBackground::before {
+	   content: " ";
+	   position: absolute;
+	   width: 1500px;
+	   height: 670px;
+	   border-image-outset: top right;
+	   z-index: -1;
+	   background-image: url(/images/Drain-Mate-Product-Panel-Grey-1500px.jpg);
+	   background-position: right top;
+	}
+
+
+}
+
