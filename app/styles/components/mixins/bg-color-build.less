@@ -1,0 +1,20 @@
+/*
+
+<<TODO>> Figure this out
+So the idea was that this would loop through each color and the numbers 1-9 to generate
+a hundred and whatever colored background classes for the colors display
+*/
+
+.make-bg-color(@colour, @count) when (@colour > 0) {
+    // create the current tile rule
+    @bg-col: "@{colour}-@{count}";
+
+    .bg-color-@{bg-col} {
+      background-color: @@bg-col;
+      height: 20px;
+    }
+    @counter: @count - 1;
+
+     // next iteration
+   // .make-bg-color(@color, @counter);
+}

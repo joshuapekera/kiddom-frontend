@@ -77,6 +77,8 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 		}
 		.nav > li{
 		  vertical-align: center;
+			border-top-style: solid;
+			border-top-color: #637070;
 		}
 		.nav > li > a{
 		  font-weight: bold;
@@ -87,15 +89,6 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 		.nav > li > a:hover{
 			background-color: #293333;
 			color: @white-1;
-		}
-		.nav hr{
-			width: 90%;
-			height: 1px;
-			margin-top: 0;
-			margin-bottom: 0;
-			border-style: solid;
-			border-color: #637070;
-			background-color: #637070;
 		}
 
 		.btn-pill-register{
@@ -114,6 +107,14 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 				background-color: #293333;
 				color: @white-1;
 			}
+		}
+		.navbar-toggle{
+			margin-top: 15px;
+			margin-right: 15px;
+			colour:  #637070;
+			outline-color: #637070;
+			outline-width: 1px;
+			outline-style: solid;
 		}
 	}
 }

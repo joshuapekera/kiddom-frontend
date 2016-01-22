@@ -20,10 +20,16 @@
 	.button-variant(@button-color, @white-1, @button-color);
 	background: 0;
 
-	&:hover, &:active, &:focus, .hoverer& {
+	&:hover, &:active, &:focus, &:target, .hoverer&{
 		border-color: @button-color;
 		background-color: @button-color;
 		color: @white-1;
+
+		&:active, &:focus{
+			border-color: @button-color;
+			background-color: @button-color;
+			color: @white-1;
+		}
 	}
 }
 
@@ -40,6 +46,10 @@
 		background-color: darken(@button-color, 10%);
 		border-color: darken(@button-color, 10%);
 
+		&:active, &:focus{
+			background-color: darken(@button-color, 10%);
+			border-color: darken(@button-color, 10%);
+		}
 	}
 }
 
@@ -53,6 +63,11 @@
 	&:hover, &:active, &:focus, .hoverer& {
 		border-color: darken(@button-color, 10%);
 		background-color: darken(@button-color, 10%);
+
+		&:active, &:focus{
+			border-color: darken(@button-color, 10%);
+			background-color: darken(@button-color, 10%);
+		}
 	}
 
 }
@@ -76,6 +91,11 @@
 		color: @font-bg-color;
 		border-color: @white-1;
 	//	.button-variant(@font-bg-color, @pill-color, @white-1);
-	}
 
+		&:active, &:focus{
+			background-color: @white-1;
+			color: @font-bg-color;
+			border-color: @white-1;
+		}
+	}
 }

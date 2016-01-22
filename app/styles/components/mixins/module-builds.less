@@ -42,7 +42,23 @@
 	   margin-left: -50%;
 	   width: 150%;
 	   height: 670px;
-	   border-image-outset: top right;
+	   z-index: -1;
+	   background-image: url(@image);
+	   background-position: cover;
+	   background-repeat: no-repeat;
+	}
+
+	&.withOverflowingBackground-right {
+	   position: relative;
+	   background-color: transparent;
+		padding: 0px;
+	}
+	&.withOverflowingBackground-right::before {
+	   content: " ";
+	   position: absolute;
+	   width: 150%;
+	   height: 670px;
+	   border-image-outset: top left;
 	   z-index: -1;
 	   background-image: url(@image);
 	   background-position: cover;
