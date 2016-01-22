@@ -1,9 +1,9 @@
 {
   "components": [
+		"headers",
 		"typography",
 		"buttons",
 		"inputs",
-		"headers",
 		"footers",
 		"modules"
   ]
