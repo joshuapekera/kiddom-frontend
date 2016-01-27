@@ -6,11 +6,16 @@ Modues consist of a class for each type and nested 'module-content' class
 
 
 //temp class to highlight edges easily
+
+
 .outlining-modules{
 	border-width: 2px;
 	border-style: solid;
 	border-color: @black-1;
 }
+
+
+///<<TODO>> Remove this, it's just a mess
 .vertically-center{
   position: relative;
   top: 50%;
@@ -25,11 +30,11 @@ Modues consist of a class for each type and nested 'module-content' class
 	.module-content{
 		&:extend(.vertically-center);
 		margin: 0 auto;
-		background-color: @white-1;
+  	background-color: rgba(255,255,255, 0.7);
 		width: 25%;
 	}
 
-	&:extend(.outlining-modules);
+//	&:extend(.outlining-modules);
 }
 
 /// <<FLAG>> Is this meant to be three columns? The usage of module content doesn't work otherwise in this setup
@@ -40,15 +45,39 @@ Modues consist of a class for each type and nested 'module-content' class
 	padding-bottom: 80px;
 	padding-top: 40px;
 	min-height: 275px;
-  .module-content{
-		background-color: @white-1;
+
+  //<<TODO>> so this solution requires you to know which position each entry will be
+  //the previous one required a blank div to fill up a slot on each row
+  //and would have required a dynamic row, I suspect javascript might be needed if this needs to be any better
+  //alternatively, a design interface which can just specify the order and then use a x%3 calculation to specify which
+  //of the following should be used
+  .module-content-1{
+  	background-color: rgba(255,255,255, 0.7);
   	.make-md-column(2);
-		.make-md-column-offset(1);
+		margin-left: 16.66667%;
 		padding-top: 10px;
 		padding-bottom: 10px;
+		height: 300px;
+  }
+  .module-content-2{
+  	background-color: rgba(255,255,255, 0.7);
+  	.make-md-column(2);
+		margin-left: 8.33333%;
+		margin-right: 8.33333%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		height: 300px;
+  }
+  .module-content-3{
+  	background-color: rgba(255,255,255, 0.7);
+  	.make-md-column(2);
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-right: 8.33333%;
+		height: 300px;
   }
 
-	&:extend(.outlining-modules);
+//	&:extend(.outlining-modules);
 }
 
 
@@ -56,14 +85,36 @@ Modues consist of a class for each type and nested 'module-content' class
 .module-section-head{
 	.module-head();
 	background-color: @gray-8;
-	&:extend(.outlining-modules);
+//	&:extend(.outlining-modules);
 }
 
-
+/*SEE .module-large-build in module-builds.less mixin
 //<<TODO -- figure out this overflow stuff -- and get rid of that image I plucked randomly off google >>
 .module-large{
 
-	&:extend(.outlining-modules);
+//	&:extend(.outlining-modules);
   .module-large-build('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
 
+}
+*/
+
+
+.module-lrg-right{
+	.module-larger('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
+	background-position: top right;
+
+	.module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  }
+}
+
+.module-lrg-left{
+	.module-larger('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
+	background-position: top left;
+
+	.module-content{
+  	.make-md-column-offset(1);
+  	.make-md-column(5);
+  }
 }

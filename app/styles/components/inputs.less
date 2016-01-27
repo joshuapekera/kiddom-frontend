@@ -64,9 +64,7 @@
 
 		font-weight: normal;
 		:hover&{
-			outline: solid;
-	    outline-offset: -3px;
-	    outline-color: @blue-1;;
+			&:extend(.kiddom-forms .hovered);
 		}
 	}
 	.form-select-invalid{
@@ -76,12 +74,21 @@
 	.active-email{
 		&:extend(input[type=email]:focus);
 	}
+	select[disabled]&{
+		opacity: .6;
+	}
+	select[invalid]&{
+		color: @red-5;
+		option{
+			color: @black-1;
+		}
+	}
+
+	label[disabled]{
+		color: lighten(@black-1, 25%);
+	}
 }
 
-
-.form-control[disabled]{
-	opacity: .8;
-}
 
 
 

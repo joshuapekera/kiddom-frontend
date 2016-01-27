@@ -91,23 +91,6 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 			color: @white-1;
 		}
 
-		.btn-pill-register{
-
-		  font-weight: bold;
-		  color: @white-1;
-			background-color: #3F4C4C;
-			border-style: none;
-			width: 100%;
-			padding-top: .5rem;
-			padding-bottom: 1rem;
-			margin-bottom: .5rem;
-
-	    height: 32px;
-			&:hover, &:focus{
-				background-color: #293333;
-				color: @white-1;
-			}
-		}
 		.navbar-toggle{
 			margin-top: 15px;
 			margin-right: 15px;
@@ -181,6 +164,8 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 			.header-text();
 		}
 		.btn-pill-register{
+
+			// <<FLAG>> <<TODO>> This button needs to be styled to work with an anchor tag, currently only works for a button
 			height: 40px;
 			width: 120px;
 	    border-radius: 40px;
@@ -203,24 +188,24 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 			}
 			margin-right: 1rem;
 		}
-/*anchor
-		.btn-pill-register{
-			.btn-pill-login;
-			margin-top: 16px;
-			border-width: 2px;
-			border-color: #EBF0EF;
-			background-color: @white-1;
-			border-radius: 40px;
-			color: #FF6252;
-			.header-text(@white-1);
+	/* heree is the most recent anchor attempt
+			.btn-pill-register{
+				.btn-pill-login;
+				margin-top: 16px;
+				border-width: 2px;
+				border-color: #EBF0EF;
+				background-color: @white-1;
+				border-radius: 40px;
+				color: #FF6252;
+				.header-text(@white-1);
 
 
-			&:hover{
-				background-color: #FF6252;
-				border-color: #FF6252;
-				colour: @white-1;
-			}
-		} */
+				&:hover{
+					background-color: #FF6252;
+					border-color: #FF6252;
+					colour: @white-1;
+				}
+			} */
 	}
 
 
