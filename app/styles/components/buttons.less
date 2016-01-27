@@ -4,12 +4,17 @@
 
 //rename to rows-button-style (as it doesn't have anything to do with buttons in particular)
 .btn-gen{
-	border-radius: 2*@btn-font-size;
+	border-radius: 3rem;
+	border-width: 2px;
 	font-weight: bold;
 	font-size: @btn-font-size;
-	width: 12rem;
-	border-width: .25rem;
-	height: 3rem;
+	//width: 12rem;///
+	//height: 3rem;///use line height//line height 24px, text size 1.25rem
+	line-height: 1.5rem;
+	text-size: 1.25rem;
+	padding: 8px 22px;
+	min-width: 128px;
+	box-sizing: border-box;
 }
 
 .row-bg1{
@@ -91,11 +96,11 @@
 	.pill-button-tertiary();
 }
 .btn-social-media{
-	min-width: 140px;
+	//min-width: 140px;
 	.appStore-text{
-		padding:0px; margin:-4px;line-spacing: 1; font-size: 1.25rem;
+		padding:0px; margin:-8px;line-spacing: 1; font-size: 1.25rem;
 	}
 	.appStore-dl{
-		padding:0px; margin:-4px; line-spacing: 1;font-size:8px;
+		padding:0px; margin:-8px; line-spacing: 1;font-size:8px;
 	}
 }

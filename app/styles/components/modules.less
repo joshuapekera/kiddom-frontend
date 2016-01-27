@@ -46,35 +46,54 @@ Modues consist of a class for each type and nested 'module-content' class
 	padding-top: 40px;
 	min-height: 275px;
 
+	@module-margin-bottom: 20px;
+
   //<<TODO>> so this solution requires you to know which position each entry will be
   //the previous one required a blank div to fill up a slot on each row
   //and would have required a dynamic row, I suspect javascript might be needed if this needs to be any better
   //alternatively, a design interface which can just specify the order and then use a x%3 calculation to specify which
   //of the following should be used
+  //<<UPDATE>> Added two media queries below to ensure the content boxes stack nicely
   .module-content-1{
   	background-color: rgba(255,255,255, 0.7);
   	.make-md-column(2);
-		margin-left: 16.66667%;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		margin-bottom: @module-margin-bottom;
 		height: 300px;
   }
   .module-content-2{
   	background-color: rgba(255,255,255, 0.7);
   	.make-md-column(2);
-		margin-left: 8.33333%;
-		margin-right: 8.33333%;
-		padding-top: 10px;
-		padding-bottom: 10px;
+		margin-bottom: @module-margin-bottom;
 		height: 300px;
   }
   .module-content-3{
   	background-color: rgba(255,255,255, 0.7);
   	.make-md-column(2);
-		padding-top: 10px;
-		padding-bottom: 10px;
-		margin-right: 8.33333%;
+		margin-bottom: @module-margin-bottom;
 		height: 300px;
+  }
+
+
+  //margins for stacks and unstacked columns (assuming md columns)
+  @media only screen and (min-width:992px){
+  	.module-content-1{
+  		margin-right: 0%;
+  		margin-left: 16.6667%;
+  	}
+  	.module-content-2{
+  		margin-right: 8.3333%;
+  		margin-left: 8.3333%;
+  	}
+  	.module-content-3{
+  		margin-right: 8.3333%;
+  	}
+  }
+
+  @media only screen and (max-width:991px){
+  	.module-content-1, .module-content-2, .module-content-3{
+  		margin-right: 8.3333%;
+  		margin-left: 8.3333%;
+  	}
   }
 
 //	&:extend(.outlining-modules);

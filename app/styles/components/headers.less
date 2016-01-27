@@ -14,9 +14,7 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 	background-color: @white-1;
 }
 
-.mobile-header{
-	min-width: 500px;
-}
+
 
 //TODO - Nest all of this within nav-desktop
 
@@ -49,7 +47,11 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
   outline-width: 1px;
 }
 
-@media only screen and (max-width:768px){
+@media (max-width:767px){
+	.mobile-header{
+		min-width: 268px;
+	}
+
 	.kiddom-head{
 		.nav{
 			text-align: center;
@@ -71,6 +73,9 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 			background-color: @white-1;
 		}
 
+		.navbar-brand{
+			padding: 20px 20px;
+		}
 		.navbar .navbar-collapse {
 		  text-align: center;
 		  padding: 0 0 0 0;
@@ -101,22 +106,28 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 		}
 	}
 }
-@media only screen and (min-width:769px){
+@media (min-width:768px){
 	.nav{
 		height: @header-height;
 	}
 
+	.mobile-header{
+		min-width: 760px;
+	}
+
 	.kiddom-head{
 
+		box-shadow: -1px 15px 30px -6px rgba(0,0,0,0.75);
+
 		background-color: @white-1;
-		min-width: 760px;
+		min-width: 640px;
 		padding-left: 0px;
 		padding-right: 0px;
 		.col-desk-4{
-  		.make-md-column(4);
+  		.make-xs-column(4);
 		}
 		.col-desk-8{
-  		.make-md-column(8);
+  		.make-xs-column(8);
   		height: @header-height;
 		}
 
