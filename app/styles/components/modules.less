@@ -30,7 +30,7 @@ Modues consist of a class for each type and nested 'module-content' class
 	.module-content{
 		&:extend(.vertically-center);
 		margin: 0 auto;
-  	background-color: rgba(255,255,255, 0.7);
+  	//background-color: rgba(255,255,255, 0.7);
 		width: 25%;
 	}
 
@@ -54,24 +54,23 @@ Modues consist of a class for each type and nested 'module-content' class
   //alternatively, a design interface which can just specify the order and then use a x%3 calculation to specify which
   //of the following should be used
   //<<UPDATE>> Added two media queries below to ensure the content boxes stack nicely
-  .module-content-1{
-  	background-color: rgba(255,255,255, 0.7);
+  .module-content-1, .module-content-2, .module-content-3{
+  	//background-color: rgba(255,255,255, 0.7);
   	.make-md-column(2);
 		margin-bottom: @module-margin-bottom;
-		height: 300px;
-  }
-  .module-content-2{
-  	background-color: rgba(255,255,255, 0.7);
-  	.make-md-column(2);
-		margin-bottom: @module-margin-bottom;
-		height: 300px;
-  }
-  .module-content-3{
-  	background-color: rgba(255,255,255, 0.7);
-  	.make-md-column(2);
-		margin-bottom: @module-margin-bottom;
-		height: 300px;
-  }
+		//height: 300px;
+		padding-top: @font-size-base;
+		padding-bottom: @font-size-base;
+
+
+		//images within content are centered and limited to a maximum width of 128px
+		img{
+			max-width: 128px;
+			display: block;
+			padding-bottom: @font-size-base;
+		}
+
+	}
 
 
   //margins for stacks and unstacked columns (assuming md columns)
@@ -103,7 +102,7 @@ Modues consist of a class for each type and nested 'module-content' class
 //Using mixin to create generic builder, need new class in here for each new background though
 .module-section-head{
 	.module-head();
-	background-color: @gray-8;
+	//background-color: @gray-8;
 //	&:extend(.outlining-modules);
 }
 

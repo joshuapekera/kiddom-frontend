@@ -1,22 +1,9 @@
 /*
-
-The current code has two different headers, one which is only visible when constrained to <768px, one which is only visible when >=768px
-A rewrite of this could easily put the two into one with a media query, I'm sure (e.g. changing the buttons in the desktop header into links)
-
+Both navbar layouts fit into the same html (w/e of one button...), media queries for screen size determine which to use
 */
 @header-height: 80px;
 
 
-.desktop-header{
-	max-width: 1440px;
-	min-width: 761px;
-	padding-right: 10px;
-	background-color: @white-1;
-}
-
-
-
-//TODO - Nest all of this within nav-desktop
 
 
 .desktop-nav{
@@ -39,7 +26,6 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 }
 
 .kiddom-head{
-
 	height:@header-height;
 	background-color: @gray-9;
 
@@ -120,7 +106,7 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 		box-shadow: -1px 15px 30px -6px rgba(0,0,0,0.75);
 
 		background-color: @white-1;
-		min-width: 640px;
+		min-width: 640px;//somewhat arbitrary, it should switch to the mobile layout before this
 		padding-left: 0px;
 		padding-right: 0px;
 		.col-desk-4{
@@ -176,7 +162,7 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 		}
 		.btn-pill-register{
 
-			// <<FLAG>> <<TODO>> This button needs to be styled to work with an anchor tag, currently only works for a button
+			// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
 			height: 40px;
 			width: 120px;
 	    border-radius: 40px;
@@ -210,7 +196,6 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 				color: #FF6252;
 				.header-text(@white-1);
 
-
 				&:hover{
 					background-color: #FF6252;
 					border-color: #FF6252;
@@ -218,6 +203,4 @@ A rewrite of this could easily put the two into one with a media query, I'm sure
 				}
 			} */
 	}
-
-
 }

@@ -100,6 +100,35 @@
 	}
 }
 
+.pill-button-flexible2-redux(@pill-color: @white-1, @button-font-size: @btn-font-size, @bg-color: rgba(0,0,0,0)){
+
+	//may need text
+	&:extend(.btn-gen);
+	color: @pill-color;
+
+	//This doesn't work as the background of the button takes precedence over the background of the container
+	//@black-opacity: rgba(0,0,0, 0.2);
+	//@white-opacity: rgba(255,255,255, 0.2);
+	////@font-bg-color: rgba(0,0,0, 0.1);
+	//@font-bg-color: contrast(@bg-color, @black-opacity, @white-opacity, 1%);
+
+	.button-variant(@white-1, @bg-color, @white-1);
+
+	&:hover, &:active, &:focus, .hoverer& {
+
+		background-color: @white-1;
+		color: @font-bg-color;
+		border-color: @white-1;
+	//	.button-variant(@font-bg-color, @pill-color, @white-1);
+
+		&:active, &:focus{
+			background-color: @white-1;
+			color: @font-bg-color;
+			border-color: @white-1;
+		}
+	}
+}
+
 .pill-button-tertiary(){
 
 	&:extend(.btn-gen);

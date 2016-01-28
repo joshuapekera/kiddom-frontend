@@ -17,11 +17,11 @@
 	box-sizing: border-box;
 }
 
+//the background colours to display buttons over
 .row-bg1{
 	background-color: @lake-6;
 }
 .row-bg2{
-
 	background-color: @yellow-5;
 }
 .row-bg3{
@@ -30,19 +30,20 @@
 .row-bg4{
 	background-color: @blue-7;
 }
+
+//just for spacing the rows a bit, not real world use
 .btn-style-rows{
 	min-height: 6rem;
 	padding-top: @btn-font-size;
 	padding-bottom: @btn-font-size;
 }
 
+//see styles/components/mixins/buttongen.less for next 16
 .btn-pill{
 	.pill-button-gen(@red-5, @btn-font-size);
 }
-
 .btn-pill-teacher{
 	.pill-button-gen(@blue-5, @btn-font-size);
-
 }
 .btn-pill-student{
 	.pill-button-gen(@purple-5, @btn-font-size);
@@ -65,7 +66,6 @@
 	.pill-button-emphasized(@grass-5, @btn-font-size);
 }
 
-
 .btn-pill-flex1-a{
 	.pill-button-flexible1(@plum-4, @btn-font-size);
 }
@@ -79,28 +79,39 @@
 	.pill-button-flexible1(@red-6, @btn-font-size);
 }
 
-.btn-pill-flex2-bg1{
+//the following style requires a new one for each possible background
+//some dynamic approach involving mixins may sort this out easily
+.btn-pill-flex2-lake{
 	.pill-button-flexible2(@white-1, @btn-font-size, @lake-6);
 }
-.btn-pill-flex2-bg2{
+.btn-pill-flex2-yellow{
 	.pill-button-flexible2(@white-1, @btn-font-size, @yellow-5);
 }
-.btn-pill-flex2-bg3{
+.btn-pill-flex2-turquoise{
 	.pill-button-flexible2(@white-1, @btn-font-size, @turq-6);
 }
-.btn-pill-flex2-bg4{
+.btn-pill-flex2-blue{
 	.pill-button-flexible2(@white-1, @btn-font-size, @blue-7);
 }
 
+
+// //this was a failed attempt to avoid needing a new class for each colour
+
+// .btn-pill-flex2-general{
+// 	.pill-button-flexible2-redux(@white-1, @btn-font-size);
+// }
+
+
+//these are the other buttons (e.g. appstore, sign in via twitter/google)
 .btn-pill-tertiary{
 	.pill-button-tertiary();
 }
 .btn-social-media{
 	//min-width: 140px;
 	.appStore-text{
-		padding:0px; margin:-8px;line-spacing: 1; font-size: 1.25rem;
+		padding:0px; margin:-(@btn-font-size*.4);line-spacing: 1; font-size: @btn-font-size;
 	}
 	.appStore-dl{
-		padding:0px; margin:-8px; line-spacing: 1;font-size:8px;
+		padding:0px; margin:-(@btn-font-size*.4); line-spacing: 1;font-size:@btn-font-size*.4;
 	}
 }
