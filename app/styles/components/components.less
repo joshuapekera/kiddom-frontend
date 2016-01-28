@@ -7,28 +7,11 @@
 @import "headers.less";
 @import "footers.less";
 @import "modules.less";
-@import "colors_display.less";
+//@import "colors_display.less";
 @import url(https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic);
 
 
-//the sidebar and guiding headlines (e.g. P.SMALL, USAGE CASES)
-.guide-titles{
-	.font_gen(@font-size-base, 1.111, -0.3px, bold);
-	color: @gray-6;
-	text-transform: uppercase;
-	//need to sort out margin here
-}
-//places which require some kind of elaboration but are within the confines of a guide-titles
-.guide-details{
-	.font_gen(0.875rem, 1.111, -0.3px);
-	color: @gray-6;
-	text-transform: uppercase;
-}
 
-//.text-centered from bootstrap should replace this
-.guide-centered{
-	text-align: center;
-}
 
 //using mixin to allow variety of colours, can probably be done better
 .red-hr, .default-hr{ .headline-hr(@red-5);}
@@ -48,8 +31,3 @@
 .red-hr{	.headline-hr(@red-5);}
 .black-hr{	.headline-hr(@black-1);}
 .white-hr{	.headline-hr(@white-1);}
-
-.component-buffer{
-	padding-top: 5rem;
-	padding-bottom: 1rem;
-}

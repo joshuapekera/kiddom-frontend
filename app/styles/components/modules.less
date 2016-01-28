@@ -8,13 +8,6 @@ Modues consist of a class for each type and nested 'module-content' class
 //temp class to highlight edges easily
 
 
-.outlining-modules{
-	border-width: 2px;
-	border-style: solid;
-	border-color: @black-1;
-}
-
-
 ///<<TODO>> Remove this, it's just a mess
 .vertically-center{
   position: relative;
@@ -26,25 +19,22 @@ Modues consist of a class for each type and nested 'module-content' class
 
 .module-small{
 	height: 80px;
-	background-color: @blue-4;
 	.module-content{
 		&:extend(.vertically-center);
 		margin: 0 auto;
   	//background-color: rgba(255,255,255, 0.7);
-		width: 25%;
+		width: 25%;//<<FLAG>>
 	}
-
 //	&:extend(.outlining-modules);
 }
 
 /// <<FLAG>> Is this meant to be three columns? The usage of module content doesn't work otherwise in this setup
 .module-flex-height{
 	overflow: hidden;
-	width: 100%;
-	background-color: @green-7;
+	width: 100%;//unsure if it should be 100%?
 	padding-bottom: 80px;
 	padding-top: 40px;
-	min-height: 275px;
+	min-height: 275px;//<<FLAG>>
 
 	@module-margin-bottom: 20px;
 
@@ -65,7 +55,7 @@ Modues consist of a class for each type and nested 'module-content' class
 
 		//images within content are centered and limited to a maximum width of 128px
 		img{
-			max-width: 128px;
+			max-width: 128px;//<<FLAG>>
 			display: block;
 			padding-bottom: @font-size-base;
 		}

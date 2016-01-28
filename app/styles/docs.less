@@ -7,6 +7,23 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
+
+//these are to be removed from main.less
+@import "components/mixins/bg-color-build.less";
+@import "components/colors_display.less";
+//@import ""; ///need to remove hoverer from buttons
+
+
+
+
+//importing just to avoid errors, also in main
+@import "components/mixins/fontdefault.less";
+@import "components/colors.less";
+@import "components/inputs.less";
+
+
+
+
 body {
   padding-top: 0px;
 }
@@ -109,3 +126,80 @@ main {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+
+/////Extra ones added in for testing purposes, added by padraig
+
+
+///<<Relating to guide text throughout display>>
+.component-buffer{
+	padding-top: 5rem;
+	padding-bottom: 1rem;
+}
+//the sidebar and guiding headlines (e.g. P.SMALL, USAGE CASES)
+.guide-titles{
+	font-family: 'Istok web';
+	font-size: 1rem;
+	letter-spacing: -0.3px;
+	line-height: 1.111;
+	margin-top: 0px;
+	font-weight: bold;
+	color: grey;
+	text-transform: uppercase;
+	//need to sort out margin here
+}
+//places which require some kind of elaboration but are within the confines of a guide-titles
+.guide-details{
+	font-size: 0.875rem;
+	line-height: 1.111;
+	letter-spacing: -0.3px;
+	color: grey;
+	text-transform: uppercase;
+	font-family: 'Istok web';
+}
+//.text-centered from bootstrap should replace this
+.guide-centered{
+	text-align: center;
+}
+
+.outline-element{
+
+	outline-style: solid;
+  outline-width: 1px;
+}
+
+
+
+///<<relating to inputs.less and inputs.hbs>>
+.kiddom-forms{
+	&.active-email{
+		border-color: @blue-5;
+	}
+	.hovered{
+		/*
+		outline: solid;
+	  outline-offset: -2px;
+	  outline-color: @blue-5;
+	  outline-width: 2px;
+		*/
+		box-shadow: inset 0px 0px 3px 3px @blue-5;
+	}
+	.form-select-invalid{
+		&:extend(select:invalid);
+	}
+	.active-email{
+		&:extend(input[type=email]:focus);
+	}
+}
+
+
+//<<modules>>
+
+.outlining-modules{
+	border-width: 2px;
+	border-style: solid;
+	border-color: @black-1;
+}
+
+
