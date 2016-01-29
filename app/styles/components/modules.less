@@ -38,11 +38,8 @@ Modues consist of a class for each type and nested 'module-content' class
 
 	@module-margin-bottom: 20px;
 
-  //<<TODO>> so this solution requires you to know which position each entry will be
-  //the previous one required a blank div to fill up a slot on each row
-  //and would have required a dynamic row, I suspect javascript might be needed if this needs to be any better
-  //alternatively, a design interface which can just specify the order and then use a x%3 calculation to specify which
-  //of the following should be used
+  //<<TODO>> so this solution requires you to know which position each entry will be,
+  // with a new row for every Xth entry where x%3=1
   //<<UPDATE>> Added two media queries below to ensure the content boxes stack nicely
   .module-content-1, .module-content-2, .module-content-3{
   	//background-color: rgba(255,255,255, 0.7);
@@ -64,6 +61,7 @@ Modues consist of a class for each type and nested 'module-content' class
 
 
   //margins for stacks and unstacked columns (assuming md columns)
+  //<<FLAG>> collapse point 992?
   @media only screen and (min-width:992px){
   	.module-content-1{
   		margin-right: 0%;
