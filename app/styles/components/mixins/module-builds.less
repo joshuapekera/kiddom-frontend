@@ -6,7 +6,6 @@
   	.make-md-column-offset(6);
   	.make-md-column(5);
   	vertical-align: middle;
-  	background-color: rgba(255,255,255, 0.7);
   	min-height: 100px;
   	min-width: 200px;
   	&:extend(.vertically-center);
@@ -75,12 +74,12 @@ in the layout of the previous modules (i.e. a module within a row, rather than a
 //This is the much simpler new one
 .module-larger(@image){
   background-image: url(@image);
+  height: 670px;
 	//background-size: 75%;//temporarily changed from coverto highlight differences
 
 	.module-content{
   	vertical-align: middle;
-  	background-color: rgba(255,255,255, 0.7);
-  	margin-top: 100px;
-  	margin-bottom: 100px;
+  	&:extend(.vertically-center);
+  	//background-color: rgba(255,255,255, 0.7);
 	}
 }

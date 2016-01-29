@@ -1,0 +1,45 @@
+---
+layout: base.hbs
+name: Student1
+---
+
+
+
+
+	<div class="container-fluid">
+		<div class="row nav-shadow">
+			<div class="kiddom-head nav">
+		  	<div class="navbar-header col-desk-4">
+		      <button href="#" type="button" class="navbar-toggle header-toggle-spacing" data-toggle="collapse" data-target=".navbar-collapse">
+		      	<!-- TODO - JavaScript change glyphicon when opened -->
+		        <span class="glyph-flip glyphicon glyphicon-chevron-down"></span>
+		      </button>
+		      <div class="navbar-brand">
+			      <a class="navbar-brand-link" href="#"><img src="images/logo-kiddom@2x.png"></a>
+			    </div>
+		  	</div>
+		  	<div class="collapse navbar-collapse col-desk-8">
+		      <ul class="nav navbar-nav">
+			      <li class="teacher-link"><a href="#">Teacher</a> </li>
+			      <li class="student-link" ><a href="#">Student</a> </li>
+			      <li class="admin-link" ><a href="#">Admin</a></li>
+			    </ul>
+		      <ul class="nav navbar-nav navbar-right">
+			      <li class="btn-pill-login"> <a href="#">Log in
+			      	</a></li>
+			      <!-- <<FLAG>>
+			      	Difficulty styling the register button as an anchor tag resulted in this awkward solution
+			      -->
+			      <li class="btn-pill-login visible-xs">
+			      	<a href="#">Sign Up</a></li>
+			      <li class="hidden-xs">
+			      	<button class="btn-pill-register">Sign Up</button></li>
+		      </ul>
+		 	 	</div><!--/.nav-collapse-->
+			</div>
+		</div>
+
+		{{> body }}
+
+	</div>
+</main>

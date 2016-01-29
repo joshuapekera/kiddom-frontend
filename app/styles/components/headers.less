@@ -13,7 +13,7 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 
 .navbar-brand{
 	float: left;
-  padding: 20px 0px;
+  padding-top: 20px 0px;
   font-size: 1.25rem;
   line-height: 1.42857143rem;
   height: @header-height;
@@ -30,6 +30,8 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 	background-color: @gray-9;
 }
 
+
+////using 768px instead of 760px and 768 is the bootstrap standard
 @media (max-width:767px){
 	.mobile-header{
 		min-width: 268px;
@@ -104,19 +106,13 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 
 	.kiddom-head{
 
-		box-shadow: -1px 15px 30px -6px rgba(0,0,0,0.75);
 
 		background-color: @white-1;
-		min-width: 640px;//somewhat arbitrary, it should switch to the mobile layout before this
+		min-width: 760px;//somewhat arbitrary, it should switch to the mobile layout before this
+		max-width: 1000px;
+		margin: 0 auto;
 		padding-left: 0px;
 		padding-right: 0px;
-		.col-desk-4{
-  		.make-xs-column(4);
-		}
-		.col-desk-8{
-  		.make-xs-column(8);
-  		height: @header-height;
-		}
 
 		.nav{
 			text-align: center;
@@ -139,11 +135,17 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 
 		.navbar-header{
 			background-color: @white-1;
+			width: 145px;//size of logo
 		}
 
 		.navbar .navbar-collapse {
 		  text-align: center;
 		  padding: 0 0 0 0;
+  		height: @header-height;
+		}
+		.navbar-collapse{
+  		width:70%;
+  		float: right;
 		}
 		.nav hr{
 			display: none;
@@ -173,7 +175,7 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 			border-color: @gray-8;
 			color: #FF6252;
 			border-style: solid;
-    	margin-left: 1.5rem;
+    	margin-left: .75rem;
 	    vertical-align: middle;
 	    display: inline-block;
 
@@ -186,6 +188,7 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 			}
 			margin-right: 1rem;
 		}
+
 	/* heree is the most recent anchor attempt
 			.btn-pill-register{
 				.btn-pill-login;
@@ -204,4 +207,11 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 				}
 			} */
 	}
+}
+.nav-shadow{
+	width: 100%;
+	position: fixed;
+	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+	z-index:1;
+	background-color: white;
 }

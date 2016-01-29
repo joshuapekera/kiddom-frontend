@@ -8,7 +8,7 @@ Modues consist of a class for each type and nested 'module-content' class
 //temp class to highlight edges easily
 
 
-///<<TODO>> Remove this, it's just a mess
+///...actually, this seems to hold up on every browser I've tried
 .vertically-center{
   position: relative;
   top: 50%;
@@ -114,6 +114,7 @@ Modues consist of a class for each type and nested 'module-content' class
 	.module-content{
   	.make-md-column-offset(6);
   	.make-md-column(5);
+  	&:extend(.vertically-center);
   }
 }
 
