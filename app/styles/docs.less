@@ -8,9 +8,6 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 
-//these are to be removed from main.less
-@import "components/mixins/bg-color-build.less";
-@import "components/colors_display.less";
 //@import ""; ///need to remove hoverer from buttons
 
 
@@ -20,9 +17,6 @@
 @import "components/mixins/fontdefault.less";
 @import "components/colors.less";
 @import "components/inputs.less";
-
-
-
 
 body {
   padding-top: 0px;
@@ -203,3 +197,38 @@ main {
 }
 
 
+//<<Background colors>>
+
+//I assume this all just has no use beyond here?
+/*
+[class*="bg-color-"]{
+	height: 20px;
+	width: 50%;
+	padding: 0px;
+	margin: 0;
+}*/
+.color-display-styling{
+	height: 20px;
+	width: 50%;
+	padding: 0px;
+	margin: 0;
+}
+
+.color-titles{
+	.font_gen(.75rem, 1.1, -0.3px);
+	color: @gray-6;
+	text-transform: uppercase;
+	//need to sort out margin here
+
+}
+.color-details{
+	.font_gen(0.75rem, 1.1, -0.3px);
+	color: @gray-6;
+	text-transform: uppercase;
+}
+
+.bg-color-descriptor{
+	height: 100px;
+  position: relative;
+  transform: translateY(100%);
+}

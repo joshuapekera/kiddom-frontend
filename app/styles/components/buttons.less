@@ -80,18 +80,9 @@
 }
 
 //the following style requires a new one for each possible background
-//some dynamic approach involving mixins may sort this out easily
-.btn-pill-flex2-lake{
-	.pill-button-flexible2(@white-1, @btn-font-size, @lake-6);
-}
-.btn-pill-flex2-yellow{
-	.pill-button-flexible2(@white-1, @btn-font-size, @yellow-5);
-}
-.btn-pill-flex2-turquoise{
-	.pill-button-flexible2(@white-1, @btn-font-size, @turq-6);
-}
-.btn-pill-flex2-blue{
-	.pill-button-flexible2(@white-1, @btn-font-size, @blue-7);
+//this is currently done using a mixin for background colors which overrides this layout
+.btn-pill-flex2{
+	.pill-button-flexible2(@white-1, @btn-font-size, @white-1);
 }
 
 // //this was a failed attempt to avoid needing a new class for each colour

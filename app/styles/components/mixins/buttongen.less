@@ -78,14 +78,14 @@
 
 	//may need text
 	&:extend(.btn-gen);
-
+	background: none;
 
 	//TODO - As contrast requires knowledge of the background colour, perhaps just set the font to black with a low opacity level
-	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%));
+	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%), 10%);
 
 	.button-variant(@pill-color, @bg-color, @white-1);
 
-	&:hover, &:active, &:focus, .hoverer& {
+	&:hover, &:active, &:focus, &.hoverer {
 
 		background-color: @white-1;
 		color: @font-bg-color;
