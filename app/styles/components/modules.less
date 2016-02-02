@@ -1,3 +1,9 @@
+.module-height-large{
+	height: 670px;
+}
+.module-height-section-head{
+	height: 466px;
+}
 
 .splash-header{
 	min-height: 80px;
@@ -5,11 +11,34 @@
 	padding: @font-size-base 0;
 	.text-holder{
 
+		.header-text{
+			&:extend(h2);
+
+			img{
+				max-height: 70px;
+			}
+		}
+
 	}
 	.image-holder{
-		img{
+	}
 
+	.square-box{
+
+		&:extend(.bg-color-white);
+		width: 60%;
+		min-width: 240px;
+		padding: 1rem;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 0;
+		margin-left: auto;
+		margin-right: auto;
+		img{
+			height: 112px;
+			margin: 8px;
 		}
+
 	}
 }
 
@@ -22,25 +51,33 @@
     vertical-align: middle;
     float: none;
 	}
+
+
+	//<<FLAG>> only use directly within row's which have a fixed height
+	.vertical-center-solo{
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
 	//text and image holder to both be col-XX-6
 	.text-holder{
 
 	}
 	.image-holder{
+		overflow-y: 10%;
 		img{
 
 		}
 	}
 
-	.pull-right{
-		img{
-			float: left;
-		}
+	///<<TODO>> get this working
+	[class*="col-"]:nth-child(odd).image-holder{
+			text-align: right;
+			margin-right: -8px;
 	}
-	.pull-left{
-		img{
-			float:right;
-		}
+	[class*="col-"]:nth-child(even).image-holder{
+			text-align: left;
+			margin-left: -8px;
 	}
 	//use bootstrap column standards for two column
 
@@ -51,15 +88,6 @@
 		background-position: bottom 0% left 50%;
 	}
 
-	.module-large{
-		min-height: 670px;
-	}
-	.module-section-head{
-		min-height: 466px;
-	}
-	img{
-		//
-	}
 }
 
 .half-column-holder{
@@ -80,10 +108,10 @@
 
 		.image-holder{
 			.make-sm-column(4);
+			text-align: right;
 			img{
 				width: 96px;//<<FLAG>>
-				display: block;
-				float: right;
+
 			}
 		}
 		.text-holder{
