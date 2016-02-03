@@ -11,16 +11,32 @@
 	padding: @font-size-base 0;
 	.text-holder{
 
-		.header-text{
-			&:extend(h2);
 
-			img{
-				max-height: 70px;
-			}
-		}
 
 	}
+
+	.heading-text{
+		&:extend(h2);
+		padding: 1rem 0;
+
+		img{
+			max-height: 70px;
+		}
+	}
 	.image-holder{
+	}
+
+	input[type=email]{
+		text-align: center;
+		font-size: 1.25rem;
+		width: 70%;
+		border-color: @gray-8;
+		border-style: none;
+		background-color: @gray-9;
+	}
+
+	button{
+		margin: 1rem;
 	}
 
 	.square-box{
@@ -61,11 +77,13 @@
 	}
 	//text and image holder to both be col-XX-6
 	.text-holder{
-
+		.heading-text{
+			&:extend(h1);
+		}
 	}
 	.image-holder{
-		overflow-y: 10%;
 		img{
+			max-width: 95%;
 
 		}
 	}
@@ -73,11 +91,15 @@
 	///<<TODO>> get this working
 	[class*="col-"]:nth-child(odd).image-holder{
 			text-align: right;
-			margin-right: -8px;
+			margin-right: -7px;
+			padding-left: 0px;
+			padding-right: 0px;
 	}
 	[class*="col-"]:nth-child(even).image-holder{
 			text-align: left;
-			margin-left: -8px;
+			margin-left: -7px;
+			padding-left: 0px;
+			padding-right: 0px;
 	}
 	//use bootstrap column standards for two column
 
@@ -87,7 +109,6 @@
 	.background-middle-right-spill{
 		background-position: bottom 0% left 50%;
 	}
-
 }
 
 .half-column-holder{
@@ -116,6 +137,9 @@
 		}
 		.text-holder{
 			.make-sm-column(8);
+			.heading-text{
+				&:extend(h3);
+			}
 		}
 	}
 }
@@ -138,6 +162,9 @@
 		}
 		.text-holder{
 			.make-md-column(12);
+			.heading-text{
+				&:extend(h4);
+			}
 		}
 	}
 }
@@ -153,18 +180,52 @@
 		// Paragraph in div (no overflow)
 		// image | <p>name</p><p>title</p>
 		//
+		outline-style: solid;
+		outline-color: @gray-8;
+		outline-width: 2px;
+		padding: 8px;
+		box-sizing: border-box;
 
+		height: 256px;
 
-		.grid-name{
-
+		.feedback{
+			//padding: 8px;
+			max-height: 65%;
+			overflow: hidden;
+			margin: 0.5rem;
+			//<<TODO>> fixed height
 		}
-		.grid-title{
 
+
+		.details{
+			position: absolute;
+			bottom: 0px;
+			min-height: 60px;
+			margin: 0.5rem;
+
+			.avatar{
+				height: 60px;
+				width: 60px;
+				float: left;
+				overflow: hidden;
+				img{
+					//square icon, crop?
+				}
+				margin-right: 8px;
+			}
+			.text{
+				float: right;
+				.name{
+					font-weight: bold;
+				}
+				.title{
+					font-size: .875rem;
+				}
+			}
 		}
 
-		img{
-			//square icon
-
+		&:hover{
+			box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
 		}
 	}
 }

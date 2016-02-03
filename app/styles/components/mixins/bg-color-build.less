@@ -28,10 +28,15 @@ a hundred and whatever colored background classes for the colors display
 
 	background-color: @bg-color;
 
-	color: contrast(@bg-color, @black-1, @white-1);
+	color: contrast(@bg-color, @black-1, @white-1, 80%);
 
 	.btn-pill-flex2{
 
 		.pill-button-flexible2(@white-1, @btn-font-size, @bg-color);
+	}
+
+
+	p{
+		color: contrast(@bg-color, @gray-7, @white-1);
 	}
 }
