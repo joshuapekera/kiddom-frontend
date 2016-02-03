@@ -1,0 +1,154 @@
+
+@btn-font-size: 1.25rem;
+
+
+//rename to rows-button-style (as it doesn't have anything to do with buttons in particular)
+.btn-gen{
+	border-radius: 3rem;
+	border-width: 2px;
+	font-weight: bold;
+	font-size: @btn-font-size;
+	//width: 12rem;///
+	//height: 3rem;///use line height//line height 24px, text size 1.25rem
+	line-height: 1.5rem;
+	text-size: 1.25rem;
+	padding: 8px 22px;
+	min-width: 128px;
+	box-sizing: border-box;
+}
+
+//the background colours to display buttons over
+.row-bg1{
+	background-color: @lake-6;
+}
+.row-bg2{
+	background-color: @yellow-5;
+}
+.row-bg3{
+ 	background-color: @turq-6;
+}
+.row-bg4{
+	background-color: @blue-7;
+}
+
+//just for spacing the rows a bit, not real world use
+.btn-style-rows{
+	min-height: 6rem;
+	padding-top: @btn-font-size;
+	padding-bottom: @btn-font-size;
+}
+
+//see styles/components/mixins/buttongen.less for next 16
+.btn-pill, .btn-pill-red{
+	.pill-button-gen(@red-5, @btn-font-size);
+}
+.btn-pill-teacher, .btn-pill-blue{
+	.pill-button-gen(@blue-5, @btn-font-size);
+}
+.btn-pill-student, .btn-pill-purple{
+	.pill-button-gen(@purple-5, @btn-font-size);
+}
+.btn-pill-academy, .btn-pill-green{
+	.pill-button-gen(@green-5, @btn-font-size);
+}
+.btn-pill-brown{
+	.pill-button-gen(@brown-5, @btn-font-size);
+}
+.btn-pill-stachio{
+	.pill-button-gen(@stachio-5, @btn-font-size);
+}
+.btn-pill-turquoise{
+	.pill-button-gen(@turq-5, @btn-font-size);
+}
+.btn-pill-orange{
+	.pill-button-gen(@orange-5, @btn-font-size);
+}
+.btn-pill-grass{
+	.pill-button-gen(@grass-5, @btn-font-size);
+}
+.btn-pill-rouge{
+	.pill-button-gen(@rouge-5, @btn-font-size);
+}
+.btn-pill-lake{
+	.pill-button-gen(@lake-5, @btn-font-size);
+}
+.btn-pill-yellow{
+	.pill-button-gen(@yellow-5, @btn-font-size);
+}
+.btn-pill-plum{
+	.pill-button-gen(@plum-5, @btn-font-size);
+}
+.btn-pill-gray{
+	.pill-button-gen(@gray-7, @btn-font-size);
+}
+.btn-pill-black{
+	.pill-button-gen(@black-1, @btn-font-size);
+}
+
+.btn-pill-emph{
+	.pill-button-emphasized(@red-5, @btn-font-size);
+}
+.btn-pill-emph-teacher{
+	.pill-button-emphasized(@blue-5, @btn-font-size);
+}
+.btn-pill-emph-student{
+	.pill-button-emphasized(@purple-5, @btn-font-size);
+}
+.btn-pill-emph-academy{
+	.pill-button-emphasized(@green-5, @btn-font-size);
+}
+
+.btn-pill-flex1-a{
+	.pill-button-flexible1(@plum-4, @btn-font-size);
+}
+.btn-pill-flex1-b{
+	.pill-button-flexible1(@blue-4, @btn-font-size);
+}
+.btn-pill-flex1-c{
+	.pill-button-flexible1(@purple-4, @btn-font-size);
+}
+.btn-pill-flex1-d{
+	.pill-button-flexible1(@red-6, @btn-font-size);
+}
+
+//the following style requires a new one for each possible background
+//this is currently done using a mixin for background colors which overrides this layout
+.btn-pill-flex2{
+	.pill-button-flexible2(@white-1, @btn-font-size, @white-1);
+}
+
+// //this was a failed attempt to avoid needing a new class for each colour
+
+// .btn-pill-flex2-general{
+// 	.pill-button-flexible2-redux(@white-1, @btn-font-size);
+// }
+
+
+//these are the other buttons (e.g. appstore, sign in via twitter/google)
+.btn-pill-tertiary{
+	.pill-button-tertiary();
+}
+.btn-social-media{
+	//min-width: 140px;
+	.appStore-text{
+		padding:0px; margin:-(@btn-font-size*.4);line-spacing: 1; font-size: @btn-font-size;
+	}
+	.appStore-dl{
+		padding:0px; margin:-(@btn-font-size*.4); line-spacing: 1;font-size:@btn-font-size*.4;
+	}
+}
+
+.btn-pill-svg{
+	&:extend(.btn-gen);
+	padding-left: 2px;
+	padding-right: 20px;
+	.pill-button-tertiary();
+	// padding-top: 0.25rem;
+	// padding-bottom: 0.25rem;
+	// padding-left: 0.5rem;
+	// padding-right: 1rem;
+	img{
+		padding: 0 12px;
+		height: 22px;
+	}
+}

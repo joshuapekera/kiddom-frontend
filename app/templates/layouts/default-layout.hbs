@@ -4,41 +4,15 @@ name: Kiddom Styleguide
 ---
 
 
-<nav class="container">
-	<div class="container">
-		<div class="row">
-	    <div class="col-sm-3 sidebar">
-				<ul class="nav nav-sidebar">
-					{{#each components}}
-  					<li><a href="#{{this}}">{{this}}</a></li>
-					{{/each}}
-	      </ul>
-			</div>
-		</div>
-	</div>
-</nav>
 
-<main>
-	<nav class="navbar navbar-inverse navbar-static-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#">{{name}}</a>
-	    </div>
-	  </div>
-	</nav>
 
 	<div class="container">
 	  <div class="row">
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 main">
-	      <h1 class="page-header">Hello World</h1>
+			<div class="col-sm-12col-md-12 main">
 	      <div class="row">
-					{{> body }}
+	      	<div class="col-md-12">
+						{{> body }}
+					</div>
 				</div>
 	    </div>
 	  </div>

@@ -1,0 +1,102 @@
+---
+layout: base.hbs
+name: Student1
+---
+
+
+
+
+	<div class="container-fluid">
+		<div class="row nav-shadow">
+			<div class='container'>
+				<div class="kiddom-head nav">
+			  	<div class="navbar-header col-desk-4">
+			      <button href="#" type="button" class="navbar-toggle header-toggle-spacing" data-toggle="collapse" data-target=".navbar-collapse">
+			      	<!-- TODO - JavaScript change glyphicon when opened -->
+			        <span class="glyph-flip glyphicon glyphicon-chevron-down"></span>
+			      </button>
+			      <div class="navbar-brand">
+				      <a class="navbar-brand-link" href="/home.html"><img src="images/logo-kiddom@2x.png"></a>
+				    </div>
+			  	</div>
+			  	<div class="collapse navbar-collapse col-desk-8">
+				  	<div>
+				      <ul class="nav navbar-nav">
+					      <li class="teacher-link"><a href="/teachers.html">Teacher</a> </li>
+					      <li class="student-link" ><a href="/students.html">Student</a> </li>
+					      <li class="admin-link" ><a href="/academy.html">Admin</a></li>
+					    </ul>
+					  </div>
+					  <div>
+				      <ul class="nav navbar-nav navbar-right">
+					      <li class="btn-pill-login"> <a href="#">Log in
+					      	</a></li>
+					      <!-- <<FLAG>>
+					      	Difficulty styling the register button as an anchor tag resulted in this awkward solution
+					      -->
+								<li class="btn-pill-login visible-xs">
+					      	<a href="#">Sign Up</a></li>
+					      <li class="hidden-xs">
+					      	<button class="btn-pill-register">Sign Up</button></li>
+				      </ul>
+				    </div>
+					</div><!--/.nav-collapse-->
+				</div>
+			</div>
+		</div>
+		{{> body }}
+		<div class="footer" id='footers'>
+			<div class="container">
+				<div class="row">
+					<div class='col-sm-3'>
+				 		<!-- LOGO -->
+				 		<div class='row footer-logo'>
+				 			<div class="col-xs-12">
+				 				<img src="images/logo-kiddom@2x.png">
+				 			</div>
+				 			<div class='col-xs-12 footer-socialmedia'>
+
+				 			</div>
+				 		</div>
+					</div>
+					<div class='col-sm-3'>
+				 		<div class="footer-list">
+							<p class="guide-titles">Company</p>
+							<ul>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Terms of use</a></li>
+								<li><a href="#">Privacy</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class='col-sm-3'>
+						<div class="footer-list">
+							<p class="guide-titles">Resources</p>
+							<ul>
+								<li><a href="#">Teacher Voice Blog</a></li>
+								<li><a href="#">Standards-Based Grading</a></li>
+								<li><a href="#">Teaching Methodologies</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class='col-sm-3'>
+						<div class="footer-list">
+							<p class="guide-titles">Support</p>
+							<ul>
+								<li><a href="#">Teacher Guides</a></li>
+								<li><a href="#">Help Desk</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row copyright">
+					<div class="col-sm-12">
+					<!-- <<FLAG>> Seems more correct for this to be below all other content in the footer than just the left column-->
+					©2015 Kiddom, Inc
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,217 @@
+/*
+Both navbar layouts fit into the same html (w/e of one button...), media queries for screen size determine which to use
+*/
+@header-height: 80px;
+
+
+
+
+.desktop-nav{
+	min-width: 761px;
+	max-width: 1440px;
+}
+
+.navbar-brand{
+	float: left;
+  padding-top: 20px 0px;
+  font-size: 1.25rem;
+  line-height: 1.42857143rem;
+  height: @header-height;
+}
+
+.navbar-brand-link{
+  img{
+  	height: 40px;
+  }
+}
+
+.kiddom-head{
+	height:@header-height;
+	background-color: @gray-9;
+}
+
+
+////using 768px instead of 760px and 768 is the bootstrap standard
+@media only screen and (max-width:767px){
+	.mobile-header{
+		min-width: 268px;
+	}
+
+	.kiddom-head{
+		.nav{
+			text-align: center;
+			background-color: #3F4C4C;
+	    position: relative;
+	    z-index: 1;
+		}
+		.navbar .navbar-nav {
+		  display: inline-block;
+		  float: none;
+		  background-color: #3F4C4C;
+		}
+		.navbar-nav{
+			margin: auto -15px;
+
+		}
+		.navbar-toggle{
+			padding: 16px;
+		}
+		.navbar-header{
+			background-color: @white-1;
+		}
+
+		.navbar-brand{
+			padding: 20px 20px;
+		}
+		.navbar .navbar-collapse {
+		  text-align: center;
+		  padding: 0 0 0 0;
+		  position: relative;
+		  z-level: 1;
+		}
+		.nav > li{
+		  vertical-align: center;
+			border-top-style: solid;
+			border-top-color: #637070;
+		}
+		.nav > li > a{
+		  font-weight: bold;
+		  color: @white-1;
+
+			background-color: #3F4C4C;
+		}
+		.nav > li > a:hover{
+			background-color: #293333;
+			color: @white-1;
+		}
+
+		.navbar-toggle{
+			margin-top: 15px;
+			margin-right: 15px;
+			colour:  #637070;
+			outline-color: #637070;
+			outline-width: 1px;
+			outline-style: solid;
+		}
+	}
+}
+@media (min-width:768px){
+	.nav{
+		height: @header-height;
+	}
+
+	.mobile-header{
+		min-width: 760px;
+	}
+
+	.kiddom-head{
+
+
+		background-color: @white-1;
+		min-width: 760px;//somewhat arbitrary, it should switch to the mobile layout before this
+		max-width: 1000px;
+		margin: 0 auto;
+		padding-left: 0px;
+		padding-right: 0px;
+
+		.nav{
+			text-align: center;
+			background-color: @white-1;
+
+			li> a {
+				color: #3F4C4C;
+			}
+		}
+		.navbar .navbar-nav {
+		  display: inline-block;
+		  float: none;
+		  background-color: #3F4C4C;
+		}
+		.navbar-nav{
+		}
+		.navbar-center{
+			margin: auto;
+		}
+
+		.navbar-header{
+			background-color: @white-1;
+			width: 145px;//size of logo
+		}
+
+		.navbar .navbar-collapse {
+		  text-align: center;
+		  padding: 0 0 0 0;
+  		height: @header-height;
+		}
+		.navbar-collapse{
+  		width:70%;
+  		float: right;
+		}
+		.nav hr{
+			display: none;
+		}
+		.teacher-link{
+				.header-text(#1DBAFF);
+		}
+		.student-link{
+			.header-text(#8F80FF);
+		}
+		.admin-link{
+			.header-text(#28E88C);
+		}
+
+		.btn-pill-login{
+			.header-text();
+		}
+		.btn-pill-register{
+
+			// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
+			height: 40px;
+			width: 120px;
+	    border-radius: 40px;
+	    font-size: 1rem;
+	    font-weight: bold;
+			background-color: @white-1;
+			border-color: @gray-8;
+			color: #FF6252;
+			border-style: solid;
+    	margin-left: .75rem;
+	    vertical-align: middle;
+	    display: inline-block;
+
+	    height: 32px;
+	    margin-top: ((@header-height /2)-@font-size-root);
+			&:hover, &:focus{
+				background-color: #FF6252;
+				border-color: #FF6252;
+				color: @white-1;
+			}
+			margin-right: 1rem;
+		}
+
+	/* heree is the most recent anchor attempt
+			.btn-pill-register{
+				.btn-pill-login;
+				margin-top: 16px;
+				border-width: 2px;
+				border-color: #EBF0EF;
+				background-color: @white-1;
+				border-radius: 40px;
+				color: #FF6252;
+				.header-text(@white-1);
+
+				&:hover{
+					background-color: #FF6252;
+					border-color: #FF6252;
+					colour: @white-1;
+				}
+			} */
+	}
+}
+.nav-shadow{
+	width: 100%;
+	position: fixed;
+	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+	z-index:1;
+	background-color: white;
+}

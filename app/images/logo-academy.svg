@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="109px" height="109px" viewBox="0 0 109 109" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+    <title>logo-academy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Components" sketch:type="MSArtboardGroup" transform="translate(-143.000000, -2345.000000)">
+            <g id="Logos" sketch:type="MSLayerGroup" transform="translate(142.000000, 2344.000000)">
+                <g id="logo-academy" sketch:type="MSShapeGroup">
+                    <path d="M109.791892,55.3963964 C109.809294,71.8819105 102.330556,87.4811497 89.4666667,97.790991 C88.9315315,98.227027 88.3963964,98.6531532 87.8414414,99.0594595 C67.608117,114.098347 39.6935189,113.267124 20.3908876,97.0509596 C1.08825631,80.834795 -4.54552318,53.4819844 6.7778832,30.9578632 C18.1012896,8.43374194 43.4153866,-3.36084206 67.9447987,2.45839418 C92.4742108,8.27763043 109.792746,30.186169 109.791892,55.3963964 L109.791892,55.3963964 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M109.791892,55.3963964 C109.809294,71.8819105 102.330556,87.4811497 89.4666667,97.790991 L49.4504505,24.7252252 L13.5864865,90.1900901 C-1.77022419,71.7381946 -3.21523493,45.4011418 10.0306077,25.3799365 C23.2764503,5.35873119 48.0807684,-3.61201058 71.0690117,3.30475764 C94.0572549,10.2215259 109.793162,31.3901262 109.791892,55.3963964 L109.791892,55.3963964 Z" id="Shape" fill="#28E88C"></path>
+                    <path d="M108.642342,66.5648649 C106.060487,78.880545 99.2826563,89.9177263 89.4666667,97.790991 L49.4504505,24.7252252 L108.642342,66.5648649 Z" id="Shape" fill="#00AF91"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

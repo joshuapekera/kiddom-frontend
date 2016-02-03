@@ -1,0 +1,237 @@
+.module-height-large{
+	height: 670px;
+}
+.module-height-section-head{
+	height: 466px;
+}
+
+.splash-header{
+	min-height: 80px;
+	text-align: center;
+//	padding: @font-size-base 0;
+	.text-holder{
+
+
+
+	}
+
+	.heading-text{
+		&:extend(h2);
+		padding: 1rem 0;
+
+		img{
+			max-height: 70px;
+		}
+	}
+	.image-holder{
+		text-align: center;
+		padding: 1rem 0;
+	}
+
+	input[type=email]{
+		text-align: center;
+		font-size: 1.25rem;
+		width: 70%;
+		border-color: @gray-8;
+		border-style: none;
+		background-color: @gray-9;
+	}
+
+	button{
+		margin: 1rem;
+	}
+
+	.square-box{
+
+		&:extend(.bg-color-white);
+		width: 60%;
+		min-width: 240px;
+		padding: 1rem;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 0;
+		margin-left: auto;
+		margin-right: auto;
+		img{
+			height: 112px;
+			margin: 8px;
+		}
+
+		&.section-end{
+			margin-bottom: 3rem;
+		}
+
+	}
+}
+
+.full-column{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+	}
+
+
+	//<<FLAG>> only use directly within row's which have a fixed height
+	.vertical-center-solo{
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+	//text and image holder to both be col-XX-6
+	.text-holder{
+		.heading-text{
+			&:extend(h1);
+		}
+	}
+	.image-holder{
+		img{
+			max-width: 95%;
+
+		}
+	}
+
+	///<<TODO>> get this working
+	[class*="col-"]:nth-child(odd).image-holder{
+			text-align: right;
+			margin-right: -7px;
+			padding-left: 0px;
+			padding-right: 0px;
+	}
+	[class*="col-"]:nth-child(even).image-holder{
+			text-align: left;
+			margin-left: -7px;
+			padding-left: 0px;
+			padding-right: 0px;
+	}
+	//use bootstrap column standards for two column
+
+	.background-middle-left-spill{
+		background-position: bottom 0% right 50%;//<<FLAG>> do these work?
+	}
+	.background-middle-right-spill{
+		background-position: bottom 0% left 50%;
+	}
+}
+
+.half-column-holder{
+	//image takes first 33% of module
+	//content takes other 67%
+	border-top: .125rem solid rgba(0,0,0, 0.15);
+	border-bottom: .125rem solid rgba(0,0,0, 0.15);
+
+
+	[class*=" col-"]:nth-child(odd) {
+    border-right: .125rem solid rgba(0,0,0, 0.15);
+    border-left: none;
+	}
+
+	.half-column{
+		padding: @font-size-base 0;
+
+
+		.image-holder{
+			.make-sm-column(4);
+			text-align: right;
+			img{
+				width: 96px;//<<FLAG>>
+
+			}
+		}
+		.text-holder{
+			.make-sm-column(8);
+			.heading-text{
+				&:extend(h3);
+			}
+		}
+	}
+}
+.third-column-holder{
+	//three per row unless fixed height (dynamic padding?)
+	//use bootstrap class or mixin for width?
+
+
+	.third-column{
+
+		padding: @font-size-base;
+		.image-holder{
+			.make-md-column(12);
+
+			img{
+				padding: @font-size-base 0;
+				width: 128px;//<<FLAG>>
+				display: block;
+			}
+		}
+		.text-holder{
+			.make-md-column(12);
+			.heading-text{
+				&:extend(h4);
+			}
+		}
+	}
+}
+
+
+.grid-of-squares{
+
+
+	.grid-square{
+		//height+width the same
+		//hover shadow
+		//
+		// Paragraph in div (no overflow)
+		// image | <p>name</p><p>title</p>
+		//
+		outline-style: solid;
+		outline-color: @gray-8;
+		outline-width: 2px;
+		padding: 8px;
+		box-sizing: border-box;
+
+		height: 256px;
+
+		.feedback{
+			//padding: 8px;
+			max-height: 65%;
+			overflow: hidden;
+			margin: 0.5rem;
+			//<<TODO>> fixed height
+		}
+
+
+		.details{
+			position: absolute;
+			bottom: 0px;
+			min-height: 60px;
+			margin: 0.5rem;
+
+			.avatar{
+				height: 60px;
+				width: 60px;
+				float: left;
+				overflow: hidden;
+				img{
+					//square icon, crop?
+				}
+				margin-right: 8px;
+			}
+			.text{
+				float: right;
+				.name{
+					font-weight: bold;
+				}
+				.title{
+					font-size: .875rem;
+				}
+			}
+		}
+
+		&:hover{
+			box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+		}
+	}
+}

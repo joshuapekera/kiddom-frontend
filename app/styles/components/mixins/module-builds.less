@@ -1,0 +1,86 @@
+.module-head(@image: '/images/bg-testing.png'){
+	background-image: url(@image);
+  height: 466px;
+
+  .module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  	vertical-align: middle;
+  	min-height: 100px;//<<FLAG, remove min height and width>>
+  	min-width: 200px;
+  	&:extend(.vertically-center);
+  }
+
+
+}
+
+
+/*<<TODO>> The below class collection is not to be considered part of
+the system. This was the only way an overflow could be completed on the large module while remaining
+in the layout of the previous modules (i.e. a module within a row, rather than a module as a row)
+*/
+/*
+.module-large-build(@image: '/images/bg-testing.png'){
+  height: 670px;
+
+  .module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  	vertical-align: middle;
+  	background-color: rgba(255,255,255, 0.7);
+  	min-height: 100px;
+  	min-width: 200px;
+  	//&:extend(.vertically-center);
+  }
+
+	padding: 40px;
+	background-color: @gray-8;
+	overflow: visible;
+	&.withOverflowingBackground {
+	   position: relative;
+	   background-color: transparent;
+		padding: 0px;
+	}
+	&.withOverflowingBackground::before {
+	   content: " ";
+	   position: absolute;
+	   margin-left: -50%;
+	   width: 150%;
+	   height: 670px;
+	   z-index: -1;
+	   background-image: url(@image);
+	   //background-size: cover;//temporarily removed
+	   background-repeat: no-repeat;
+	}
+
+	&.withOverflowingBackground-right {
+	   position: relative;
+	   background-color: transparent;
+		padding: 0px;
+	}
+	&.withOverflowingBackground-right::before {
+	   content: " ";
+	   position: absolute;
+	   width: 150%;
+	   height: 670px;
+	   z-index: -1;
+	   background-image: url(@image);
+	   //background-size: cover;
+	   background-repeat: no-repeat;
+	}
+}
+*/
+
+//This is the much simpler new one
+.module-larger(@image){
+  background-image: url(@image);
+  height: 670px;
+	//background-size: 75%;//temporarily changed from coverto highlight differences
+
+	.module-content{
+  	vertical-align: middle;
+  	&:extend(.vertically-center);
+  	//background-color: rgba(255,255,255, 0.7);
+	}
+}
+

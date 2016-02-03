@@ -15,6 +15,7 @@ module.exports = function (grunt) {
   // Load assemble.io
   grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -30,6 +31,17 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+  	
+  	// Override "newer" disabling partial updates. 
+  	// Rebuild everything every time. 
+  	newer: {
+	    options: {
+	      override: function(details, include) {
+	        // decide if the file should be included
+	        include(true); // include everything!
+	      }
+	    }
+	  },
 
     // Project settings
     config: config,
@@ -76,7 +88,18 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
+      },
+      //#added browsersync to resolve reload issues, seems to work!
+      browserSync: {
+         files: {
+         		src: [
+         			'app/*.less',
+         			'dist/index.html'
+
+         		]
+         }
       }
+      	///Reload issues with css files
     },
 
     // The actual grunt server settings

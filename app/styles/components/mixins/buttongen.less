@@ -1,0 +1,157 @@
+/*
+//could use extend to have a general pill shaped button builder
+//which would be built upon with all the general kinds
+//i.e. a mixin for general use
+//		 a mixin for emphasized
+//		 etc...
+//
+// overrode button variant for a bunch of states because it was forcing border shading that wasn't needed
+// added .hoverer for displaying the buttons as they appear when hovered over
+//*
+*/
+
+.pill-button-gen(@pill-color: @red; @button-font-size: @btn-font-size){
+
+
+	@button-color: @pill-color;
+
+	&:extend(.btn-gen);
+
+	.button-variant(@button-color, @white-1, @button-color);
+	background: 0;
+
+	&:hover, &:active, &:focus, &:target, .hoverer&{
+		border-color: @button-color;
+		background-color: @button-color;
+		color: @white-1;
+
+		&:active, &:focus{
+			border-color: @button-color;
+			background-color: @button-color;
+			color: @white-1;
+		}
+	}
+}
+
+
+//change to take in string and boost
+.pill-button-emphasized(@pill-color: @red-5; @button-font-size: @btn-font-size){
+	&:extend(.btn-gen);
+
+	@button-color: @pill-color;
+
+	.button-variant(@white-1, @button-color, @button-color);
+
+	&:hover, &:active, &:focus, .hoverer& {
+		background-color: darken(@button-color, 10%);
+		border-color: darken(@button-color, 10%);
+
+		&:active, &:focus{
+			background-color: darken(@button-color, 10%);
+			border-color: darken(@button-color, 10%);
+		}
+	}
+}
+
+.pill-button-flexible1(@pill-color: @red-5; @button-font-size: @btn-font-size){
+	&:extend(.btn-gen);
+
+	@button-color: @pill-color;
+
+	.button-variant(@white-1, @button-color, @button-color);
+
+	&:hover, &:active, &:focus, .hoverer& {
+		border-color: darken(@button-color, 10%);
+		background-color: darken(@button-color, 10%);
+
+		&:active, &:focus{
+			border-color: darken(@button-color, 10%);
+			background-color: darken(@button-color, 10%);
+		}
+	}
+
+}
+
+
+
+.pill-button-flexible2(@pill-color: @white-1, @button-font-size: @btn-font-size, @bg-color: @black-1){
+
+	//may need text
+	&:extend(.btn-gen);
+	background: none;
+
+	//TODO - As contrast requires knowledge of the background colour, perhaps just set the font to black with a low opacity level
+	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%), 10%);
+
+	.button-variant(@pill-color, @bg-color, @white-1);
+
+	&:hover, &:active, &:focus, &.hoverer {
+
+		background-color: @white-1;
+		color: @font-bg-color;
+		border-color: @white-1;
+	//	.button-variant(@font-bg-color, @pill-color, @white-1);
+
+		&:active, &:focus{
+			background-color: @white-1;
+			color: @font-bg-color;
+			border-color: @white-1;
+		}
+	}
+}
+
+.pill-button-flexible2-redux(@pill-color: @white-1, @button-font-size: @btn-font-size, @bg-color: rgba(0,0,0,0)){
+
+	//may need text
+	&:extend(.btn-gen);
+	color: @pill-color;
+
+	//This doesn't work as the background of the button takes precedence over the background of the container
+	//@black-opacity: rgba(0,0,0, 0.2);
+	//@white-opacity: rgba(255,255,255, 0.2);
+	////@font-bg-color: rgba(0,0,0, 0.1);
+	//@font-bg-color: contrast(@bg-color, @black-opacity, @white-opacity, 1%);
+
+	.button-variant(@white-1, @bg-color, @white-1);
+
+	&:hover, &:active, &:focus, .hoverer& {
+
+		background-color: @white-1;
+		color: @font-bg-color;
+		border-color: @white-1;
+	//	.button-variant(@font-bg-color, @pill-color, @white-1);
+
+		&:active, &:focus{
+			background-color: @white-1;
+			color: @font-bg-color;
+			border-color: @white-1;
+		}
+	}
+}
+
+.pill-button-tertiary(){
+
+	&:extend(.btn-gen);
+
+	//TODO - As contrast requires knowledge of the background colour, perhaps just set the font to black with a low opacity level
+
+	font-size: .875rem;
+	.button-variant(@gray-7, @white-1, @gray-8);
+	border-color: @white-1;
+	&:hover, &:active, &:focus, .hoverer& {
+
+		background-color: @white-1;
+		color: @gray-6;
+	//	.button-variant(@font-bg-color, @pill-color, @white-1);
+		border-color: @white-1;
+
+
+		box-shadow: 2px 3px 9px 2px rgba(0,0,0,0.30);
+
+		&:active, &:focus{
+			background-color: @white-1;
+			color: @gray-7;
+		}
+	}
+}
+

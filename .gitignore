@@ -3,3 +3,4 @@ dist
 .tmp
 .grunt
 bower_components
+.env

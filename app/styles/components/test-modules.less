@@ -1,0 +1,135 @@
+/*
+
+Modues consist of a class for each type and nested 'module-content' class
+
+*/
+
+
+//temp class to highlight edges easily
+
+
+///...actually, this seems to hold up on every browser I've tried
+.vertically-center{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+.module-small{
+	height: 80px;
+	.module-content{
+		&:extend(.vertically-center);
+		margin: 0 auto;
+  	//background-color: rgba(255,255,255, 0.7);
+		width: 25%;//<<FLAG>>
+	}
+//	&:extend(.outlining-modules);
+}
+
+/// <<FLAG>> Is this meant to be three columns? The usage of module content doesn't work otherwise in this setup
+.module-flex-height{
+	overflow: hidden;
+	width: 100%;//unsure if it should be 100%?
+	padding-bottom: 80px;
+	padding-top: 40px;
+	min-height: 275px;//<<FLAG>>
+
+	@module-margin-bottom: 20px;
+
+  //<<TODO>> so this solution requires you to know which position each entry will be,
+  // with a new row for every Xth entry where x%3=1
+  //<<UPDATE>> Added two media queries below to ensure the content boxes stack nicely
+  .module-content-1, .module-content-2, .module-content-3{
+  	//background-color: rgba(255,255,255, 0.7);
+  	.make-md-column(2);
+		margin-bottom: @module-margin-bottom;
+		//height: 300px;
+		padding-top: @font-size-base;
+		padding-bottom: @font-size-base;
+
+
+		//images within content are centered and limited to a maximum width of 128px
+		img{
+			max-width: 128px;//<<FLAG>>
+			display: block;
+			padding-bottom: @font-size-base;
+		}
+
+	}
+
+
+  //margins for stacks and unstacked columns (assuming md columns)
+  //<<FLAG>> collapse point 992?
+  @media only screen and (min-width:992px){
+  	.module-content-1{
+  		margin-right: 0%;
+  		margin-left: 16.6667%;
+  	}
+  	.module-content-2{
+  		margin-right: 8.3333%;
+  		margin-left: 8.3333%;
+  	}
+  	.module-content-3{
+  		margin-right: 8.3333%;
+  	}
+  }
+
+  @media only screen and (max-width:991px){
+  	.module-content-1, .module-content-2, .module-content-3{
+  		margin-right: 8.3333%;
+  		margin-left: 8.3333%;
+  	}
+  }
+
+//	&:extend(.outlining-modules);
+}
+
+
+//Using mixin to create generic builder, need new class in here for each new background though
+.module-section-head{
+	.module-head();
+	//background-color: @gray-8;
+//	&:extend(.outlining-modules);
+}
+
+/*SEE .module-large-build in module-builds.less mixin
+//<<TODO -- figure out this overflow stuff -- and get rid of that image I plucked randomly off google >>
+.module-large{
+
+//	&:extend(.outlining-modules);
+  .module-large-build('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
+
+}
+*/
+
+
+.module-lrg-right{
+	.module-larger('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
+	background-position: top right;
+
+	.module-content{
+  	.make-md-column-offset(6);
+  	.make-md-column(5);
+  	&:extend(.vertically-center);
+  }
+}
+
+.module-lrg-left{
+	.module-larger('/images/Drain-Mate-Product-Panel-Grey-1500px.jpg');
+	background-position: top left;
+
+	.module-content{
+  	.make-md-column-offset(1);
+  	.make-md-column(5);
+  }
+}
+
+
+
+
+/////////////////////////////
+
+
+/////////////////////////////
