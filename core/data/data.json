@@ -1,10 +1,6 @@
 {
   "components": [
-<<<<<<< HEAD
-    "hero",
-		"slider",
-		"typography"
-=======
+		"typography",
 		"headers",
 		"typography",
 		"buttons",
@@ -12,6 +8,5 @@
 		"colors_display",
 		"footers",
 		"modules"
->>>>>>> padraig-buttons
   ]
 }
