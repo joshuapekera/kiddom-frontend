@@ -84,3 +84,35 @@ in the layout of the previous modules (i.e. a module within a row, rather than a
 	}
 }
 
+
+
+/////////////////
+//background reposition
+//need to know image width
+////////////////
+.position-background-left(@image-width){
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+		@bg-pos: ((@screen-sm-min - @image-width) / 4 ) - (@screen-sm-min * 0.3);
+
+		background-position: bottom left @bg-pos;
+
+	}
+	@media (min-width: @screen-md-min) and (max-width: @screen-md-max){
+		@bg-pos: ((@screen-md-min - @image-width) / 4 ) - (@screen-md-min *  0.15);
+
+		background-position: bottom left @bg-pos;
+
+	}
+	@media (min-width: @screen-lg-min) and (max-width: 1500px){
+		@bg-pos: ((@screen-lg-min - @image-width) / 4 ) - (@screen-lg-min *  0.05);
+
+		background-position: bottom left @bg-pos;
+
+	}
+	@media (min-width: 1501px){
+		@bg-pos: ( (1501px - @image-width) / 4 ) - (1501px *  0.05);
+
+		background-position: bottom left @bg-pos;
+
+	}
+}
