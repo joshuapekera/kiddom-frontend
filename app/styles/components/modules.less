@@ -1,8 +1,16 @@
-.module-height-large{
+
+//a selection of fixed heights for rows
+.module-height-larger{
 	height: 670px;
+}
+.module-height-large{
+	height: 560px;
 }
 .module-height-section-head{
 	height: 466px;
+}
+.module-height-strip{
+	height: 256px;
 }
 
 .splash-header{
@@ -15,8 +23,6 @@
 	}
 
 	.text-holder{
-
-
 
 	}
 
@@ -38,20 +44,18 @@
 	}
 
 	.square-box{
-
-		width: 60%;
+		width: 50%;
 		min-width: 240px;
-		padding: 1rem;
+		padding: 2rem 1rem;
 		border-radius: 5px;
 		margin: 1rem auto;
 		.avatar-container{
 			margin: 0 auto;
 			img{
 				height: 112px;
-				margin: 8px;
+				margin: 8px 0px;
 			}
 		}
-
 		input[type=email]{
 			text-align: center;
 			font-size: 1.5rem;
@@ -61,15 +65,20 @@
 			background-color: @gray-9;
 			margin: 0.5rem 0;
 		}
-
 		&.section-end{
 			margin-bottom: 5rem;
 		}
 	}
 
+	.full-row-spread{
+		&:extend(.shadow-outline);
+		padding: 2rem;
+	}
+
 	.section-end{
 		margin-bottom: 3rem;
 	}
+
 }
 
 .full-column{
@@ -118,7 +127,7 @@
 	//use bootstrap column standards for two column
 
 
-	//needs to know image size, dynamic repositioning...
+	//<<FLAG>> Remove this <<FLAG>> needs to know image size, dynamic repositioning...
 	&.background-middle-left-spill{
 		background-image: url('/images/grid.png');
 		background-repeat: no-repeat;
@@ -133,8 +142,8 @@
 
 	&.image-spiller{
 		padding: 0;
+		overflow-y: hidden;
 	}
-
 	.image-spill-right{
 		img{
 			position: absolute;
@@ -143,7 +152,6 @@
 		}
 		overflow-y: visible;
 		height: 100%;
-
 	}
 	.image-spill-left{
 		img{
@@ -155,12 +163,11 @@
 		height: 100%;
 	}
 
-
 	.section-end{
 		margin-bottom: 3rem;
 	}
 
-	p{
+	.paragraph-padding{
 		padding: 1rem 0;
 	}
 
@@ -209,13 +216,10 @@
 	//three per row unless fixed height (dynamic padding?)
 	//use bootstrap class or mixin for width?
 
-
 	.third-column{
-
 		padding: @font-size-base;
 		.image-holder{
 			.make-md-column(12);
-
 			img{
 				padding: @font-size-base 0;
 				width: 128px;//<<FLAG>>
@@ -233,9 +237,9 @@
 
 
 .grid-of-squares{
-
-
 	.grid-square{
+
+		&:extend(.shadow-outline);
 		//height+width the same
 		//hover shadow
 		//
@@ -244,29 +248,26 @@
 		//
 
 		//<<TODO>> should have a slight shadow which is increased when hovered over rather than an outline
-		outline-style: solid;
-		outline-color: @gray-8;
-		outline-width: 2px;
-		padding: 8px;
+
+		padding: 1.5rem;
 		box-sizing: border-box;
 		background-color: @white-1;
 		margin-bottom: 1rem;
 
-		height: 256px;
+		height: 16rem;
 
 		.feedback{
 			//padding: 8px;
 			max-height: 65%;
 			overflow: hidden;
-			margin: 0.5rem;
 			//<<TODO>> fixed height
 		}
 
 		.details{
 			position: absolute;
-			bottom: 0.5rem;
-			min-height: 60px;
-			margin: 0.5rem;
+			bottom: 0;
+			min-height: 76px;
+			margin-bottom: 1.5rem;
 
 			.avatar{
 				height: 60px;
@@ -276,7 +277,7 @@
 				img{
 					//square icon, crop?
 				}
-				margin-right: 8px;
+				margin-right: 1rem;
 			}
 			.text{
 				float: right;
@@ -286,15 +287,26 @@
 				.title{
 					font-size: .875rem;
 				}
+				p{
+					margin: 0px;
+				}
 			}
 		}
 
 		&:hover{
-			box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+			box-shadow: 2px 3px 10px 3px rgba(0,0,0,0.30);
 		}
 	}
+
 }
 
+
+//for all cases of inline image placement in a text field
+.text-holder{
+	img{
+		margin: 0px 15px;
+	}
+}
 
 ///margin to position content at start of a section away from edge
 //variety of section-end definitions exist within module specifications
@@ -302,5 +314,24 @@
 	margin-top: 3rem;
 }
 .section-end{
-	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
+
+
+.shadow-outline{
+	box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+/* Idea for dealing with ugly image alignment on narrower screens
+.text-holder{
+
+	img{
+		&:extend(.hidden-xs);
+	}
+}
+
+*/

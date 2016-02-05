@@ -117,6 +117,25 @@
 	.pill-button-flexible2(@white-1, @btn-font-size, @white-1);
 }
 
+
+.btn-pill-heading-no-border{
+	.pill-button-gen(@red-5, @btn-font-size);
+	border: none;
+	padding: 1rem 2rem;
+	background-color: @white-1;
+
+	&:hover, &:active, &:focus, &:target, .hoverer&{
+		background-color: @button-color;
+		color: @white-1;
+
+		&:active, &:focus{
+			background-color: @button-color;
+			color: @white-1;
+		}
+	}
+
+
+}
 // //this was a failed attempt to avoid needing a new class for each colour
 
 // .btn-pill-flex2-general{
@@ -136,15 +155,17 @@
 	min-width: 0px;
 	height: 4rem;
 	background-color: rgba(255,255,255, 0.8);
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .btn-social-media{
 	//min-width: 140px;
+
 	.appStore-text{
-		padding:0px; margin:-(@btn-font-size*.4);line-spacing: 1; font-size: @btn-font-size;
+		padding:0px; margin:-(@btn-font-size*.4);line-spacing: 1; font-size: @btn-font-size;color: @white-1 !important;
 	}
 	.appStore-dl{
-		padding:0px; margin:-(@btn-font-size*.4); line-spacing: 1;font-size:@btn-font-size*.4;
+		padding:0px; margin:-(@btn-font-size*.4); line-spacing: 1;font-size:@btn-font-size*.4;color: @white-1 !important;
 	}
 }
 
