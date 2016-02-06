@@ -12,7 +12,6 @@
 
 .pill-button-gen(@pill-color: @red; @button-font-size: @btn-font-size){
 
-
 	@button-color: @pill-color;
 
 	&:extend(.btn-gen);
@@ -53,6 +52,8 @@
 	}
 }
 
+
+//<<FLAG>> this can be removed when emphasized is expanded
 .pill-button-flexible1(@pill-color: @red-5; @button-font-size: @btn-font-size){
 	&:extend(.btn-gen);
 
@@ -84,18 +85,19 @@
 	@font-bg-color: contrast(@bg-color, darken(@bg-color, 10%), lighten(@bg-color, 10%), 10%);
 
 	.button-variant(@pill-color, @bg-color, @white-1);
+	border-color: @pill-color;
 
 	&:hover, &:active, &:focus, &.hoverer {
 
-		background-color: @white-1;
+		background-color: @pill-color;
 		color: @font-bg-color;
-		border-color: @white-1;
+		border-color: @pill-color;
 	//	.button-variant(@font-bg-color, @pill-color, @white-1);
 
 		&:active, &:focus{
-			background-color: @white-1;
+			background-color: @pill-color;
 			color: @font-bg-color;
-			border-color: @white-1;
+			border-color: @pill-color;
 		}
 	}
 }

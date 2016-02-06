@@ -121,10 +121,12 @@ layout: container-fluid-with-header.hbs
 	</div>
 </div>
 
+
+<!-- Precarousel version
 <div class="row full-column bg-color-lake-4">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2 pull-right">
+			<div class="col-sm-2 pull-right">
 				<div class="row">
 					<div class="col-xs-6">
 						<button class="btn btn-round"><span class="glyphicon glyphicon-chevron-left"></span></button>
@@ -136,7 +138,7 @@ layout: container-fluid-with-header.hbs
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-offset-1 col-md-7 text-holder pull-left">
+			<div class="col-sm-offset-1 col-sm-7 text-holder pull-left">
 					<p class="heading-text">Evaluate and adapt with standards-based grading</p>
 					<hr class="yellow-hr">
 					<p>Align assignments with national and state standards, including the Common Core, and NGSS. You can even set your own custom standards to more effectively serve the learning goals of your classroom.
@@ -146,6 +148,73 @@ layout: container-fluid-with-header.hbs
 		</div>
 	</div>
 </div>
+-->
+
+
+<div class="carousel slide" data-ride="carousel" id='carousel1'>
+
+	<!-- Carousel indicators <<FLAG>> need colour adjustments for brighter backgrounds-->
+  <ol class="carousel-indicators visible-xs">
+    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel1" data-slide-to="1"></li>
+  </ol>
+	<div class="row carousel-holder bg-color-lake-4">
+
+		<!-- carousel navigation buttons, need to be moved into inner -->
+		<div class="carousel-buttons hidden-xs pull-right">
+				<div class="row">
+					<div class="col-xs-6">
+						<button class="btn btn-round" href="#carousel1" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</button>
+					</div>
+					<div class="col-xs-6">
+						<button class="btn btn-round" href="#carousel1" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</button>
+					</div>
+				</div>
+		</div>
+
+		<!-- carousel indicators go here-->
+
+
+		<div class="carousel-inner" role="listbox"><!-- desktop switch buttons-->
+			<!-- need to switch full column out-->
+			<div class="item active">
+				<div class="row full-column bg-color-white ">
+					<div class="container">
+						<div class="col-sm-offset-1 col-sm-7 text-holder pull-left  section-start section-end">
+							<p class="heading-text">Evaluate and adapt with standards-based grading</p>
+							<hr class="yellow-hr">
+							<p>Align assignments with national and state standards, including the Common Core, and NGSS. You can even set your own custom standards to more effectively serve the learning goals of your classroom.
+							</p>
+							<p><button class="btn btn-pill-flex2">Read More <span class="glyphicon glyphicon-chevron-right glyhpicon-align-tight-right"></span></button> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item ">
+				<div class="row full-column bg-color-black ">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-offset-1 col-sm-7 text-holder pull-left section-start section-end">
+									<p class="heading-text">Evaluate and adapt with standards-based grading</p>
+									<hr class="yellow-hr">
+									<p>Align assignments with national and state standards, including the Common Core, and NGSS. You can even set your own custom standards to more effectively serve the learning goals of your classroom.
+									</p>
+									<p><button class="btn btn-pill-flex2">Read More <span class="glyphicon glyphicon-chevron-right glyhpicon-align-tight-right"></span></button> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 
 <div class="row splash-header bg-color-blue-5">
 	<div class="container">
