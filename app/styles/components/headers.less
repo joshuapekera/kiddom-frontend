@@ -4,7 +4,7 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 @header-height: 80px;
 
 
-
+//<<TODO>> Align first list in center
 
 .desktop-nav{
 	min-width: 761px;
@@ -35,6 +35,11 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 @media only screen and (max-width:767px){
 	.mobile-header{
 		min-width: 268px;
+	}
+
+
+	.container{
+		padding: 0px;
 	}
 
 	.kiddom-head{
@@ -68,11 +73,12 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 		  padding: 0 0 0 0;
 		  position: relative;
 		  z-level: 1;
+		  border-top: none;
 		}
 		.nav > li{
 		  vertical-align: center;
-			border-top-style: solid;
-			border-top-color: #637070;
+			border-bottom-style: solid;
+			border-bottom-color: #637070;
 		}
 		.nav > li > a{
 		  font-weight: bold;
@@ -105,7 +111,6 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 	}
 
 	.kiddom-head{
-
 
 		background-color: @white-1;
 		min-width: 760px;//somewhat arbitrary, it should switch to the mobile layout before this
@@ -211,7 +216,7 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 .nav-shadow{
 	width: 100%;
 	position: fixed;
-	box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
-	z-index:1;
+	box-shadow: 0px 3px 6px 6px rgba(0, 0, 0, 0.5);
+	z-index:2;
 	background-color: white;
 }

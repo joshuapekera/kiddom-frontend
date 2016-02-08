@@ -1,8 +1,16 @@
-.module-height-large{
+
+//a selection of fixed heights for rows, currently only 670 and 466 come from design specs
+.module-height-larger{
 	height: 670px;
+}
+.module-height-large{
+	height: 560px;
 }
 .module-height-section-head{
 	height: 466px;
+}
+.module-height-strip{
+	height: 320px;
 }
 
 .splash-header{
@@ -10,13 +18,13 @@
 	text-align: center;
 	//	padding: @font-size-base 0;
 
+
+	//<<FLAG>> not sure this should apply everywhere
 	a{
 		color: @red-5;
 	}
 
 	.text-holder{
-
-
 
 	}
 
@@ -38,20 +46,18 @@
 	}
 
 	.square-box{
-
-		width: 60%;
+		width: 50%;
 		min-width: 240px;
-		padding: 1rem;
+		padding: 2rem 1rem;
 		border-radius: 5px;
 		margin: 1rem auto;
 		.avatar-container{
 			margin: 0 auto;
 			img{
 				height: 112px;
-				margin: 8px;
+				margin: 8px 0px;
 			}
 		}
-
 		input[type=email]{
 			text-align: center;
 			font-size: 1.5rem;
@@ -61,27 +67,33 @@
 			background-color: @gray-9;
 			margin: 0.5rem 0;
 		}
-
 		&.section-end{
 			margin-bottom: 5rem;
 		}
 	}
 
+	.full-row-spread{
+		&:extend(.shadow-outline);
+		padding: 2rem;
+	}
+
 	.section-end{
 		margin-bottom: 3rem;
 	}
+
 }
 
 .full-column{
 
 	padding: 2rem 0;
 
+	//<<FLAG>> All elements in row must have this class
+	//needs to not be part of mobile code
 	.vertical-center {
     display: inline-block;
     vertical-align: middle;
     float: none;
 	}
-
 
 	//<<FLAG>> only use directly within row's which have a fixed height
 	.vertical-center-solo{
@@ -89,7 +101,8 @@
 	  top: 50%;
 	  transform: translateY(-50%);
 	}
-	//text and image holder to both be col-XX-6
+
+	//text and image holder to both be col-XX-6, but can be flexible
 	.text-holder{
 		.heading-text{
 			&:extend(h1);
@@ -97,28 +110,37 @@
 	}
 	.image-holder{
 		img{
-			max-width: 95%;
-
+			max-width: 100%;
 		}
 	}
 
-	///<<TODO>> get this working
-	[class*="col-"]:nth-child(odd).image-holder{
-			text-align: right;
-			margin-right: -7px;
-			padding-left: 0px;
-			padding-right: 0px;
+	//ensures alignment of content in image-holders with horizontal center of page
+	@media only screen and (min-width:768px){
+		[class*="col-"]:nth-child(odd).image-holder{
+				text-align: right;
+				margin-right: -7px;
+		}
+		[class*="col-"]:nth-child(even).image-holder{
+				text-align: left;
+				margin-left: -7px;
+		}
 	}
-	[class*="col-"]:nth-child(even).image-holder{
-			text-align: left;
-			margin-left: -7px;
-			padding-left: 0px;
-			padding-right: 0px;
+
+	@media only screen and (max-width:767px){
+		[class*="col-"]:nth-child(odd).image-holder{
+				text-align: center;
+				&:extend(.pull-right);
+		}
+		[class*="col-"]:nth-child(even).image-holder{
+				text-align: center;
+				&:extend(.pull-right);
+		}
 	}
+
 	//use bootstrap column standards for two column
 
 
-	//needs to know image size, dynamic repositioning...
+	//<<FLAG>> Remove this <<FLAG>> needs to know image size, dynamic repositioning...
 	&.background-middle-left-spill{
 		background-image: url('/images/grid.png');
 		background-repeat: no-repeat;
@@ -131,10 +153,13 @@
 	}
 
 
+	//define spiller in outer row
+	//define height of inner row
+	//define spill-___ in relevant image-holder column
 	&.image-spiller{
 		padding: 0;
+		overflow-y: hidden;
 	}
-
 	.image-spill-right{
 		img{
 			position: absolute;
@@ -143,7 +168,6 @@
 		}
 		overflow-y: visible;
 		height: 100%;
-
 	}
 	.image-spill-left{
 		img{
@@ -156,40 +180,56 @@
 	}
 
 
+	//override of general use section end
 	.section-end{
 		margin-bottom: 3rem;
 	}
 
-	p{
+	//for where p tags need more prominent spacing
+	.paragraph-padding{
 		padding: 1rem 0;
 	}
-
 }
 
+
+//<<FLAG>> vertical border needs to span full row length
 .half-column-holder{
 	//image takes first 33% of module
 	//content takes other 67%
-	border-top: .125rem solid rgba(0,0,0, 0.15);
-	border-bottom: .125rem solid rgba(0,0,0, 0.15);
+	border-top: .125rem solid @gray-8;
+	border-bottom: .125rem solid @gray-8;
 
+	@media (max-width:767px){
+		[class*="col-"]:nth-child(odd) {
+	    border-bottom: .125rem solid @gray-8;
+	    border-left: none;
+		}
+	}
+	@media (min-width:768px){
+		[class*="col-"]:nth-child(odd) {
+	    border-right: .125rem solid @gray-8;
+	    border-left: none;
+	    margin-right: -0.0625rem;
+		}
 
-	[class*=" col-"]:nth-child(odd) {
-    border-right: .125rem solid rgba(0,0,0, 0.15);
-    border-left: none;
+		[class*="col-"]:nth-child(even) {
+	    border-left: .125rem solid @gray-8;
+	    border-right: none;
+	    margin-left: -0.0625rem;
+		}
 	}
 
 	.half-column{
 
 		padding: 2rem 0;
 
-
 		.image-holder{
 			.make-xs-column(4);
 			text-align: right;
 			img{
 				width: 96px;//<<FLAG>>
-
 			}
+			padding: 0px;
 		}
 		.text-holder{
 			.make-xs-column(8);
@@ -209,13 +249,10 @@
 	//three per row unless fixed height (dynamic padding?)
 	//use bootstrap class or mixin for width?
 
-
 	.third-column{
-
 		padding: @font-size-base;
 		.image-holder{
 			.make-md-column(12);
-
 			img{
 				padding: @font-size-base 0;
 				width: 128px;//<<FLAG>>
@@ -233,9 +270,9 @@
 
 
 .grid-of-squares{
-
-
 	.grid-square{
+
+		&:extend(.shadow-outline);
 		//height+width the same
 		//hover shadow
 		//
@@ -244,29 +281,26 @@
 		//
 
 		//<<TODO>> should have a slight shadow which is increased when hovered over rather than an outline
-		outline-style: solid;
-		outline-color: @gray-8;
-		outline-width: 2px;
-		padding: 8px;
+
+		padding: 1.5rem;
 		box-sizing: border-box;
 		background-color: @white-1;
 		margin-bottom: 1rem;
 
-		height: 256px;
+		height: 16rem;
 
 		.feedback{
 			//padding: 8px;
 			max-height: 65%;
 			overflow: hidden;
-			margin: 0.5rem;
 			//<<TODO>> fixed height
 		}
 
 		.details{
 			position: absolute;
-			bottom: 0.5rem;
-			min-height: 60px;
-			margin: 0.5rem;
+			bottom: 0;
+			min-height: 76px;
+			margin-bottom: 1.5rem;
 
 			.avatar{
 				height: 60px;
@@ -276,7 +310,7 @@
 				img{
 					//square icon, crop?
 				}
-				margin-right: 8px;
+				margin-right: 1rem;
 			}
 			.text{
 				float: right;
@@ -286,15 +320,26 @@
 				.title{
 					font-size: .875rem;
 				}
+				p{
+					margin: 0px;
+				}
 			}
 		}
 
 		&:hover{
-			box-shadow: 0px 10px 10px -6px rgba(0,0,0,0.75);
+			box-shadow: 2px 3px 10px 3px rgba(0,0,0,0.30);
 		}
 	}
+
 }
 
+
+//for all cases of inline image placement in a text field
+.text-holder{
+	img{
+		margin: 0px 15px;
+	}
+}
 
 ///margin to position content at start of a section away from edge
 //variety of section-end definitions exist within module specifications
@@ -302,5 +347,37 @@
 	margin-top: 3rem;
 }
 .section-end{
-	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
+
+.shadow-outline{
+	box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
+}
+
+
+//<<FLAG>> Really hacky solution to the -15px side margins issue
+.row{
+	.row{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+//<<FLAG>> Hacky solution to the carousel buttons within a full-column item
+.carousel-buttons{
+	position: absolute;
+	top: 1rem;
+	z-index: 1;
+	right: 0rem;
+	width: 200px;
+}
+
+
+/* Idea for dealing with ugly image alignment on narrower screens
+.text-holder{
+
+	img{
+		&:extend(.hidden-xs);
+	}
+}
+
+*/

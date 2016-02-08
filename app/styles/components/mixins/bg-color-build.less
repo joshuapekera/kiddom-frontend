@@ -1,9 +1,7 @@
 /*
-
-<<TODO>> Figure this out
-So the idea was that this would loop through each color and the numbers 1-9 to generate
-a hundred and whatever colored background classes for the colors display
-
+//<<TODO>> Figure this out
+//So the idea was that this would loop through each color and the numbers 1-9 to generate
+//a hundred and whatever colored background classes for the colors display
 .make-bg-color(@colour, @count) when (@colour > 0) {
     // create the current tile rule
     @bg-col: "@{colour}-@{count}";
@@ -13,30 +11,21 @@ a hundred and whatever colored background classes for the colors display
       height: 20px;
     }
     @counter: @count - 1;
-
-
-  .btn-pill-flex2{
-
-		.pill-button-flexible2(@white-1, @btn-font-size, @bg-col);
-	}
-     // next iteration
+  .btn-pill-flex2{	.pill-button-flexible2(@white-1, @btn-font-size, @bg-col);}
+    // next iteration
    // .make-bg-color(@color, @counter);
 }
 */
 
 .make-bg-color(@bg-color: @white-1){
-
 	background-color: @bg-color;
-
 	color: contrast(@bg-color, @black-1, @white-1, 80%);
+	@button-border: contrast(@bg-color, @black-1, @white-1, 99%);
 
 	.btn-pill-flex2{
-
-		.pill-button-flexible2(@white-1, @btn-font-size, @bg-color);
+		.pill-button-flexible2(@button-border, @btn-font-size, @bg-color);
 	}
 
-
-	p{
-		color: contrast(@bg-color, @gray-7, @white-1);
-	}
+	//<<FLAG>> possible risky inclusion
+	p{	color: contrast(@bg-color, @gray-7, @white-1);}
 }

@@ -29,7 +29,17 @@ p.tiny{
 	.font_gen(0.875rem, 1.357);
 }
 
+//<<FLAG>> potentially troublesome
+p{
+	color: @gray-7;
+}
 
+
+
+
+
+
+//<<FLAG>> nothing below required for website
 .title-line{
 	.font_gen(6rem, 1.5, -0.3, bolder);
 	color: @red-5;
@@ -37,16 +47,11 @@ p.tiny{
 .subtitle-line{
 	.font_gen(@font-size-h1, 1.1, 0.1px);
 }
-
-p{
-	color: @gray-7;
-}
-
 .paragraph-display{
 		margin-bottom: 0;
 }
 
-//the text descripting the attribute of each text
+//the text describing the attribute of each text
 .typography-descriptor{
 	.font_gen(@font-size-h5, 1.111, -0.3px);
 	color: @gray-7;
