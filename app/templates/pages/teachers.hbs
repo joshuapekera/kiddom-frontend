@@ -26,15 +26,15 @@ layout: container-fluid-with-header.hbs
 <div class="row full-column">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-5 col-sm-offset-1 text-holder vertical-center">
+			<div class="col-sm-6 col-sm-push-6 image-holder vertical-center">
+				<img src="/images/circle-yellow.png" >
+			</div>
+			<div class="col-sm-5 col-sm-offset-1 col-sm-pull-6 text-holder vertical-center">
 					<p class="heading-text">A teacher's control center</p>
 					<hr class="green-hr">
 					<p class="medium">
 						Detailed reports help you analyze and drive student achievement. All student effort is accounted for, providing you with accurate data to make the next instructional decision.
 					</p>
-			</div>
-			<div class="col-sm-6 image-holder vertical-center">
-				<img src="/images/circle-yellow.png" >
 			</div>
 		</div>
 	</div>
@@ -57,15 +57,15 @@ layout: container-fluid-with-header.hbs
 <div class="row full-column">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-offset-1 col-sm-5 text-holder vertical-center">
+			<div class="col-sm-6 col-sm-push-6 image-holder vertical-center">
+				<img src="/images/circle-yellow.png" >
+			</div>
+			<div class="col-sm-offset-1 col-sm-5 col-sm-pull-6 text-holder vertical-center">
 					<p class="heading-text">Works with just about everything</p>
 					<hr class="blue-hr">
 					<p class="medium">
 						Sync with many learning management and student information systems you already use. Set-up is super simple to help you save valuable time.
 					</p>
-			</div>
-			<div class="col-sm-6 image-holder vertical-center">
-				<img src="/images/circle-yellow.png" >
 			</div>
 		</div>
 	</div>
@@ -151,7 +151,7 @@ layout: container-fluid-with-header.hbs
 -->
 
 
-<div class="carousel slide" data-ride="carousel" id='carousel1'>
+<div class="carousel slide" data-ride="carousel" data-interval="false" id='carousel1'>
 
 	<!-- Carousel indicators <<FLAG>> need colour adjustments for brighter backgrounds-->
   <ol class="carousel-indicators visible-xs">
@@ -166,13 +166,13 @@ layout: container-fluid-with-header.hbs
 					<!-- carousel navigation buttons, need to be moved into inner -->
 			<div class="container">
 			  <div class="carousel-buttons hidden-xs container">
-							<div class="row">
-								<div class="col-xs-offset-10 col-xs-1">
+							<div class="row corner-button-holder">
+								<div class="col-xs-offset-8 col-xs-2">
 									<button class="btn btn-round" href="#carousel1" role="button" data-slide="prev">
 										<span class="glyphicon glyphicon-chevron-left"></span>
 									</button>
 								</div>
-								<div class="col-xs-1">
+								<div class="col-xs-2">
 									<button class="btn btn-round" href="#carousel1" role="button" data-slide="next">
 										<span class="glyphicon glyphicon-chevron-right"></span>
 									</button>
@@ -221,7 +221,7 @@ layout: container-fluid-with-header.hbs
 <div class="row splash-header bg-color-blue-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 image-holder">
+			<div class="col-md-12 image-holder section-start">
 				<img src="/images/logo-teach.svg" style="width: 100px;">
 			</div>
 			<div class="col-md-12 text-holder">
