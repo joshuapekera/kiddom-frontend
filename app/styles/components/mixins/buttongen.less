@@ -23,11 +23,14 @@
 		border-color: @button-color;
 		background-color: @button-color;
 		color: @white-1;
+		outline: none;
 
 		&:active, &:focus{
 			border-color: @button-color;
 			background-color: @button-color;
 			color: @white-1;
+			outline: none;
+
 		}
 	}
 }
@@ -44,10 +47,13 @@
 	&:hover, &:active, &:focus, .hoverer& {
 		background-color: darken(@button-color, 10%);
 		border-color: darken(@button-color, 10%);
+		outline: none;
 
 		&:active, &:focus{
 			background-color: darken(@button-color, 10%);
 			border-color: darken(@button-color, 10%);
+			outline: none;
+
 		}
 	}
 }
@@ -64,10 +70,13 @@
 	&:hover, &:active, &:focus, .hoverer& {
 		border-color: darken(@button-color, 10%);
 		background-color: darken(@button-color, 10%);
+		outline: none;
 
 		&:active, &:focus{
 			border-color: darken(@button-color, 10%);
 			background-color: darken(@button-color, 10%);
+			outline: none;
+
 		}
 	}
 
@@ -92,12 +101,16 @@
 		background-color: @pill-color;
 		color: @font-bg-color;
 		border-color: @pill-color;
+		outline: none;
+
 	//	.button-variant(@font-bg-color, @pill-color, @white-1);
 
 		&:active, &:focus{
 			background-color: @pill-color;
 			color: @font-bg-color;
 			border-color: @pill-color;
+			outline: none;
+
 		}
 	}
 }
@@ -121,12 +134,14 @@
 		background-color: @white-1;
 		color: @font-bg-color;
 		border-color: @white-1;
+		outline: none;
 	//	.button-variant(@font-bg-color, @pill-color, @white-1);
 
 		&:active, &:focus{
 			background-color: @white-1;
 			color: @font-bg-color;
 			border-color: @white-1;
+			outline: none;
 		}
 	}
 }
@@ -135,26 +150,27 @@
 
 	&:extend(.btn-gen);
 
-	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
 
 	//TODO - As contrast requires knowledge of the background colour, perhaps just set the font to black with a low opacity level
 
 	font-size: .875rem;
 	.button-variant(@gray-7, @white-1, @gray-8);
 	border-color: @white-1;
+
 	&:hover, &:active, &:focus, .hoverer& {
 
+		border-color: @white-1;
 		background-color: @white-1;
 		color: @gray-6;
-	//	.button-variant(@font-bg-color, @pill-color, @white-1);
-		border-color: @white-1;
-
-
-		box-shadow: 2px 3px 9px 2px rgba(0,0,0,0.30);
+		outline: none;
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
 
 		&:active, &:focus{
 			background-color: @white-1;
 			color: @gray-7;
+			outline: none;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
 		}
 	}
 }

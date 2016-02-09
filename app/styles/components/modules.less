@@ -30,7 +30,7 @@
 
 	.heading-text{
 		&:extend(h2);
-		padding: 1rem 0;
+		padding: 16px 0;
 
 		img{
 			max-height: 70px;
@@ -38,19 +38,19 @@
 	}
 	.image-holder{
 		text-align: center;
-		padding: 1rem 0;
+		padding: 16px 0;
 	}
 
 	button{
-		margin: 1rem;
+		margin: 16px;
 	}
 
 	.square-box{
 		width: 50%;
 		min-width: 240px;
-		padding: 2rem 1rem;
-		border-radius: 5px;
-		margin: 1rem auto;
+		padding: 32px 16px;
+		border-radius: 8px;
+		margin: 16px auto;
 		.avatar-container{
 			margin: 0 auto;
 			img{
@@ -65,27 +65,27 @@
 			border-color: @gray-8;
 			border-style: none;
 			background-color: @gray-9;
-			margin: 0.5rem 0;
+			margin: 8px 0;
 		}
 		&.section-end{
-			margin-bottom: 5rem;
+			margin-bottom: 80px;
 		}
 	}
 
 	.full-row-spread{
 		&:extend(.shadow-outline);
-		padding: 2rem;
+		padding: 32px;
 	}
 
 	.section-end{
-		margin-bottom: 3rem;
+		margin-bottom: 48px;
 	}
 
 }
 
 .full-column{
 
-	padding: 2rem 0;
+	padding: 32px 0;
 
 	//<<FLAG>> All elements in row must have this class
 	//needs to not be part of mobile code
@@ -111,7 +111,7 @@
 	.image-holder{
 		img{
 			max-width: 100%;
-		}
+		}//no overflow
 	}
 
 	//ensures alignment of content in image-holders with horizontal center of page
@@ -182,12 +182,12 @@
 
 	//override of general use section end
 	.section-end{
-		margin-bottom: 3rem;
+		margin-bottom: 48px;
 	}
 
 	//for where p tags need more prominent spacing
 	.paragraph-padding{
-		padding: 1rem 0;
+		padding: 16px 0;
 	}
 }
 
@@ -196,35 +196,39 @@
 .half-column-holder{
 	//image takes first 33% of module
 	//content takes other 67%
-	border-top: .125rem solid @gray-8;
-	border-bottom: .125rem solid @gray-8;
+	.clearfix();
+	border-top: 2px solid @gray-8;
+	border-bottom: 2px solid @gray-8;
 
+
+//try clearfix
 	@media (max-width:767px){
-		[class*="col-"]:nth-child(odd) {
-	    border-bottom: .125rem solid @gray-8;
+		>.container >.row > [class*="col-"]:nth-child(odd) {
+	    border-bottom: 2px solid @gray-8;
 	    border-left: none;
 		}
 	}
 	@media (min-width:768px){
-		[class*="col-"]:nth-child(odd) {
-	    border-right: .125rem solid @gray-8;
+		//the resolution to having the negative margin on both of these is to include a fixed row height for the row just outside the columns
+		//and set the column heights to be fixed at 100%
+		//some kind of provision to fix buttons to the bottom of the rows so they align nicely could be worth implementing
+
+		>.container >.row > [class*="col-"]:nth-child(odd) {
+	    border-right: 2px solid @gray-8;
 	    border-left: none;
-	    margin-right: -0.0625rem;
+			padding: 32px 0;
+	    margin-right: -1px;
 		}
 
-		[class*="col-"]:nth-child(even) {
-	    border-left: .125rem solid @gray-8;
-	    border-right: none;
-	    margin-left: -0.0625rem;
+		>.container >.row > [class*="col-"]:nth-child(even) {
+	    padding-top: 32px;
 		}
 	}
 
 	.half-column{
 
-		padding: 2rem 0;
 
 		.image-holder{
-			.make-xs-column(4);
 			text-align: right;
 			img{
 				width: 96px;//<<FLAG>>
@@ -232,15 +236,14 @@
 			padding: 0px;
 		}
 		.text-holder{
-			.make-xs-column(8);
 			.heading-text{
 				&:extend(h2);
-				margin-top: 1.5rem;
-				margin-bottom: 1rem;
+				margin-top: 24px;
+				margin-bottom: 16px;
 			}
 
 			p{
-				margin: 1rem 0;
+				margin: 16px 0;
 			}
 		}
 	}
@@ -282,12 +285,12 @@
 
 		//<<TODO>> should have a slight shadow which is increased when hovered over rather than an outline
 
-		padding: 1.5rem;
+		padding: 24px;
 		box-sizing: border-box;
 		background-color: @white-1;
-		margin-bottom: 1rem;
+		margin-bottom: 16px;
 
-		height: 16rem;
+		height: 256px;
 
 		.feedback{
 			//padding: 8px;
@@ -300,7 +303,7 @@
 			position: absolute;
 			bottom: 0;
 			min-height: 76px;
-			margin-bottom: 1.5rem;
+			margin-bottom: 24px;
 
 			.avatar{
 				height: 60px;
@@ -310,7 +313,7 @@
 				img{
 					//square icon, crop?
 				}
-				margin-right: 1rem;
+				margin-right: 24px;
 			}
 			.text{
 				float: right;
@@ -318,7 +321,7 @@
 					font-weight: bold;
 				}
 				.title{
-					font-size: .875rem;
+					font-size: 14px;
 				}
 				p{
 					margin: 0px;
@@ -327,7 +330,7 @@
 		}
 
 		&:hover{
-			box-shadow: 2px 3px 10px 3px rgba(0,0,0,0.30);
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
 		}
 	}
 
@@ -344,20 +347,25 @@
 ///margin to position content at start of a section away from edge
 //variety of section-end definitions exist within module specifications
 .section-start{
-	margin-top: 3rem;
+	margin-top: 48px;
 }
 .section-end{
-	margin-bottom: 1.5rem;
+	margin-bottom: 24px;
 }
 
 .shadow-outline{
-	box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
 }
 
 
 //<<FLAG>> Really hacky solution to the -15px side margins issue
-.row{
-	.row{
+.full-column,
+.half-column-holder,
+.third-column-holder,
+.splash-header,
+.grid-of-squares{
+
+	.container > .row{
 		margin-left: 0px;
 		margin-right: 0px;
 	}
@@ -365,11 +373,10 @@
 //<<FLAG>> Hacky solution to the carousel buttons within a full-column item
 .carousel-buttons{
 	position: absolute;
-	top: 1rem;
+	top: 16px;
 	z-index: 1;
-	right: 0rem;
-	width: 200px;
 }
+
 
 
 /* Idea for dealing with ugly image alignment on narrower screens

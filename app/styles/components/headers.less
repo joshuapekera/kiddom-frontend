@@ -33,22 +33,18 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 
 ////using 768px instead of 760px and 768 is the bootstrap standard
 @media only screen and (max-width:767px){
-	.mobile-header{
-		min-width: 268px;
-	}
-
-
-	.container{
-		padding: 0px;
-	}
 
 	.kiddom-head{
-		.nav{
-			text-align: center;
-			background-color: #3F4C4C;
-	    position: relative;
-	    z-index: 1;
+		.container{
+			padding: 0px;
 		}
+
+		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+		position: fixed;
+		text-align: center;
+		background-color: #3F4C4C;
+    z-index: 1;
+
 		.navbar .navbar-nav {
 		  display: inline-block;
 		  float: none;
@@ -63,6 +59,8 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 		}
 		.navbar-header{
 			background-color: @white-1;
+			margin-right: 0px;
+			margin-left: 0px;
 		}
 
 		.navbar-brand{
@@ -111,10 +109,9 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 	}
 
 	.kiddom-head{
+		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
 
 		background-color: @white-1;
-		min-width: 760px;//somewhat arbitrary, it should switch to the mobile layout before this
-		max-width: 1000px;
 		margin: 0 auto;
 		padding-left: 0px;
 		padding-right: 0px;
@@ -127,30 +124,40 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 				color: #3F4C4C;
 			}
 		}
+
 		.navbar .navbar-nav {
 		  display: inline-block;
 		  float: none;
 		  background-color: #3F4C4C;
 		}
-		.navbar-nav{
-		}
-		.navbar-center{
-			margin: auto;
-		}
 
 		.navbar-header{
+			position: absolute;
 			background-color: @white-1;
 			width: 145px;//size of logo
 		}
+		.navbar-right{
+			float: none;
+			position: absolute;
+			top: 0px;
+			right: 15px;
+		}
 
 		.navbar .navbar-collapse {
-		  text-align: center;
 		  padding: 0 0 0 0;
   		height: @header-height;
 		}
+
+
 		.navbar-collapse{
-  		width:70%;
-  		float: right;
+			text-align: right;
+  		>.navbar-align-center{
+  			text-align: center;
+  			.navbar-nav{
+  				float: none;
+  				display: inline-block;
+  			}
+  		}
 		}
 		.nav hr{
 			display: none;
@@ -169,6 +176,8 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 			.header-text();
 		}
 		.btn-pill-register{
+			&:extend(.btn-gen);
+
 
 			// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
 			height: 40px;
@@ -180,18 +189,20 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 			border-color: @gray-8;
 			color: #FF6252;
 			border-style: solid;
-    	margin-left: .75rem;
 	    vertical-align: middle;
 	    display: inline-block;
 
 	    height: 32px;
 	    margin-top: ((@header-height /2)-@font-size-root);
 			&:hover, &:focus{
+				outline: none;
+
 				background-color: #FF6252;
 				border-color: #FF6252;
 				color: @white-1;
 			}
-			margin-right: 1rem;
+
+			margin-right: 16px;
 		}
 
 	/* heree is the most recent anchor attempt
@@ -212,11 +223,4 @@ Both navbar layouts fit into the same html (w/e of one button...), media queries
 				}
 			} */
 	}
-}
-.nav-shadow{
-	width: 100%;
-	position: fixed;
-	box-shadow: 0px 3px 6px 6px rgba(0, 0, 0, 0.5);
-	z-index:2;
-	background-color: white;
 }

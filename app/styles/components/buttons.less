@@ -5,7 +5,7 @@
 
 //rename to rows-button-style (as it doesn't have anything to do with buttons in particular)
 .btn-gen{
-	border-radius: 3rem;
+	border-radius: 3.75rem;
 	border-width: 2px;
 	font-weight: bold;
 	font-size: @btn-font-size;
@@ -16,6 +16,8 @@
 	padding: 8px 22px;
 	min-width: 128px;
 	box-sizing: border-box;
+
+  transition: all linear 50ms;
 }
 
 //the background colours to display buttons over
@@ -32,12 +34,7 @@
 	background-color: @blue-7;
 }
 
-//just for spacing the rows a bit, not real world use
-.btn-style-rows{
-	min-height: 6rem;
-	padding-top: @btn-font-size;
-	padding-bottom: @btn-font-size;
-}
+
 
 //see styles/components/mixins/buttongen.less for next 16
 .btn-pill, .btn-pill-red{
@@ -124,7 +121,7 @@
 .btn-pill-heading-no-border{
 	.pill-button-gen(@red-5, @btn-font-size);
 	border: none;
-	padding: 1rem 2rem;
+	padding: 16px 32px;
 	background-color: @white-1;
 
 	&:hover, &:active, &:focus, &:target, .hoverer&{
@@ -149,9 +146,9 @@
 	font-size: 1rem;
 	border-radius: 50%;
 	min-width: 0px;
-	height: 4rem;
-	background-color: rgba(255,255,255, 0.8);
-	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+	height: 64px;
+	width: 64px;
+	background-color: rgba(255,255,255, 0.9);
 }
 
 .btn-social-media{
@@ -185,5 +182,22 @@
 	&.glyhpicon-align-tight-right{
 		margin-right: -8px;
 		margin-left: 16px;
+	}
+}
+
+.btn-pill-one-state{
+	&:extend(.btn-gen);
+	background-color: rgba(0,0,0, 0.0);
+	color: @gray-7;
+	border-color: @gray-7;
+
+	&:hover, &:active, &:focus{
+		color: @gray-7;
+		outline:none;
+
+		&:hover, &:active, &:focus{
+			color: @gray-7;
+			outline:none;
+		}
 	}
 }
