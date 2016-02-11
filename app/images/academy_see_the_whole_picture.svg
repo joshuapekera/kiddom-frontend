@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 144 144" enable-background="new 0 0 144 144" xml:space="preserve">
+<g>
+	<path fill="#DC595D" d="M60.5,97.6L60.5,97.6c18.2-15.3,7.4-28.7,7.4-30.8c-0.1-2.1,5.3-1.6,5.3-1.6s5.4-0.4,5.3,1.6
+		c-0.1,2.1-10.8,15.4,7.3,30.9l0.1-0.1L124,52.2c-1.6-0.7-13.5-5.8-23.5-1.4l-2.2-0.1c0,0-6.3-8.2-18.2-8.2c-3.8,0-5.8,0-6.9,0
+		c-1.1,0-3.1,0-6.9,0c-11.9,0-18.2,8.2-18.2,8.2l-2.2,0.1c-10-4.4-21.9,0.7-23.5,1.4L60.5,97.6z"/>
+	<circle fill="#FFFFFF" cx="73.2" cy="54.2" r="6.2"/>
+	<circle fill="#DC595D" cx="73.2" cy="54.2" r="3"/>
+	<g>
+		<circle fill="#DC595D" cx="110.6" cy="80.2" r="28"/>
+		<circle fill="#FDFDFD" cx="110.6" cy="80.2" r="24.3"/>
+	</g>
+	<g>
+		<circle fill="#DC595D" cx="35.1" cy="80.6" r="28"/>
+		<circle fill="#FDFDFD" cx="35.1" cy="80.6" r="24.3"/>
+	</g>
+	<path fill="#09CFB6" d="M50.4,80.6c0,8.4-6.8,15.3-15.3,15.3s-15.3-6.8-15.3-15.3c0-8.4,6.8-15.3,15.3-15.3v15.3H50.4z"/>
+	<g>
+		<path fill="#0AB198" d="M35.9,65.4c8,0,14.4,6.5,14.4,14.4"/>
+		<polyline fill="#0AB198" points="35.9,65.4 35.9,79.8 50.4,79.8 		"/>
+	</g>
+	<path fill="#09CFB6" d="M125.8,80.6c0,8.4-6.8,15.3-15.3,15.3s-15.3-6.8-15.3-15.3c0-8.4,6.8-15.3,15.3-15.3v15.3H125.8z"/>
+	<g>
+		<path fill="#0AB198" d="M111.4,65.4c8,0,14.4,6.5,14.4,14.4"/>
+		<polyline fill="#0AB198" points="111.4,65.4 111.4,79.8 125.8,79.8 		"/>
+	</g>
+</g>
+</svg>

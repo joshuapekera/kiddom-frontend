@@ -1,23 +1,66 @@
 
 //a selection of fixed heights for rows, currently only 670 and 466 come from design specs
-.module-height-larger{
+
+
+body{
+	text-align: center;
+}
+
+.height-xs-850{
+	height: 850px;
+}
+
+.height-xs-750{
+	height: 750px;
+}
+
+.height-xs-650{
 	height: 670px;
 }
-.module-height-large{
+.height-xs-550{
 	height: 560px;
 }
-.module-height-section-head{
-	height: 466px;
+.height-xs-500{
+	height: 500px;
 }
-.module-height-strip{
+.height-xs-450{
+	height: 450px;
+}
+.height-xs-320{
 	height: 320px;
 }
+
+@media only screen and (min-width:768px){
+
+	.height-sm-650{
+		height: 670px;
+	}
+	.height-sm-550{
+		height: 550px;
+	}
+	.height-sm-450{
+		height: 450px;
+	}
+	.height-sm-320{
+		height: 320px;
+	}
+
+
+	.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+	}
+	body{
+		text-align: left;
+	}
+}
+
 
 .splash-header{
 	min-height: 80px;
 	text-align: center;
 	//	padding: @font-size-base 0;
-
 
 	//<<FLAG>> not sure this should apply everywhere
 	a{
@@ -25,7 +68,7 @@
 	}
 
 	.text-holder{
-
+		//<<FLAG>> text holder may not be needed for splash header
 	}
 
 	.heading-text{
@@ -34,11 +77,20 @@
 
 		img{
 			max-height: 70px;
+			float: left;
+			@media only screen and (min-width:768px){
+				float: none;
+			}
+
 		}
 	}
 	.image-holder{
 		text-align: center;
 		padding: 16px 0;
+
+		img{
+			width:100%;
+		}
 	}
 
 	button{
@@ -46,26 +98,36 @@
 	}
 
 	.square-box{
-		width: 50%;
-		min-width: 240px;
+		width: 60%;
+		min-width: 280px;
 		padding: 32px 16px;
 		border-radius: 8px;
 		margin: 16px auto;
 		.avatar-container{
 			margin: 0 auto;
+
 			img{
-				height: 112px;
+				height: 96px;
 				margin: 8px 0px;
+				@media (min-width: 768px){
+					height: 112px;
+				}
 			}
 		}
 		input[type=email]{
 			text-align: center;
-			font-size: 1.5rem;
+			font-size: 1.25rem;
+			height: 48px;
 			width: 70%;
-			border-color: @gray-8;
+			min-width: 250px;
 			border-style: none;
 			background-color: @gray-9;
 			margin: 8px 0;
+
+			&:focus{
+				border: none;
+				outline-color: @gray-8;
+			}
 		}
 		&.section-end{
 			margin-bottom: 80px;
@@ -77,8 +139,40 @@
 		padding: 32px;
 	}
 
+	.section-start{
+		margin-top: 24px;
+	}
+
 	.section-end{
 		margin-bottom: 48px;
+	}
+
+
+	.row-link{
+
+		padding-right: 0px;
+		padding-left: 0px;
+		a{
+			position: relative;
+			display: block;
+			width: 100%;
+			text-decoration: none;
+
+		  padding-left: 16px;
+		  padding-right: 16px;
+			&:hover{
+				background-color: @lake-8;
+				text-decoration: none;
+			}
+			img{
+		    max-height: 70px;
+		    float: left;
+
+				@media only screen and (min-width:768px){
+					float: none;
+				}
+			}
+		}
 	}
 
 }
@@ -87,19 +181,23 @@
 
 	padding: 32px 0;
 
-	//<<FLAG>> All elements in row must have this class
-	//needs to not be part of mobile code
-	.vertical-center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+	>.container{
+		padding-right: 0px;
+		padding-left: 0px;
 	}
 
-	//<<FLAG>> only use directly within row's which have a fixed height
-	.vertical-center-solo{
-	  position: relative;
-	  top: 50%;
-	  transform: translateY(-50%);
+	//<<FLAG>> All elements in row must have this class to align vertically
+	@media (min-width:768px){
+		.vertical-center-solo{
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+
+		>.container{
+			padding-right: 15px;
+			padding-left: 15px;
+		}
 	}
 
 	//text and image holder to both be col-XX-6, but can be flexible
@@ -107,23 +205,27 @@
 		.heading-text{
 			&:extend(h1);
 		}
+		padding: 8px 16px;
+
+		@media (min-width:768px){
+			padding: 0px 0px;
+		}
 	}
 	.image-holder{
+
+		@media (min-width:768px){
+			&.image-align-left{
+				text-align: left;
+				margin-left: -7px;
+			}
+			&.image-align-right{
+				text-align: right;
+				margin-right: -7px;
+			}
+		}
 		img{
 			max-width: 100%;
 		}//no overflow
-	}
-
-	//ensures alignment of content in image-holders with horizontal center of page
-	@media only screen and (min-width:768px){
-		[class*="col-"]:nth-child(odd).image-holder{
-				text-align: right;
-				margin-right: -7px;
-		}
-		[class*="col-"]:nth-child(even).image-holder{
-				text-align: left;
-				margin-left: -7px;
-		}
 	}
 
 	@media only screen and (max-width:767px){
@@ -160,23 +262,29 @@
 		padding: 0;
 		overflow-y: hidden;
 	}
-	.image-spill-right{
-		img{
-			position: absolute;
-    	bottom: 0px;
-    	left: 0px;
+
+	@media only screen and (min-width:768px){
+		.image-spill-right{
+			img{
+				position: absolute;
+	    	bottom: 0px;
+	    	left: 0px;
+			}
+			overflow-y: visible;
+			height: 100%;
 		}
-		overflow-y: visible;
-		height: 100%;
-	}
-	.image-spill-left{
-		img{
-			position: absolute;
-    	bottom: 0px;
-    	right: 0px;
+		.image-spill-left{
+			img{
+				position: absolute;
+	    	bottom: 0px;
+	    	right: 0px;
+			}
+			overflow-y: visible;
+			height: 100%;
+			img{
+				height: 100%;
+			}
 		}
-		overflow-y: visible;
-		height: 100%;
 	}
 
 
@@ -192,22 +300,42 @@
 }
 
 
+.academy{
+
+	.logo{
+		height: 200px;
+	}
+	.title{
+		font-size: 4rem;
+		color: black;
+		font-weight: bold
+	}
+	.subtitle{
+		&:extend(.font-color-green-5);
+		margin-top:-40px;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+
+}
+
 //<<FLAG>> vertical border needs to span full row length
 .half-column-holder{
 	//image takes first 33% of module
 	//content takes other 67%
-	.clearfix();
 	border-top: 2px solid @gray-8;
 	border-bottom: 2px solid @gray-8;
 
+	>.container >.row > [class*="col-"]{
+		padding: 16px 0;
 
-//try clearfix
-	@media (max-width:767px){
-		>.container >.row > [class*="col-"]:nth-child(odd) {
+		&:nth-child(odd){
 	    border-bottom: 2px solid @gray-8;
 	    border-left: none;
-		}
+  	}
 	}
+
+
 	@media (min-width:768px){
 		//the resolution to having the negative margin on both of these is to include a fixed row height for the row just outside the columns
 		//and set the column heights to be fixed at 100%
@@ -215,7 +343,7 @@
 
 		>.container >.row > [class*="col-"]:nth-child(odd) {
 	    border-right: 2px solid @gray-8;
-	    border-left: none;
+	    border-bottom: none;
 			padding: 32px 0;
 	    margin-right: -1px;
 		}
@@ -227,15 +355,28 @@
 
 	.half-column{
 
+		margin-left: 0px;
+		margin-right: 0px;
+
+		hr{
+			margin-left: 0px;
+		}
 
 		.image-holder{
 			text-align: right;
+
 			img{
 				width: 96px;//<<FLAG>>
+				padding: 0px;
+				margin-top: 8px;
+
+				@media (min-width:768px){
+					margin-top: 0px;
+				}
 			}
-			padding: 0px;
 		}
 		.text-holder{
+			text-align: left;
 			.heading-text{
 				&:extend(h2);
 				margin-top: 24px;
@@ -258,8 +399,7 @@
 			.make-md-column(12);
 			img{
 				padding: @font-size-base 0;
-				width: 128px;//<<FLAG>>
-				display: block;
+				width: 128px;
 			}
 		}
 		.text-holder{
@@ -273,8 +413,23 @@
 
 
 .grid-of-squares{
-	.grid-square{
 
+	.heading-text{
+		&:extend(h2);
+		padding: 16px 0;
+
+		>img{
+			height: 80px;
+			float: left;
+			margin-left: 16px;
+
+			@media (min-width: 768px){
+				margin: -16px 16px 16px 16px;
+			}
+		}
+	}
+	.grid-square{
+		text-align: left;
 		&:extend(.shadow-outline);
 		//height+width the same
 		//hover shadow
@@ -295,7 +450,12 @@
 		.feedback{
 			//padding: 8px;
 			max-height: 65%;
+
 			overflow: hidden;
+			p {
+				color: @black-1;
+				font-size: 1.125rem;
+			}
 			//<<TODO>> fixed height
 		}
 
@@ -317,11 +477,14 @@
 			}
 			.text{
 				float: right;
+
 				.name{
 					font-weight: bold;
+					color: @black-1;
+					font-size: 1.25rem;
 				}
 				.title{
-					font-size: 14px;
+					font-size: 1rem;
 				}
 				p{
 					margin: 0px;
@@ -339,7 +502,7 @@
 
 //for all cases of inline image placement in a text field
 .text-holder{
-	img{
+	>img{
 		margin: 0px 15px;
 	}
 }
@@ -348,6 +511,9 @@
 //variety of section-end definitions exist within module specifications
 .section-start{
 	margin-top: 48px;
+}
+.section-start-extra-padding{
+	margin-top: 72px;
 }
 .section-end{
 	margin-bottom: 24px;
@@ -358,7 +524,7 @@
 }
 
 
-//<<FLAG>> Really hacky solution to the -15px side margins issue
+//<<FLAG>> solution to the -15px side margins issue
 .full-column,
 .half-column-holder,
 .third-column-holder,
@@ -370,6 +536,7 @@
 		margin-right: 0px;
 	}
 }
+
 //<<FLAG>> Hacky solution to the carousel buttons within a full-column item
 .carousel-buttons{
 	position: absolute;
@@ -377,14 +544,39 @@
 	z-index: 1;
 }
 
-
-
-/* Idea for dealing with ugly image alignment on narrower screens
-.text-holder{
-
-	img{
-		&:extend(.hidden-xs);
-	}
+//for holding two buttons in top right corner closely aligned without overlapping
+.corner-button-holder{
+	padding-top: 8px;
+	[class*="col-"]:nth-child(odd) {
+	   text-align: right;
+		}
+		[class*="col-"]:nth-child(even) {
+	   text-align: left;
+		}
 }
 
-*/
+.background{
+	background-size: cover;
+	background-repeat: no-repeat;;
+
+	&.bg-bottom-left{
+		background-position: bottom left;
+	}
+	&.bg-bottom-right{
+		background-position: bottom right;
+	}
+	&.bg-bottom-center{
+		background-position: bottom center;
+	}
+	&.bg-top-left{
+		background-position: top left;
+	}
+	&.bg-top-right{
+		background-position: top right;
+	}
+	&.bg-top-center{
+		background-position: top center;
+	}
+
+}
+
