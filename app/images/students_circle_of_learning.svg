@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 940 670" enable-background="new 0 0 940 670" xml:space="preserve">
+<g>
+	
+		<line fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8E80FF" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="470" y1="33.2" x2="470" y2="107.9"/>
+	
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#8E80FF" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" d="
+		M470,145.2c128.1,0,232,103.9,232,232s-103.9,232-232,232s-232-103.9-232-232c0-92.9,54.6-173.1,133.6-210.1"/>
+	<circle fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" cx="470" cy="145.2" r="72"/>
+	
+		<ellipse transform="matrix(0.309 -0.9511 0.9511 0.309 -118.2093 448.2179)" fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" cx="249.4" cy="305.5" rx="72" ry="72"/>
+	
+		<ellipse transform="matrix(0.5878 -0.809 0.809 0.5878 -319.4391 502.7522)" fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" cx="333.6" cy="564.8" rx="72" ry="72"/>
+	
+		<ellipse transform="matrix(0.809 -0.5878 0.5878 0.809 -216.201 464.2886)" fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" cx="606.4" cy="564.8" rx="72" ry="72"/>
+	
+		<ellipse transform="matrix(0.9511 -0.309 0.309 0.9511 -60.5896 228.3713)" fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" cx="690.6" cy="305.5" rx="72" ry="72"/>
+	<g>
+		<text transform="matrix(1 0 0 1 423.3546 137.5958)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">What do I </tspan><tspan x="-2.4" y="26" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">complete?</tspan></text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 638.0763 297.9039)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">Where do I</tspan><tspan x="-6.5" y="26" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">complete it?</tspan></text>
+	</g>
+	<text transform="matrix(1 0 0 1 568.0216 557.2883)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">When is</tspan><tspan x="5.6" y="26" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">it due?</tspan></text>
+	<text transform="matrix(1 0 0 1 295.1183 557.2878)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">How did</tspan><tspan x="15" y="26" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">I do?</tspan></text>
+	<g>
+		<text transform="matrix(1 0 0 1 208.5295 297.9039)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">How can</tspan><tspan x="-8.4" y="26" fill="#FFFFFF" font-family="'IstokWeb-Bold'" font-size="20px">I improve?</tspan></text>
+	</g>
+	<rect x="341.5" y="326.7" fill-rule="evenodd" clip-rule="evenodd" fill="none" width="257" height="121"/>
+	<text transform="matrix(1 0 0 1 356.2867 346.839)"><tspan x="0" y="0" fill="#3E4B4B" font-family="'IstokWeb-Bold'" font-size="28px">Help students get </tspan><tspan x="18.4" y="32" fill="#3E4B4B" font-family="'IstokWeb-Bold'" font-size="28px">answers to the </tspan><tspan x="18.1" y="64" fill="#3E4B4B" font-family="'IstokWeb-Bold'" font-size="28px">right questions</tspan></text>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#8E80FF" d="M352.6,206.2l-24.9-39.9c-2.2-3.5,0.6-8,4.7-7.6l38.4,3.8
+		c3.3,0.3,5.3,3.7,4.2,6.7l-13.6,36.2C360.1,209.2,354.8,209.8,352.6,206.2z"/>
+</g>
+</svg>

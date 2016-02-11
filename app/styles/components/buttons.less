@@ -13,10 +13,10 @@
 	//height: 3rem;///use line height//line height 24px, text size 1.25rem
 	line-height: 1.5rem;
 	text-size: 1.25rem;
-	padding: 8px 22px;
+	padding: 10px 22px 6px 22px;
 	min-width: 128px;
 	box-sizing: border-box;
-
+	text-align: center;
   transition: all linear 50ms;
 }
 
@@ -85,17 +85,50 @@
 
 
 //<<FLAG>> change emphs to have every color, get rid of flex1
-.btn-pill-emph{
+.btn-pill-emph, .btn-pill-emph-red{
 	.pill-button-emphasized(@red-5, @btn-font-size);
 }
-.btn-pill-emph-teacher{
+.btn-pill-emph-teacher, .btn-pill-emph-blue{
 	.pill-button-emphasized(@blue-5, @btn-font-size);
 }
-.btn-pill-emph-student{
+.btn-pill-emph-student, .btn-pill-emph-purple{
 	.pill-button-emphasized(@purple-5, @btn-font-size);
 }
-.btn-pill-emph-academy{
+.btn-pill-emph-academy, .btn-pill-emph-green{
 	.pill-button-emphasized(@green-5, @btn-font-size);
+}
+.btn-pill-emph-brown{
+	.pill-button-emphasized(@brown-5, @btn-font-size);
+}
+.btn-pill-emph-stachio{
+	.pill-button-emphasized(@stachio-5, @btn-font-size);
+}
+.btn-pill-emph-turquoise{
+	.pill-button-emphasized(@turq-5, @btn-font-size);
+}
+.btn-pill-emph-orange{
+	.pill-button-emphasized(@orange-5, @btn-font-size);
+}
+.btn-pill-emph-grass{
+	.pill-button-emphasized(@grass-5, @btn-font-size);
+}
+.btn-pill-emph-rouge{
+	.pill-button-emphasized(@rouge-5, @btn-font-size);
+}
+.btn-pill-emph-lake{
+	.pill-button-emphasized(@lake-5, @btn-font-size);
+}
+.btn-pill-emph-yellow{
+	.pill-button-emphasized(@yellow-5, @btn-font-size);
+}
+.btn-pill-emph-plum{
+	.pill-button-emphasized(@plum-5, @btn-font-size);
+}
+.btn-pill-emph-gray{
+	.pill-button-emphasized(@gray-5, @btn-font-size);
+}
+.btn-pill-emph-black{
+	.pill-button-emphasized(@black-1, @btn-font-size);
 }
 
 .btn-pill-flex1-a{
@@ -121,7 +154,7 @@
 .btn-pill-heading-no-border{
 	.pill-button-gen(@red-5, @btn-font-size);
 	border: none;
-	padding: 16px 32px;
+	padding: 16px 32px 14px 32px;
 	background-color: @white-1;
 
 	&:hover, &:active, &:focus, &:target, .hoverer&{
@@ -146,22 +179,52 @@
 	font-size: 1rem;
 	border-radius: 50%;
 	min-width: 0px;
-	height: 56px;
-	width: 56px;
+	height: 52px;
+	width: 52px;
 	background-color: rgba(255,255,255, 0.9);
+
 	span{
-		margin-left: -4px;
+		margin: -48px;
+		position:relative;
+	}
+
+	img{
+    height: 48px;
+    position: absolute;
+    top: -12px;
+    left: -24px;
 	}
 }
 
 .btn-social-media{
-	min-width: 140px;
+	min-width: 160px;
+	padding: 0px;
+
+	[class*="col-xs-"]:nth-child(odd).image-holder{
+		margin-left: -8px;
+	}
+	[class*="col-xs-"]:nth-child(even).image-holder{
+		text-align: center;
+	}
 
 	.appStore-text{
-		padding:0px; margin:-(@btn-font-size*.4);line-spacing: 1; font-size: @btn-font-size;color: @white-1 !important;
+		padding:0px;
+		margin: -4px 0px;
+		line-spacing: 1;
+		font-size:	@btn-font-size;
+		color: @white-1;
 	}
 	.appStore-dl{
-		padding:0px; margin:-(@btn-font-size*.4); line-spacing: 1;font-size:@btn-font-size*.4;color: @white-1 !important;
+		padding:0px;
+		margin:-8px 0px -8px 4px;
+		line-spacing: 1;
+		font-size: @btn-font-size*.5;
+		color: @white-1;
+	}
+
+	img{
+
+	margin: -2px 22px -4px 8px;
 	}
 }
 
@@ -188,18 +251,21 @@
 	}
 }
 
-.btn-pill-one-state{
+.btn-pill-subtle{
 	&:extend(.btn-gen);
 	background-color: rgba(0,0,0, 0.0);
 	color: @gray-8;
 	border-color: @gray-8;
+	@active-color: darken(@gray-8, 5%);
 
 	&:hover, &:active, &:focus{
-		color: @gray-8;
+		color: @active-color;
+		border-color: @active-color;
 		outline:none;
 
 		&:hover, &:active, &:focus{
-			color: @gray-8;
+			color: @active-color;
+			border-color: @active-color;
 			outline:none;
 		}
 	}

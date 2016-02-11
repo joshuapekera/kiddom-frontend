@@ -161,3 +161,38 @@
 .bg-color-white{ .make-bg-color(@white-1); }
 
 .bg-color-black{ .make-bg-color(@black-1); }
+
+
+
+
+.bg-color-teacher-head{
+
+	//needs background color and color for each column
+	&:extend(.bg-color-blue-5);
+	[class*="col-"]:nth-child(2){
+			.make-bg-color(@blue-4);
+	}
+	@media only screen and (min-width: 768px){
+
+		[class*="col-"]:nth-child(2){
+				.make-bg-color(@blue-5);
+		}
+	}
+}
+.bg-color-student-head{
+
+	&:extend(.bg-color-purple-5);
+	[class*="col-"]:nth-child(2){
+			.make-bg-color(@purple-4);
+	}
+
+	@media only screen and (min-width: 768px){
+
+		[class*="col-"]:nth-child(2){
+				.make-bg-color(@purple-5);
+		}
+	}
+}
+
+
+

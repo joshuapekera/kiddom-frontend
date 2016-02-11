@@ -4,6 +4,11 @@
 	//padding as specified
 	padding-top: 50px;
 	padding-bottom: 60px;
+	text-align:left;
+
+	[class*="col-"]{
+		margin-bottom: 16px;
+	}
 
 	.footer-list {
 		padding-top: 8px;
@@ -24,7 +29,6 @@
 	}
 
 	.copyright{
-		padding-top: 0px;
 		padding-left: 16px;
 		font-size: .75rem;
 		color: #DCE2E1;
@@ -41,5 +45,18 @@
 		img{
 			height: 40px;
 		}
+	}
+
+	//the sidebar and guiding headlines (e.g. P.SMALL, USAGE CASES)
+	.guide-titles{
+		font-family: 'Istok web';
+		font-size: 1rem;
+		letter-spacing: -0.3px;
+		line-height: 1.111;
+		margin-top: 0px;
+		font-weight: bold;
+		color: grey;
+		text-transform: uppercase;
+		//need to sort out margin here
 	}
 }
