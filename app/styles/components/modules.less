@@ -362,6 +362,41 @@ body{
 	}
 
 
+&.bg-introducing-academy{
+			overflow-x: hidden;
+			[class*="col-"]:nth-child(1){
+					.make-bg-color(@green-4);
+					p{
+						color:white;
+					}
+			}
+
+			@media only screen and (min-width: 768px){
+				.make-bg-color(@green-7);
+				[class*="col-"]:nth-child(1){
+						.make-bg-color(@green-7);
+						background-color: rgba(0,0,0,0.0);
+						z-index: 1;
+						p{
+							color: @gray-7;
+						}
+						p.heading-text{
+							color:@gray-5;
+						}
+				}
+				[class*="col-"]:nth-child(2){
+						.make-bg-color(@green-7);
+						margin-left: -100px;
+						img{
+							width:800px;
+						}
+				}
+			}
+
+
+}
+
+
 	//override of general use section end
 	.section-end{
 		margin-bottom: 48px;
@@ -462,11 +497,12 @@ body{
 			padding-left: 0px;
 
 			img{
-				width: 96px;//<<FLAG>>
+				width: 80px;
 				padding: 0px;
 				margin-top: 8px;
 
 				@media (min-width:768px){
+					image: 96px;
 					margin-top: 0px;
 				}
 			}

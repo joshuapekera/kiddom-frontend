@@ -42,7 +42,7 @@
 
 	.copyright{
 		.footer.logo-column;
-		padding-left: 16px;
+		padding-left: 0px;
 		font-size: .75rem;
 		color: #DCE2E1;
 		font-weight: bold;
@@ -50,10 +50,14 @@
 
 
 	.social-media{
+		margin-top: 0px;
 		img{
 			opacity: 50%;
+			width: 48px;
+			margin-right: 4px;
 		}
 	}
+
 	.footer-logo{
 		img{
 			height: 40px;
@@ -71,5 +75,20 @@
 		color: grey;
 		text-transform: uppercase;
 		//need to sort out margin here
+	}
+}
+
+@media (min-width:768px){
+
+
+	.footer{
+		.social-media{
+			padding-left: 16px;
+			margin-top: 32px;
+		}
+
+		.copyright{
+			padding-left: 8px;
+		}
 	}
 }

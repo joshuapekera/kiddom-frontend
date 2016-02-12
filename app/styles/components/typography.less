@@ -1,21 +1,28 @@
 
 
 
-h1{
+h1, .header-1{
 	.font_gen(@font-size-h1, 1.143, -0.3px, bold);
 }
-h2{
+h2, .header-2{
 	.font_gen(@font-size-h2, 1.125, -0.3px, bold);
 }
-h3{
+h3, .header-3{
 	.font_gen(@font-size-h3, 1.125, -0.3px, bold);
 }
-h4{
+h4, .header-4{
 	.font_gen(@font-size-h4, 1.3, -0.3px, bold);
 }
-h5{
+h5, .header-5{
 	.font_gen(@font-size-h5, 1.111, -0.3px, bold);
 }
+h1,h2,h3,h4,h5{
+
+	color: @gray-5;
+}
+
+
+
 p.large{
 	.font_gen(1.25rem, 1.5);
 }
