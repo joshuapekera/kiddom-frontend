@@ -20,7 +20,7 @@
 .make-bg-color(@bg-color: @white-1){
 	background-color: @bg-color;
 	color: contrast(@bg-color, @black-1, @white-1, 80%);
-	@button-border: contrast(@bg-color, @black-1, @white-1, 99%);
+	@button-border: contrast(@bg-color, #3f4c4c, @white-1, 99%);
 
 	.btn-pill-flex2{
 		.pill-button-flexible2(@button-border, @btn-font-size, @bg-color);
@@ -30,6 +30,10 @@
 	p{	color: contrast(@bg-color, @gray-7, @white-1);}
 
 
+
+	[class*="heading-"]{
+		color: contrast(@bg-color, @gray-5, @white-1, 60%);
+	}
 
 	//<<FLAG>> have to sort out carousel indicators here
 }

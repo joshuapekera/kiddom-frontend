@@ -5,10 +5,10 @@ keywords: kiddom, studentss
 author: Not Joshua Pekera
 layout: container-fluid-with-header.hbs
 ---
-<div class="row splash-header height-xs-500 height-sm-650 bg-color-green-4  background bg-bottom-center" style="background-image: url('/images/homepage-hero.svg');">
-	<div class="col-md-6 col-md-offset-3 text-holder section-start-extra-padding font-color-red-5">
+<div class="row splash-header height-xs-650 bg-color-green-4  background bg-bottom-center bg-sm-cover" style="background-image: url('/images/homepage-hero.svg');">
+	<div class="col-md-6 col-md-offset-3 text-holder section-start sm-extra-padding-top font-color-red-5">
 		<h1> Transformative Teaching, <br/>Personalised Learning</h1>
-		<button class="btn btn-pill-heading-no-border">Sign Up</button>
+		<button class="btn btn-pill-chunky-no-border">Sign Up</button>
 
 	</div>
 </div>
@@ -16,7 +16,7 @@ layout: container-fluid-with-header.hbs
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
-				<div class="row half-column">
+				<div class="row half-column half-column-home">
 					<div class="image-holder col-md-3 col-xs-4">
 						<img src="/images/logo-teach.svg" >
 					</div>
@@ -26,12 +26,13 @@ layout: container-fluid-with-header.hbs
 						<p class="medium">
 							Be a conductor of learning for your students. Assess, analyze, and take action on student achievement data all from one place
 						</p>
-						<button class="btn btn-pill-teacher">Learn more</button>
+						<button class="btn btn-pill-teacher hidden-xs">Learn more</button>
 					</div>
+					<span class="glyphicon glyphicon-menu-right arrow visible-xs"></span>
 				</div>
 			</div>
 			<div class="col-sm-6">
-				<div class="row half-column ">
+				<div class="row half-column half-column-home">
 					<div class="image-holder col-md-3 col-xs-4">
 						<img src="/images/logo-learn.svg" >
 					</div>
@@ -43,6 +44,18 @@ layout: container-fluid-with-header.hbs
 						</p>
 						<button class="btn btn-pill-student">Learn more</button>
 					</div>
+					<span class="glyphicon glyphicon-menu-right arrow visible-xs"></span>
+				</div>
+			</div>
+			<div class="col-sm-6 visible-xs">
+				<div class="row half-column half-column-home">
+					<div class="image-holder col-md-3 col-xs-4">
+						<img src="/images/logo-academy.svg" >
+					</div>
+					<div class="text-holder col-xs-8">
+						<p class="heading-text">Admins</p>
+					</div>
+					<span class="glyphicon glyphicon-menu-right arrow visible-xs"></span>
 				</div>
 			</div>
 		</div>
@@ -50,10 +63,10 @@ layout: container-fluid-with-header.hbs
 </div>
 
 
-<div class="row splash-header">
+<div class="row splash-header hidden-xs">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3 text-holder academy section-start-extra-padding section-end">
+			<div class="col-md-6 col-md-offset-3 text-holder academy section-start sm-extra-padding-top section-end">
 				<img src="/images/logo-academy.svg" class="logo">
 				<p class="title">Academy</p>
 				<p class="large subtitle">BY KIDDOM</p>
@@ -67,8 +80,11 @@ layout: container-fluid-with-header.hbs
 <div class="row grid-of-squares bg-color-gray-9">
 	<div class="container">
 		<div class="row section-start">
-			<div class="col-xs-12 heading-text">
-				<img src="/images/homepage-heart.svg" style="float:left;">
+		<!--
+			<div class="col-sm-2 col-xs-12 heading-image">
+				<img src="/images/homepage-heart.svg">
+			</div>
+			<div class="col-sm-3 col-sm-push-7 hidden-xs">
 				<div class="row corner-button-holder" style="float:right;">
 					<div class="col-xs-6">
 						<button class="btn btn-round"><span><img src="/images/icon-facebook.svg"></span></button>
@@ -77,10 +93,27 @@ layout: container-fluid-with-header.hbs
 						<button class="btn btn-round"><span><img src="/images/icon-twitter.svg"></span></button>
 					</div>
 				</div>
+			</div>
+			<div class="col-sm-7 col-sm-pull-3 col-xs-12 heading-text">
 				<h1>Educators love us</h1>
 			</div>
+			-->
+
+			<div class="col-sm-12 grid-heading margin-bottom-24">
+				<img src="/images/homepage-heart.svg">
+				<div class="row corner-button-holder hidden-xs" style="float:right;">
+					<div class="col-xs-6">
+						<button class="btn btn-round"><span><img src="/images/icon-facebook.svg"></span></button>
+					</div>
+					<div class="col-xs-6">
+						<button class="btn btn-round"><span><img src="/images/icon-twitter.svg"></span></button>
+					</div>
+				</div>
+				<p class="heading-text" style="font-size: 3rem; text-align: center; display: inline-block;">Educators love us</p>
+
+			</div>
 		</div>
-		<div class="row section-start section-end">
+		<div class="row section-end">
 			<div class="col-lg-4 col-sm-6 col-xs-12 ">
 				<div class= "grid-square">
 					<div class="feedback">
@@ -161,18 +194,18 @@ layout: container-fluid-with-header.hbs
 
 <div class="row bg-color-lake-7 full-column image-spiller">
 	<div class="container">
-		<div class="row module-height-strip">
-			<div class="col-sm-7 image-spill-left hidden-xs">
-				<img src="/images/app-illustration.svg">
-			</div>
-			<div class="col-md-4 col-sm-5 text-holder vertical-center-solo">
-				<p class="heading-text">Get the Kiddom app</p>
+		<div class="row height-sm-250">
+			<div class="col-md-4 col-sm-5 col-sm-push-7 text-holder vertical-center-solo">
+				<p class="heading-text-sm-h2">Get the Kiddom app</p>
 				<p>Keep the classroom in your pocket!</p>
 				<p>
 					<button class="btn btn-pill-emph btn-social-media">
 						<img src="/images/icon-app_store_ios.svg">
 					</button>
 				</p>
+			</div>
+			<div class="col-sm-7 col-sm-pull-5 col-md-pull-4 image-spill-left">
+				<img src="/images/app-illustration.svg">
 			</div>
 		</div>
 	</div>

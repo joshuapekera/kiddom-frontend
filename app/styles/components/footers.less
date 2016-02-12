@@ -2,6 +2,8 @@
 //<<TODO>> Styling for icons, mobile alterations
 .footer{
 	//padding as specified
+	background-color: #f5f9f8;
+
 	padding-top: 50px;
 	padding-bottom: 60px;
 	text-align:left;
@@ -9,6 +11,8 @@
 	[class*="col-"]{
 		margin-bottom: 16px;
 	}
+
+
 
 	.footer-list {
 		padding-top: 8px;
@@ -28,7 +32,16 @@
 			}
 	}
 
+	.logo-column{
+		text-align: center;
+
+		@media (min-width: 768px){
+			text-align: left;
+		}
+	}
+
 	.copyright{
+		.footer.logo-column;
 		padding-left: 16px;
 		font-size: .75rem;
 		color: #DCE2E1;
