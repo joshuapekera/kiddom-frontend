@@ -285,12 +285,16 @@ body{
 	//text and image holder to both be col-XX-6, but can be flexible
 	.text-holder{
 		.heading-text{
-			font-size: @font-size-h1;
+			font-size: @font-size-h2;
 			font-weight: bold;
+			line-height: 1;
 		}
 		padding: 8px 16px;
 
 		@media (min-width:768px){
+			.heading-text{
+				font-size: @font-size-h1;
+			}
 			padding: 0px 0px;
 		}
 	}
@@ -524,17 +528,25 @@ body{
 				}
 			}
 		}
-		.text-holder{
-			text-align: left;
+
+	.text-holder{
+		.heading-text{
+			font-size: @font-size-h2;
+			font-weight: bold;
+			line-height: 1;
+		}
+		padding: 8px 16px;
+
+		@media (min-width:768px){
 			.heading-text{
 				font-size: @font-size-h1;
-				font-weight: bold;
-				margin-top: 24px;
-				margin-bottom: 16px;
-				@media (min-width:768px){
-					font-size: 1.75rem;
-				}
 			}
+			padding: 0px 0px;
+		}
+	}
+		.text-holder{
+			text-align: left;
+
 
 			p{
 				margin: 16px 0;
@@ -611,11 +623,20 @@ body{
 			}
 		}
 	}
-
 	.heading-text{
 		font-size: @font-size-h2;
 		font-weight: bold;
+		line-height: 1;
+		padding: 8px 16px;
+
+		@media (min-width:768px){
+			.heading-text{
+				font-size: @font-size-h1;
+			}
+			padding: 0px 0px;
+		}
 	}
+
 	.grid-square{
 		text-align: left;
 		&:extend(.shadow-outline);
