@@ -53,6 +53,17 @@ body{
 }
 
 
+.vertical-center-xs {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+
+  @media (min-width:768px){
+  	display: inherit;
+    vertical-align: top;
+    float: left;
+  }
+}
 
 @media only screen and (min-width:768px){
 
@@ -438,7 +449,7 @@ body{
 	>.container >.row > [class*="col-"]{
 		padding: 16px;
 		margin-right: 0px;
-		margin-left: 0px;
+		//margin-left: 0px;
 
 		&:not(:last-child) {
 	    border-bottom: 2px solid @gray-8;
@@ -468,8 +479,11 @@ body{
 
 			.text-holder{
 				padding-left: 0px;
-				@media (min-width: 768px){
-					padding-left: 15px;
+			}
+
+			@media (min-width: 768px){
+				.text-holder{
+					padding-left: 24px;
 				}
 			}
 		}
@@ -479,9 +493,11 @@ body{
 	    font-weight: normal;
 	    position: absolute;
 	    right: -8px;
-	    top: 30px;
+	    top: 30%;
 	    font-size: 3rem;
 	    color: @gray-8;
+
+
 		}
 
 
@@ -493,7 +509,7 @@ body{
 		}
 
 		.image-holder{
-			text-align: right;
+			text-align: center;
 			padding-left: 0px;
 
 			img{
@@ -501,8 +517,12 @@ body{
 				padding: 0px;
 				margin-top: 8px;
 
-				@media (min-width:768px){
-					image: 96px;
+			}
+
+
+			@media (min-width:768px){
+				img{
+					width: 96px;
 					margin-top: 0px;
 				}
 			}
@@ -755,6 +775,7 @@ body{
 	&.bg-xs-hidden{
 		background-size: 0 0;
 	}
+
 
 	@media (min-width: 768px){
 		&.bg-sm-cover{
