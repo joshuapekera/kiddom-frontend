@@ -8,5 +8,12 @@
 		"colors_display",
 		"footers",
 		"modules"
+  ],
+  "stylesheet":[
+  	"typography2",
+  	"buttons2",
+  	"colors_display",
+  	"modules2",
+  	"carousel"
   ]
 }

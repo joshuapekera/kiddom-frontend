@@ -1,0 +1,117 @@
+---
+component: Modules2
+---
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h1>Modules</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				Modules are designed in a manner to control a full row, therefore. Assuming whole page is wrapped with a container-fluid class as opposed to a container, each one requires a row as its outer element with a container within.
+
+				Several subclass names recur across most of these modules, including:
+				<ul>
+					<li>text-holder: for elements containing text, the element containing this class should contain bootstrap column specifications for its width and positioning
+							<ul>
+								<li>heading-text: a means of standardising the text heading formats for module types across a website</li>
+							</ul>
+					</li>
+					<li>image-holder: for div elements designed to only contain , the element containing this class should also contain bootstrap column specifications</li>
+					<li>[modulename]: used in conjunction with a bootstrap row element, the width of the image and text holders within being defined using bootstrap column classes</li>
+					<li>[modulename]-holder: used in conjunction with a bootstrap row, it holds the third- and half-column modules (as full-column and splash-header both occupy a full row, they are their own holders)</li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row full-column">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-push-6 image-holder image-align-left vertical-center">
+				<img src="images/teachers-control_center.svg"  alt="teachers-control_center">
+			</div>
+			<div class="col-sm-5 col-sm-offset-1 col-sm-pull-6 text-holder vertical-center">
+					<p class="heading-text">Full-column</p>
+					<hr class="green-hr">
+					<p>
+						Text in a paragraph
+					</p>
+					<span>in a span</span><br>
+					<ul>
+						<li>The image and text positioning is defined using col-XX-pull-_ and col-XX-push_ with the image on the left by default.</li>
+						<li>The image within the image holder is specified to have a width which fills the element it is within.</li>
+						<li>Vertical centering is achieved using a vertical-center subclass which only applies on the desktop version of the site.</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row full-column bg-color-gray-5">
+	<div class="container">
+		<div class="row height-sm-350">
+			<div class="col-sm-5 col-sm-offset-6 text-holder vertical-center-solo">
+					<p class="heading-text">Vertical center solo</p>
+					<hr class="green-hr">
+					<p>
+						A single image- or text-holder within a row of a fixed height can use .vertical-center-solo to align in the middle of the element.
+						Also note text-color change
+					</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="row half-column-holder">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-5">
+				<div class="row half-column">
+					<div class="image-holder col-md-3 col-xs-4  vertical-center-xs">
+						<img src="images/logo-teach.svg" >
+					</div>
+					<div class="text-holder col-xs-7 vertical-center-xs">
+						<p class="heading-text">Half-column</p>
+						<hr class="blue-hr"/>
+						<p>
+							Half columns stack on mobile. The elements within a single 'half-column' row operate in much the same manner as full-column, asides from being more deeply nested. Different widths of half columns here specified directly in html via bootstrap classes.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row half-column half-column-home">
+					<div class="image-holder col-md-3 col-xs-4  vertical-center-xs">
+						<img src="images/logo-learn.svg" >
+					</div>
+					<div class="text-holder col-xs-7 vertical-center-xs">
+						<p class="heading-text">Students</p>
+						<hr class="purple-hr"/>
+						<p class="medium">
+							Half columns on the home page contain an extra class to behave differently.
+						</p>
+						<button class="btn btn-pill-student">Learn more</button>
+					</div>
+					<!--<span class="glyphicon glyphicon-menu-right arrow visible-xs"></span>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

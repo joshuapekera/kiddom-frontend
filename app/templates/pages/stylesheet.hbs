@@ -1,0 +1,25 @@
+---
+title: Stylesheet
+description: A run through the stylings
+keywords: kiddom, studentss
+author: Not Joshua Pekera
+layout: container-fluid-with-header.hbs
+---
+
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class= "col-md-12" style="padding-top: 12px; text-align:center">
+				Navbar requires body to have padding at the top of 80px to avoid content slipping underneath.<br>
+				Navbar styling switches from one style to another at 768px, html remains the same.<br>
+				Logo likely needs to be changed from image to CSS
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{{#each stylesheet}}
+	{{renderPartial this}}
+{{/each}}
