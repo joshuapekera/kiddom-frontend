@@ -65,6 +65,7 @@ body{
 		background-color: @white-1;
 		margin-right: 0px;
 		margin-left: 0px;
+		z-index: 1;
 	}
 	.navbar-toggle{
 		//margin-top: 15px;
@@ -79,8 +80,12 @@ body{
 		outline-style: solid;*/
 	}
 	.navbar-brand{
-		padding: 22px 40px 22px 22px;
+		padding-top: 20px;
 		height: 80px;
+		z-index: 1;
+		>.navbar-brand-link{
+			padding: 20px 10px;
+		}
 	}
 	.navbar .navbar-collapse {
 	  padding: 0 0 0 0;
@@ -199,17 +204,21 @@ body{
 				background-color: @white-1;
 				&:hover{
 					background-color: @white-1;
-					&teacher-link{
+					&.teacher-link{
 						color: #1DBAFF;
+					background-color: @white-1;
 					}
-					&student-link{
+					&.student-link{
 						color: #8F80FF;
+					background-color: @white-1;
 					}
-					&admin-link{
+					&.admin-link{
 						color: #28E88C;
+					background-color: @white-1;
 					}
-					&login-link{
+					&.login-link{
 						color: @red-5;
+					background-color: @white-1;
 					}
 				}
 			}
@@ -290,6 +299,7 @@ body{
   				display: inline-block;
   			}
   		}
+  		z-index:0;
 		}
 		.nav hr{
 			display: none;
