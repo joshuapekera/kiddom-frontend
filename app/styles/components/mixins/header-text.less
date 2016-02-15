@@ -6,21 +6,25 @@
   display: block;//ie fill block
   margin: 0 auto;
 
-  a{
-    vertical-align: middle;
-    display: inline-block;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 12px;
-    margin-right:12px;
-    padding: 0px;
+	@media (min-width: 768px){
+	  >a{
+	    vertical-align: middle;
+	    display: inline-block;
+	    margin-top: 30px;
+	    margin-bottom: 30px;
+	    margin-left: 12px;
+	    margin-right:12px;
+	    padding: 0px;
+	    color: #3F4C4C;
+	    background-color: @white-1;
+	    transition: all linear 150ms;
 
-    transition: all linear 150ms;
+
+			&:hover, &:focus{
+		    //background-color: #FFFF00;
+		    color: @highlight-color;
+				background-color: @white-1;
+			}
+		}
   }
-	a:hover, a:focus{
-    //background-color: #FFFF00;
-    color: @highlight-color;
-		background-color: @white-1;
-	}
-
 }

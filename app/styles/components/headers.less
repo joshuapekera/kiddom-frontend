@@ -37,85 +37,83 @@ body{
 	padding-top: 80px;
 }
 ////using 768px instead of 760px and 768 is the bootstrap standard
-@media only screen and (max-width:767px){
 
 
 
-	.kiddom-head{
+.kiddom-head{
+	height: 80px;
+	.container{
+		padding: 0px;
+	}
+
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	text-align: center;
+	background-color: #3F4C4C;
+  z-index: 1;
+
+	.navbar .navbar-nav {
+	  display: inline-block;
+	  float: none;
+	  background-color: #3F4C4C;
+	}
+	.navbar-nav{
+		margin: auto -15px;
+
+	}
+	.navbar-header{
+		background-color: @white-1;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.navbar-toggle{
+		//margin-top: 15px;
+		//margin-right: 15px;
+
+		padding: 25px;
+		margin: 3px;
+		color:  @gray-7;
+		/*
+		outline-color: @gray-8;
+		outline-width: 1px;
+		outline-style: solid;*/
+	}
+	.navbar-brand{
+		padding: 22px 40px 22px 22px;
 		height: 80px;
-		.container{
-			padding: 0px;
-		}
-
-		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
-		position: fixed;
-		text-align: center;
+	}
+	.navbar .navbar-collapse {
+	  padding: 0 0 0 0;
+	}
+	.navbar-collapse{
+	  text-align: center;
+	  position: relative;
+	  z-level: 1;
+	  border-top: none;
 		background-color: #3F4C4C;
-    z-index: 1;
-
-		.navbar .navbar-nav {
-		  display: inline-block;
-		  float: none;
-		  background-color: #3F4C4C;
-		}
-		.navbar-nav{
-			margin: auto -15px;
-
-		}
-		.navbar-header{
-			background-color: @white-1;
-			margin-right: 0px;
-			margin-left: 0px;
-		}
-		.navbar-toggle{
-			//margin-top: 15px;
-			//margin-right: 15px;
-
-			padding: 25px;
-			margin: 3px;
-			color:  @gray-7;
-			/*
-			outline-color: @gray-8;
-			outline-width: 1px;
-			outline-style: solid;*/
-		}
-		.navbar-brand{
-			padding: 22px 40px 22px 22px;
-			height: 80px;
-		}
-		.navbar .navbar-collapse {
-		  padding: 0 0 0 0;
-		}
-		.navbar-collapse{
-		  text-align: center;
-		  position: relative;
-		  z-level: 1;
-		  border-top: none;
-			background-color: #3F4C4C;
-		  max-height: 400px;
-		}
-		.nav > li{
-		  vertical-align: center;
-	    box-shadow: 0px 25px 0px -24px @gray-6;
-	    margin-top: 1px;
-		}
-		.nav > li > a{
+	  max-height: 400px;
+	}
+	.nav > li{
+	  vertical-align: center;
+    box-shadow: 0px 25px 0px -24px @gray-6;
+    margin-top: 1px;
+		> a{
 		  font-weight: bold;
 		  color: @white-1;
 		  padding-top: 14px;
 		  padding-bottom: 14px;
 			background-color: #3F4C4C;
+			&:hover{
+				&.teacher-link, &.student-link, &.admin-link, &.login-link, &.signup-link{
+					background-color: #293333;
+					color: @white-1;
+				}
+			}
 		}
-		.nav > li > a:hover{
-			background-color: #293333;
-			color: @white-1;
-		}
-
-
 	}
-
-
 }
+
+
 
 /*
 //overrides for landscape on older phones
@@ -185,15 +183,79 @@ body{
 		padding-left: 0px;
 		padding-right: 0px;
 
+
+		//rewrite this patch to compensate for differences from above and you should be sorted
+		.nav > li{
+			box-shadow: none;
+			> a{
+			  font-weight: bold;
+			  color: #3F4C4C;
+		    margin-top: 30px;
+		    margin-bottom: 30px;
+		    margin-left: 12px;
+		    margin-right:12px;
+		    padding-top: 0px;
+		    padding-bottom: 0px;
+				background-color: @white-1;
+				&:hover{
+					background-color: @white-1;
+					&teacher-link{
+						color: #1DBAFF;
+					}
+					&student-link{
+						color: #8F80FF;
+					}
+					&admin-link{
+						color: #28E88C;
+					}
+					&login-link{
+						color: @red-5;
+					}
+				}
+			}
+		}
+/*
 		.nav{
 			text-align: center;
 			background-color: @white-1;
 
-			li> a {
-				color: #3F4C4C;
+			> li{
+				box-shadow: none;
+			  vertical-align: center;
+		    //box-shadow: 0px 25px 0px -24px @gray-6;
+		    //margin-top: 1px;
+				> a{
+			    vertical-align: middle;
+			    display: inline-block;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			    margin-left: 12px;
+			    margin-right:12px;
+			    padding: 0px;
+			    color: #3F4C4C;
+			    background-color: @white-1;
+			    transition: all linear 150ms;
+				  font-weight: bold;
+					&:hover{
+						background-color: @white-1;
+
+						&teacher-link{
+							color: #1DBAFF;
+						}
+						&student-link{
+							color: #8F80FF;
+						}
+						&admin-link{
+							color: #28E88C;
+						}
+						&login-link{
+							color: @red-5;
+						}
+					}
+				}
 			}
 		}
-
+		*/
 		.navbar .navbar-nav {
 		  display: inline-block;
 		  float: none;
@@ -219,6 +281,7 @@ body{
 
 
 		.navbar-collapse{
+			background-color: inherit;
 			text-align: right;
   		>.navbar-align-center{
   			text-align: center;
@@ -231,15 +294,16 @@ body{
 		.nav hr{
 			display: none;
 		}
+		/*
 		.teacher-link{
-				.header-text(#1DBAFF);
+			.header-text(#1DBAFF);
 		}
 		.student-link{
 			.header-text(#8F80FF);
 		}
 		.admin-link{
 			.header-text(#28E88C);
-		}
+		}*/
 
 		.login-link{
 			.header-text(@red-5);
