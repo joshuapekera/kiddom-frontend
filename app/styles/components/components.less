@@ -1,6 +1,5 @@
 @import "mixins/mixins.less";
 @import "typography.less";//<<FLAG>> remove large chunks
-@import "colors.less";//<<FLAG>> move to variables
 @import "variables/variables.less";
 @import url(https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic);
 @import "buttons.less";
@@ -8,7 +7,7 @@
 @import "headers.less";
 @import "footers.less";
 @import "modules.less";
-@import "test-modules.less";//<<FLAG>> for removal
+//@import "test-modules.less";//<<FLAG>> for removal
 @import "bg-colors";
 @import "font-colors.less";
 @import url(https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic);
@@ -41,7 +40,7 @@ body{
 	font-family: 'Istok web', 'Arial';
 
 	p{
-		font-size: 1.15rem;
+		//font-size: 1.15rem;
 		@media (min-width:768px){
 			font-size: 1rem;
 		}

@@ -172,6 +172,8 @@ body{
 		padding: 32px 16px;
 		border-radius: 8px;
 		margin: 16px auto;
+
+		font-weight: normal;
 		.avatar-container{
 			margin: 0 auto;
 
@@ -192,6 +194,8 @@ body{
 			border-style: none;
 			background-color: @gray-9;
 			margin: 8px 0;
+
+			//font-weight: normal;
 
 			&:focus{
 				border: none;
@@ -235,15 +239,17 @@ body{
 		padding-left: 0px;
 		padding-right: 0px;
 
+
 		>a{
 			position: relative;
 			display: block;
 			width: 100%;
 			text-decoration: none;
+			transition: all ease-out 500ms;
 
 		  padding: 16px 0px;
 			&:hover{
-				background-color: @lake-8;
+				background-color: @lake-7;
 				text-decoration: none;
 			}
 			img{
@@ -333,18 +339,6 @@ body{
 
 	//use bootstrap column standards for two column
 
-
-	//<<FLAG>> Remove this <<FLAG>> needs to know image size, dynamic repositioning...
-	&.background-middle-left-spill{
-		background-image: url('/images/grid.png');
-		background-repeat: no-repeat;
-		.position-background-left(750);//<<FLAG>> do these work?
-	}
-	&.background-middle-right-spill{
-		background-image: url('/images/grid.png');
-		background-repeat: no-repeat;
-		background-position: bottom 0% left 50%;
-	}
 
 
 	//define spiller in outer row
@@ -474,13 +468,13 @@ body{
 		position: relative;
 		&.half-column-home{
 			button{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 			p.medium{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 			hr{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 
 			.text-holder{
@@ -491,6 +485,17 @@ body{
 				.text-holder{
 					padding-left: 24px;
 				}
+
+				button{
+					display: inline-block;
+				}
+				p.medium{
+					display: inline-block;
+				}
+				hr{
+					display: inline-block;
+				}
+
 			}
 		}
 
@@ -591,14 +596,14 @@ body{
 	.third-column{
 		padding: @font-size-base;
 		.image-holder{
-			.make-md-column(12);
+			width: 100%;
 			img{
 				padding: @font-size-base 0;
 				width: 128px;
 			}
 		}
 		.text-holder{
-			.make-md-column(12);
+			width: 100%;
 			.heading-text{
 				font-size: @font-size-h4;
 				font-weight: bold;
@@ -638,7 +643,7 @@ body{
 			.heading-text{
 				font-size: @font-size-h1;
 			}
-			padding: 0px 0px;
+			padding: 16px 16px;
 		}
 	}
 

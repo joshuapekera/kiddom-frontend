@@ -1,3 +1,118 @@
----
-component: Carousel
----
+<div class="carousel slide" data-ride="carousel" data-interval="false" id='carousel1'>
+
+	<!-- Carousel indicators <<FLAG>> need colour adjustments for brighter backgrounds-->
+  <ol class="carousel-indicators visible-xs">
+    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel1" data-slide-to="1"></li>
+    <li data-target="#carousel1" data-slide-to="2"></li>
+  </ol>
+	<div class="row carousel-holder">
+
+
+		<div class="carousel-inner" role="listbox"><!-- desktop switch buttons-->
+
+					<!-- carousel navigation buttons, need to be moved into inner -->
+			<div class="container">
+			  <div class="carousel-buttons hidden-xs container">
+							<div class="row corner-button-holder">
+								<div class="col-xs-offset-8 col-xs-2">
+									<button class="btn btn-round" href="#carousel1" role="button" data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left"></span>
+									</button>
+								</div>
+								<div class="col-xs-2">
+									<button class="btn btn-round" href="#carousel1" role="button" data-slide="next">
+										<span class="glyphicon glyphicon-chevron-right"></span>
+									</button>
+								</div>
+							</div>
+					</div>
+			</div>
+
+
+			<!-- need to switch full column out-->
+			<div class="item active">
+				<div class="row full-column bg-color-gray-6 height-xs-450">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-offset-1 col-sm-7 col-xs-10 text-holder pull-left  section-start section-end">
+								<p class="heading-text">This is a carousel...</p>
+								<hr class="yellow-hr">
+								<p>
+									Item #1
+								</p>
+								<p><button class="btn btn-pill-flex2">Read More <span class="glyphicon glyphicon-chevron-right glyhpicon-align-tight-right"></span></button> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row full-column bg-color-blue-7 height-xs-450">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-offset-1 col-sm-7 text-holder pull-left  section-start section-end">
+								<p class="heading-text">...which contains a full container-fluid row...</p>
+								<hr class="yellow-hr">
+								<p>
+									Item #2
+								</p>
+								<p><button class="btn btn-pill-flex2">Read More <span class="glyphicon glyphicon-chevron-right glyhpicon-align-tight-right"></span></button> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="row third-column-holder bg-color-brown-4  height-xs-450">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-offset-1 col-md-3 col-sm-4">
+								<div class="row third-column">
+								<div class="image-holder">
+										<img src="images/circle-yellow.png" >
+									</div>
+									<div class="text-holder">
+										<p class="heading-text">...which can...</p>
+										<hr class="lake-hr"/>
+										<p>
+											They all must be of a consistent fixed height
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-offset-1 col-md-3 col-sm-4">
+								<div class="row third-column">
+									<div class="image-holder">
+										<img src="images/circle-yellow.png" >
+									</div>
+									<div class="text-holder">
+										<p class="heading-text">...contain any module...</p>
+										<hr class="brown-hr"/>
+										<p>
+											Or it'll be a jumpy mess
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-offset-1 col-md-3 col-sm-4">
+								<div class="row third-column">
+								<div class="image-holder">
+										<img src="images/circle-yellow.png" >
+									</div>
+									<div class="text-holder">
+										<p class="heading-text">...type within.</p>
+										<hr class="turquoise-hr"/>
+										<p>
+											and no one wants that
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

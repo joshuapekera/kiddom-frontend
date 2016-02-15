@@ -56,6 +56,7 @@ component: Modules2
 						<li>The image within the image holder is specified to have a width which fills the element it is within.</li>
 						<li>Vertical centering is achieved using a vertical-center subclass which only applies on the desktop version of the site.</li>
 					</ul>
+					<p class="heading-text">All heading's in this section use p.heading-text, which operates differently depending on the module type</p>
 			</div>
 		</div>
 	</div>
@@ -93,7 +94,8 @@ component: Modules2
 						<p class="heading-text">.half-column</p>
 						<hr class="blue-hr"/>
 						<p>
-							Half columns stack on mobile. The elements within a single 'half-column' row operate in much the same manner as full-column, asides from being more deeply nested. Different widths of half columns here specified directly in html via bootstrap classes.
+							Half columns stack on mobile. The elements within a single 'half-column' row operate in much the same manner as full-column, asides from being more deeply nested. Different widths of half columns here specified directly in html via bootstrap classes.<b>
+							The text and image holders in these half columns use vertical-center-xs, which aligns elements vertically on screen sizes of 767px or lower.
 						</p>
 					</div>
 				</div>
@@ -171,7 +173,7 @@ component: Modules2
 
 
 
-<div class="row splash-header bg-color-yellow-7 height-xs-500 height-sm-350">
+<div class="row splash-header bg-color-yellow-7 height-xs-700 height-sm-750">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-holder section-start ssection-end">
@@ -180,12 +182,23 @@ component: Modules2
 				<p>This element uses height-xs-500 to set the height at 500 on mobiles, height-sm-350 overrides this on desktop. See height classes in styles for further options.
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="square-box bg-color-white">
+						<p>This box is used for email input, it has text-aligned centrally and a variety of width % and min specifications.</p>
+						<input type="email" placeholder="Email Address"><br>
+						<button class="btn btn-pill-red">Click</button>
+
+				</div>
+
+			</div>
+		</div>
 	</div>
 </div>
 
 <div class="row bg-color-teacher-head full-column image-spiller">
 	<div class="container">
-		<div class="row height-sm-450">
+		<div class="row height-sm-700">
 			<div class="col-sm-6 image-spill-left">
 				<img src="images/teachers-hero.svg"  alt="teachers-hero">
 			</div>
@@ -199,6 +212,7 @@ component: Modules2
 						<li>The full column row needs to not allow overflow-x for images which spill to the right as that will disrupt the page width otherwise. The internal row within the container element, however, must allow overflow-x.</li>
 						<li>As the image is set up to fill the element, the height is set to 100% and the containing row has a fixed height.</li>
 						<li>The mobile version of image-spiller rows overrides the background color of the text-holder column to avoid the image looking weird. In this case, the class bg-teacher-head handles this change.</li>
+						<li>Height of the row containining the image and text columns needs a fixed height on desktop must exceed the height of the text column.
 					</ul>
 				</p>
 			</div>
@@ -213,10 +227,114 @@ component: Modules2
 			<div class="col-sm-offset-1  col-sm-5 text-holder vertical-center-solo">
 				<p class="heading-text">Background center offset effect</p>
 				<hr class="green-hr">
-				<p>By containing the image within an image-spill module, setting the z-index of the text-holder to 1 and giving the image-spill-_ element a negative margin to pull it closer to the middle. This effect is achieved. The current class name is specific to the case in the website but two more generic names could be used for a slight offset from the left and right.</p>
+				<p>By containing the image within an image-spill module, setting the z-index of the text-holder to 1 and giving the image-spill-_ element a negative margin to pull it closer to the middle. This effect is achieved. The current class name is specific to the case in the website but two more generic names could be used for a slight offset from the left and right (or the offset could be specified using bootstrap push and pull classes.</p>
 			</div>
 			<div class="col-sm-6 image-spill-right hidden-xs">
 				<img src="images/academy-bg-intro_bg.svg"  alt="academy-bg-intro">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row grid-of-squares bg-color-gray-9">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"With a variety of restrictions on these boxes and hidden overflow, bootstrap effectively creates new rows dynamically"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback ">
+						<p>"Boxes have fixed height and width"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"This text occupies a fixed portion of the box, with the overflow hidden"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"Images have a set are and any overflow is hidden"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"No provisions to deal with long names and positions, but I can't see it being needed either"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"fewer boxers display on mobile, each occuying a full row"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
