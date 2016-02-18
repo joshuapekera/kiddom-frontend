@@ -1,10 +1,10 @@
 {
-  "name": "joshuapekera-com",
+  "name": "kiddom-frontend",
   "private": true,
   "dependencies": {
     "bootstrap": "~3.3.4",
     "jquery": "~2.1.1",
-    "modernizr": "~2.8.2"
+    "modernizr": "~3.3.1"
   },
   "devDependencies": {
     "holderjs": "~2.7.1"
