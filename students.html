@@ -41,41 +41,39 @@
 
 
 
-				<nav class="kiddom-head navbar-fixed-top nav-shadow">
-					<div class=container>
-				  	<div class=navbar-header>
-				      <button href=# type=button class="navbar-toggle header-toggle-spacing" data-toggle=collapse data-target=.navbar-collapse>
-				      	<!-- TODO - JavaScript change glyphicon when opened -->
-				        <span class="glyph-flip glyphicon glyphicon-chevron-down"></span>
-				      </button>
-				      <div class=navbar-brand>
-					      <a class=navbar-brand-link href=./home.html><img src=images/logo-kiddom@2x.png alt=KIDDOM></a>
-					    </div>
-				  	</div>
-				  	<div class="collapse navbar-collapse">
-				  		<div class=navbar-align-center>
-					      <ul class="nav navbar-nav">
-						      <li><a class=teacher-link href=./teachers.html>Teacher</a> </li>
-						      <li><a class=student-link href=./students.html>Student</a> </li>
-						      <li><a class=admin-link href=./academy.html>Admin</a></li>
-						    </ul>
-					    </div>
-					    <div class=navbar-align-right>
-					      <ul class="nav navbar-nav">
-						      <li> <a class=login-link href=#>Log in
-						      	</a></li>
-						      <!-- <<FLAG>>
-						      	Difficulty styling the register button as an anchor tag resulted in this awkward solution
-						      -->
-									<li class="btn-pill-login visible-xs">
-						      	<a href=#>Sign Up</a></li>
-						      <li class=hidden-xs>
-						      	<button class=btn-pill-register>Sign Up</button></li>
-					      </ul>
-				      </div>
-				    </div>
-					</div><!--/.nav-collapse-->
-				</nav>
+<nav class="kiddom-head navbar-fixed-top nav-shadow">
+	<div class=container>
+  	<div class=navbar-header>
+      <button href=# type=button class="navbar-toggle header-toggle-spacing" data-toggle=collapse data-target=.navbar-collapse>
+      	<!-- TODO - JavaScript change glyphicon when opened -->
+        <span class="glyph-flip glyphicon glyphicon-chevron-down"></span>
+      </button>
+      <div class=navbar-brand>
+	      <a class=navbar-brand-link href=./home.html><img src=images/logo-kiddom@2x.png alt=KIDDOM></a>
+	    </div>
+  	</div>
+  	<div class="collapse navbar-collapse">
+  		<div class=navbar-align-center>
+	      <ul class="nav navbar-nav">
+		      <li><a class=teacher-link href=./teachers.html>Teacher</a> </li>
+		      <li><a class=student-link href=./students.html>Student</a> </li>
+		      <li><a class=admin-link href=./academy.html>Admin</a></li>
+		    </ul>
+	    </div>
+	    <div class=navbar-align-right>
+	      <ul class="nav navbar-nav">
+		      <li> <a class=login-link href=#>Log in
+		      	</a></li>
+		      <!-- <<FLAG>>
+		      	Difficulty styling the register button as an anchor tag resulted in this awkward solution
+		      -->
+					<li>
+		      	<span><a href=# class="btn btn-pill-register">Sign Up</a></span></li>
+	      </ul>
+      </div>
+    </div>
+	</div><!--/.nav-collapse-->
+</nav>
 	<div class=container-fluid>
 		
 
@@ -99,6 +97,7 @@
 <div class="row half-column-holder">
 	<div class=container>
 		<div class=row>
+			<a>
 			<div class="col-lg-offset-2 col-lg-4 col-md-offset-1 col-md-5 col-sm-6"><!-- <<TODO>> Call this half-column and include specs in css-->
 				<div class="row half-column">
 					<div class="image-holder col-sm-4 col-xs-3 vertical-center-xs">
@@ -113,6 +112,8 @@
 					</div>
 				</div>
 			</div>
+			</a>
+			<a>
 			<div class="col-lg-4 col-md-5 col-sm-6">
 				<div class="row half-column">
 					<div class="image-holder col-sm-4 col-xs-3 vertical-center-xs">
@@ -125,6 +126,41 @@
 							</em>
 						</p>
 					</div>
+				</div>
+			</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="row half-column-holder">
+	<div class=col-sm-6>
+		<div class=half-column-fluid><!--link goes here -->
+			<div class=row>
+				<div class="image-holder col-sm-4 col-xs-3 vertical-center-xs">
+					<img src=images/join_class.svg alt=students-join>
+				</div>
+				<div class="text-holder col-sm-8 col-xs-8 vertical-center-xs">
+					<p class="heading-text font-color-turquoise-5">Join a class</p>
+					<p class=medium>
+						<em>Start your new account
+						</em>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class=col-sm-6>
+		<div class=half-column-fluid>
+			<div class=row>
+				<div class="image-holder col-sm-4 col-xs-3 vertical-center-xs">
+					<img src=images/students-log_in.svg alt=students-login>
+				</div>
+				<div class="text-holder col-sm-8 col-xs-8 vertical-center-xs">
+					<p class="heading-text font-color-yellow-5">Log in</p>
+					<p class=medium>
+						<em>Welcome back
+						</em>
+					</p>
 				</div>
 			</div>
 		</div>
