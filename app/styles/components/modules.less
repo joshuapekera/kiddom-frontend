@@ -36,12 +36,16 @@ body{
 .height-xs-320{
 	height: 320px;
 }
+.height-xs-vh{
+	height: 100vh;
+}
 .xs-margin-top-48{
 	margin-top: 48px;
 }
 .xs-margin-top-72{
 	margin-top: 72px;
 }
+
 
 
 .heading-text-sm-h2{
@@ -71,7 +75,7 @@ body{
 	//	padding: @font-size-base 0;
 
 	//<<FLAG>> not sure this should apply everywhere
-	a{
+	a.red-link{
 		color: @red-5;
 	}
 
@@ -107,7 +111,7 @@ body{
 		}
 	}
 
-	button{
+	.btn{
 		margin: 16px;
 	}
 
@@ -319,7 +323,7 @@ body{
 
 	&.bg-introducing-academy{
 		overflow-x: hidden;
-		[class*="col-"]:nth-child(1){
+		[class*="col-"]:nth-child(2){
 			.make-bg-color(@green-4);
 			p{
 				color:white;
@@ -385,6 +389,9 @@ body{
 
 //<<FLAG>> vertical border needs to span full row length
 .half-column-holder{
+	a:hover, a:focus, a:active{
+		text-decoration: none;
+	}
 
 	margin-right: -15px;
 	margin-left: -15px;
@@ -392,16 +399,31 @@ body{
 	//content takes other 67%
 	border-bottom: 2px solid @gray-8;
 
+	>.container >.row > a{
+		> [class*="col-"]{
+			padding: 16px;
+			margin-right: 0px;
+			//margin-left: 0px;
+		}
+		&:not(:last-child) {
+			> [class*="col-"]{
+			    border-bottom: 2px solid @gray-8;
+			    border-left: none;
+				//margin-left: 0px;
+			}
+  		}
+	}
 	>.container >.row > [class*="col-"]{
 		padding: 16px;
 		margin-right: 0px;
 		//margin-left: 0px;
-
 		&:not(:last-child) {
-	    border-bottom: 2px solid @gray-8;
-	    border-left: none;
-  	}
+		    border-bottom: 2px solid @gray-8;
+		    border-left: none;
+			//margin-left: 0px;
+		}
 	}
+
 
 	>.container{
 		padding-left: 0px;
@@ -617,7 +639,7 @@ body{
 			position: absolute;
 			bottom: 0;
 			min-height: 76px;
-			margin-bottom: 24px;
+			margin-bottom: 28px;
 
 			.avatar{
 				height: 64px;
@@ -626,8 +648,8 @@ body{
 				overflow: hidden;
 				border-radius: 4px;
 				img{
-					//square icon, crop?
 					height: 100%;
+					//square icon, crop?
 				}
 				margin-right: 24px;
 			}
@@ -740,6 +762,10 @@ body{
 		background-size: 0 0;
 	}
 
+	&.bg-evaluate-adapt{
+		background-image: asset-url('assets/resource-room-standards-bg.svg');
+	}
+
 	/*
 	@media (min-width: 768px){
 		&.bg-sm-cover{
@@ -772,7 +798,7 @@ body{
 		height: 700px;
 	}
 	.height-sm-650{
-		height: 670px;
+		height: 650px;
 	}
 	.height-sm-600{
 		height: 600px;
@@ -833,8 +859,8 @@ body{
 			}
 		}
 		.full-row-spread{
-			margin-left: 15px;
-			margin-right: 15px;
+			margin-left: 0px;
+			margin-right: 0px;
 			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
 			padding: 32px;
 
@@ -894,10 +920,9 @@ body{
 		}
 		&.bg-introducing-academy{
 			.make-bg-color(@green-7);
-			[class*="col-"]:nth-child(1){
+			[class*="col-"]:nth-child(2){
 				.make-bg-color(@green-7);
 				background-color: rgba(0,0,0,0.0);
-				z-index: 1;
 				p{
 					color: @gray-7;
 				}
@@ -905,9 +930,8 @@ body{
 					color:@gray-5;
 				}
 			}
-			[class*="col-"]:nth-child(2){
+			[class*="col-"]:nth-child(1){
 				.make-bg-color(@green-7);
-				margin-left: -100px;
 				img{
 					width:800px;
 				}
@@ -915,6 +939,33 @@ body{
 		}
 	}
 	.half-column-holder{
+		a{
+			&:hover{
+				text-decoration: none;
+				
+
+				    //background: -webkit-linear-gradient(left,white,#f0f2f3 95%);
+				>div{
+					background-color: #f0f2f3;
+				}
+
+
+				/* gradient approach, looks too much like a page opening
+				&:nth-child(odd){			    
+					>div{
+						@darkerdark: darken(#f0f2f3,10%);
+						background: -webkit-linear-gradient(left,white 5%, #f0f2f3 50%, #f0f2f3 10%, @darkerdark);
+					}
+				}
+				&:nth-child(even){			    
+					>div{
+						background-color: #f0f2f3;
+						background: -webkit-linear-gradient(right,white 3%,#f0f2f3 27%, #f0f2f3 70%);
+					}
+				}
+				*/
+			}
+		}
 		.half-column{
 			&.half-column-home{
 				.text-holder{
@@ -956,18 +1007,33 @@ body{
 		//and set the column heights to be fixed at 100%
 		//some kind of provision to fix buttons to the bottom of the rows so they align nicely could be worth implementing
 
-		>.container >.row > [class*="col-"]:nth-child(odd) {
-	    border-right: 2px solid @gray-8;
-	    border-bottom: none;
+		>.container >.row > a:nth-child(odd) > [class*="col-"] {
+	    	border-right: 2px solid @gray-8;
+	   		border-bottom: none;
 			padding-top: 32px;
-			padding-bottom: 40px;
-	    margin-right: -1px;
+			padding-bottom: 32px;
+	    	margin-right: -1px;
+		}
+
+		>.container >.row > a:nth-child(even) > [class*="col-"] {
+	    	padding-top: 32px;
+	   	 	padding-bottom: 32px;
+	    	border-bottom: none;
+		}
+
+
+		>.container >.row >  [class*="col-"]:nth-child(odd){
+	    	border-right: 2px solid @gray-8;
+	   		border-bottom: none;
+			padding-top: 32px;
+			padding-bottom: 32px;
+	    	margin-right: -1px;
 		}
 
 		>.container >.row > [class*="col-"]:nth-child(even) {
-	    padding-top: 32px;
-	    padding-bottom: 0px;
-	    border-bottom: none;
+	    	padding-top: 32px;
+	   	 	padding-bottom: 0px;
+	    	border-bottom: none;
 		}
 
 		.half-column{//<<FLAG>> put above
@@ -979,11 +1045,11 @@ body{
 
 	.grid-of-squares{
 		.grid-heading{
+			text-align: center;
 			>img{
-				float: left;
-				display: inline;
 			}
 			.heading-text{
+				vertical-align: middle;;
 				font-size: @font-size-h1;
 				padding: 16px 16px;
 			}
@@ -1002,17 +1068,16 @@ body{
 	.heading-text-sm-h2{
 		padding-top: 0;
 		font-size: @font-size-h1 !important;
+		line-height: 1;
 	}
 }
 
+.bg-img-home{
+	background-image: asset-url('homepage-hero.svg');
+}
 
 .IExplorer{
 	.bg-img-home{
-		background-image: url('../images/homepage-hero-ie.jpg');
+		background-image: asset-url('homepage-hero-ie.jpg');
 	}
-}
-
-
-.bg-img-home{
-	background-image: url('../images/homepage-hero.svg');
 }

@@ -37,7 +37,14 @@ body{
 	padding-top: 80px;
 }
 ////using 768px instead of 760px and 768 is the bootstrap standard
-
+a{
+	&:focus{
+		outline: none;
+	}
+	img:focus{
+		outline:none;
+	}
+}
 
 
 .kiddom-head{
@@ -50,7 +57,7 @@ body{
 	position: fixed;
 	text-align: center;
 	background-color: #3F4C4C;
-  z-index: 1;
+  	z-index: 1030;//bootstrap standard
 
 	.navbar .navbar-nav {
 	  display: inline-block;
@@ -100,17 +107,25 @@ body{
 	  max-height: 400px;
 	}
 	.nav > li{
-	  vertical-align: center;
-    box-shadow: 0px 25px 0px -24px @gray-6;
-    margin-top: 1px;
-		> a{
+	  	vertical-align: center;
+    	box-shadow: 0px 25px 0px -24px @gray-6;
+    	margin-top: 1px;
+    	span{
+    		display: block;
+    		width: 100%;
+    		>a{
+    			width:100%;
+    		}
+    	}
+
+		> a, span>a{
 		  font-weight: bold;
 		  color: @white-1;
 		  padding-top: 14px;
 		  padding-bottom: 14px;
 			background-color: #3F4C4C;
 			&:hover{
-				&.teacher-link, &.student-link, &.admin-link, &.login-link, &.signup-link{
+				&.teacher-link, &.student-link, &.admin-link, &.login-link, &.btn-pill-register{
 					background-color: #293333;
 					color: @white-1;
 				}
@@ -196,12 +211,12 @@ body{
 			> a{
 			  font-weight: bold;
 			  color: #3F4C4C;
-		    margin-top: 30px;
-		    margin-bottom: 30px;
-		    margin-left: 5px;
-		    margin-right:5px;
-		    padding-top: 0px;
-		    padding-bottom: 0px;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			    margin-left: 5px;
+			    margin-right:5px;
+			    padding-top: 0px;
+			    padding-bottom: 0px;
 				background-color: rgba(0,0,0,0);
 				transition: all linear 150ms;
 				&:hover{
@@ -224,7 +239,39 @@ body{
 					}
 				}
 			}
-		}
+			> span{
+				display: inline;
+				width: auto;
+				 > a.btn-pill-register{
+					&:extend(.btn-gen);
+					height: 40px;
+					width: 120px;
+			    	border-radius: 40px;
+			    	font-size: 1rem;
+			    	font-weight: bold;
+					background-color: @white-1;
+					border-color: @gray-8;
+					color: #FF6252;
+					border-style: solid;
+			    	vertical-align: middle;
+			    	display: inline-block;
+			    	margin-top: 20px;
+					margin-right: 16px;
+					padding: 8px 0px;
+					transition: all linear 150ms;
+
+					&:hover, &:focus{
+						outline: none;
+
+						background-color: #FF6252;
+						border-color: #FF6252;
+						color: @white-1;
+					}
+				}
+
+			}
+
+ 		}
 /*
 		.nav{
 			text-align: center;
@@ -320,39 +367,7 @@ body{
 		.login-link{
 			.header-text(@red-5);
 		}*/
-		.btn-pill-register{
-			&:extend(.btn-gen);
-
-
-			// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
-			height: 40px;
-			width: 120px;
-	    border-radius: 40px;
-	    font-size: 1rem;
-	    font-weight: bold;
-			background-color: @white-1;
-			border-color: @gray-8;
-			color: #FF6252;
-			border-style: solid;
-	    vertical-align: middle;
-	    display: inline-block;
-	    margin-top: 20px;
-			margin-right: 16px;
-
-			padding: 8px 0px;
-
-			transition: all linear 150ms;
-
-			&:hover, &:focus{
-				outline: none;
-
-				background-color: #FF6252;
-				border-color: #FF6252;
-				color: @white-1;
-			}
-
-		}
-
+		
 	/* heree is the most recent anchor attempt
 			.btn-pill-register{
 				.btn-pill-login;

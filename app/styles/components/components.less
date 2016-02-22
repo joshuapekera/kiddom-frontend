@@ -10,6 +10,7 @@
 //@import "test-modules.less";//<<FLAG>> for removal
 @import "bg-colors";
 @import "font-colors.less";
+@import "modals.less";
 @import url(https://fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic);
 
 
@@ -41,8 +42,15 @@ body{
 
 	p{
 		font-size: 1.15rem;
-		@media (min-width:768px){
+
+	}
+
+	@media (min-width:768px){
+		p{
 			font-size: 1rem;
+		}
+		.heading-text{
+			line-height: 1.125;
 		}
 	}
 }
