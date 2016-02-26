@@ -1,6 +1,19 @@
 {
-  "name": "joshuapekera-com",
+  "name": "kiddom-frontend",
   "private": true,
+  "ignore": [
+  	"app/styles/base",
+  	"app/styles/bootstrap",
+  	"app/styles/docs",
+  	"app/styles/docs.less",
+  	"app/robots.txt",
+  	"core",
+  	"dist",
+  	"test",
+  	"**/.*",
+  	"Gruntfile.json",
+  	"package.json"
+  ],
   "dependencies": {
     "bootstrap": "~3.3.4",
     "jquery": "~2.1.1",
