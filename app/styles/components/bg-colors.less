@@ -158,7 +158,12 @@
 .bg-color-brown-8{ .make-bg-color(@brown-8); }
 .bg-color-brown-9{ .make-bg-color(@brown-9); }
 
-.bg-color-white{ .make-bg-color(@white-1); }
+.bg-color-white{
+  .make-bg-color(@white-1);
+  a[class*='btn-pill-emph'] {
+    color: white;
+  }
+}
 
 .bg-color-black{ .make-bg-color(@black-1); }
 

@@ -66,6 +66,15 @@
 
 	&:extend(.btn-gen);
 
+  // .content-heavy is added to the body of some pages
+  // It things and shrinks the text. Useful for pages that are wordy,
+  // eg pages that are not landing pages like content#show
+  //
+  // See typography.less for more.
+  .content-heavy & {
+    font-weight: normal;
+  }
+
 	.button-variant(@button-color, @white-1, @button-color);
 	background: 0;
 
@@ -89,6 +98,15 @@
 //change to take in string and boost
 .pill-button-emphasized(@pill-color: @red-5; @button-font-size: @btn-font-size){
 	&:extend(.btn-gen);
+
+  // .content-heavy is added to the body of some pages
+  // It things and shrinks the text. Useful for pages that are wordy,
+  // eg pages that are not landing pages like content#show
+  //
+  // See typography.less for more.
+  .content-heavy & {
+    font-weight: normal;
+  }
 
 	@button-color: @pill-color;
 

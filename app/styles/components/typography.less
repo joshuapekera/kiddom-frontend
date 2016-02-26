@@ -30,20 +30,17 @@ h5, .header-5{
 	.font_gen(1rem, 1.111, -0.3px, bold);
 }
 
-h1,h2,h3,h4,h5{
-
+h1,h2,h3,h4,h5,[class*="heading-"]{
 	color: @gray-5;
 }
 
-
-
-p.large{
+p.large {
 	.font_gen(1.25rem, 1.5);
 }
-p.medium{
+p.medium, p {
 	.font_gen(1.125rem, 1.333);
 }
-p.small{
+p.small {
 	.font_gen(1rem, 1.375);
 }
 p.tiny{
@@ -56,73 +53,39 @@ p{
 }
 
 
-[class*="heading-"]{
-	color: @gray-5;
-}
+// .content-heavy is added to the body of some pages
+// It things and shrinks the text. Useful for pages that are wordy,
+// eg pages that are not landing pages like content#show
+.content-heavy {
+  h1, .header-1{
+    .font_gen(2.625rem, 1.143, -0.3px, normal);
+  }
+  h2, .header-2{
+    .font_gen(1.75rem, 1.125, -0.3px, normal);
+  }
 
+  h3, .header-3{
+    .font_gen(1.75rem, 1.312, -0.3px, normal);
+  }
 
+  h4, .header-4{
+    .font_gen(1.5rem, 1.56, -0.3px, normal);
+  }
 
+  h5, .header-5{
+    .font_gen(1.125rem, 1.25, -0.3px, normal);
+  }
 
-//<<FLAG>> nothing below required for website
-.title-line{
-	.font_gen(6rem, 1.5, -0.3, bolder);
-	color: @red-5;
+  p.large {
+    .font_gen(1.563rem, 1.875);
+  }
+  p.medium, p {
+    .font_gen(1.406rem, 1.666);
+  }
+  p.small {
+    .font_gen(1.25rem, 1.719);
+  }
+  p.tiny{
+    .font_gen(1.094rem, 1.719);
+  }
 }
-.subtitle-line{
-	.font_gen(1.21, 1.1, 0.1px);
-}
-.paragraph-display{
-		margin-bottom: 0;
-}
-
-//the text describing the attribute of each text
-.typography-descriptor{
-	.font_gen(1.25, 1.111, -0.3px);
-	color: @gray-7;
-	text-transform: uppercase;
-	margin-top: 0px;
-	margin-bottom: 1rem;
-}
-
-//removing margins from headers within 'Typography' to allow tighter spacing
-.typography h1,h2,h3,h4,h5{
-	margin-bottom: 0px;
-}
-
-.guide-typography{
-	min-height: 1.5rem;
-    position: relative;
-    transform: translateY(50%);
-}
-
-.title-line{
-	.font_gen(6rem, 1.5, -0.3, bolder);
-	color: @red-5;
-	margin-bottom: 2rem;
-}
-.typography-alphabet{
-	.font_gen(1.21, 1.1, 0.1px);
-	display: block;
-	margin-bottom: 1rem;
-}
-
-.row-buffer{
-	margin-top: 1rem;
-}
-
-/*
-.dl-horizontal dd{
-	margin-left: 1.23*2;
-	min-width: 90%;
-}
-.dl-horizontal dt{
-		font-size: 1.25;
-		text-align: left;
-}
-
-.dl-horizontal {
-	p&{
-		display: inline;
-	}
-}*/
-
