@@ -1,0 +1,341 @@
+---
+component: Modules2
+---
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<h1>Modules</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				Modules are designed in a manner to control a full row, therefore. Assuming whole page is wrapped with a container-fluid class as opposed to a container, each one requires a row as its outer element with a container within.
+
+				Several subclass names recur across most of these modules, including:
+				<ul>
+					<li>text-holder: for elements containing text, the element containing this class should contain bootstrap column specifications for its width and positioning
+							<ul>
+								<li>heading-text: a means of standardising the text heading formats for module types across a website</li>
+							</ul>
+					</li>
+					<li>image-holder: for div elements designed to only contain , the element containing this class should also contain bootstrap column specifications</li>
+					<li>[modulename]: used in conjunction with a bootstrap row element, the width of the image and text holders within being defined using bootstrap column classes</li>
+					<li>[modulename]-holder: used in conjunction with a bootstrap row, it holds the third- and half-column modules (as full-column and splash-header both occupy a full row, they are their own holders)</li>
+					<li>section-start: gives containing element a specified amount of padding-top</li>
+					<li>section-end: same as section-start but for the bottom of the element</li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row full-column">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-push-6 image-holder image-align-left vertical-center">
+				<img src="images/teachers-control_center.svg"  alt="teachers-control_center">
+			</div>
+			<div class="col-sm-5 col-sm-offset-1 col-sm-pull-6 text-holder vertical-center">
+					<p class="heading-text">.full-column</p>
+					<hr class="green-hr">
+					<p>
+						Text in a paragraph
+					</p>
+					<span>in a span</span><br>
+					<ul>
+						<li>The image and text positioning is defined using col-XX-pull-_ and col-XX-push_ with the image on the left by default.</li>
+						<li>The image within the image holder is specified to have a width which fills the element it is within.</li>
+						<li>Vertical centering is achieved using a vertical-center subclass which only applies on the desktop version of the site.</li>
+					</ul>
+					<p class="heading-text">All heading's in this section use p.heading-text, which operates differently depending on the module type</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row full-column bg-color-gray-5">
+	<div class="container">
+		<div class="row height-sm-350">
+			<div class="col-sm-5 col-sm-offset-6 text-holder vertical-center-solo">
+					<p class="heading-text">.vertical-center-solo</p>
+					<hr class="green-hr">
+					<p>
+						A single image- or text-holder within a row of a fixed height can use .vertical-center-solo to align in the middle of the element.
+						Also note text-color change
+					</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="row half-column-holder">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-5">
+				<div class="row half-column">
+					<div class="image-holder col-md-3 col-xs-4  vertical-center-xs">
+						<img src="images/logo-teach.svg" >
+					</div>
+					<div class="text-holder col-xs-7 vertical-center-xs">
+						<p class="heading-text">.half-column</p>
+						<hr class="blue-hr"/>
+						<p>
+							Half columns stack on mobile. The elements within a single 'half-column' row operate in much the same manner as full-column, asides from being more deeply nested. Different widths of half columns here specified directly in html via bootstrap classes.<br>
+							The text and image holders in these half columns use vertical-center-xs, which aligns elements vertically on screen sizes of 767px or lower.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row half-column half-column-home">
+					<div class="image-holder col-md-3 col-xs-4  vertical-center-xs">
+						<img src="images/logo-learn.svg" >
+					</div>
+					<div class="text-holder col-xs-7 vertical-center-xs">
+						<p class="heading-text">Students</p>
+						<hr class="purple-hr"/>
+						<p class="medium">
+							Half columns on the home page contain an extra class to behave differently.
+						</p>
+						<button class="btn btn-pill-student">Learn more</button>
+					</div>
+					<!--<span class="glyphicon glyphicon-menu-right arrow visible-xs"></span>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row third-column-holder section-start section-end">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-3 col-sm-4">
+				<div class="row third-column">
+				<div class="image-holder">
+						<img src="images/circle-yellow.png" >
+					</div>
+					<div class="text-holder">
+						<p class="heading-text">.third-column</p>
+						<hr class="lake-hr"/>
+						<p>
+							Offset is removed on smaller screens. <br>
+							Due to the element width, image and text holders occupy a row
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-offset-1 col-md-3 col-sm-4">
+				<div class="row third-column">
+					<div class="image-holder">
+						<img src="images/circle-yellow.png" >
+					</div>
+					<div class="text-holder">
+						<p class="heading-text">Third column</p>
+						<hr class="brown-hr"/>
+						<p>
+							On mobile each third-column occupies the width of the screen. <br>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-offset-1 col-md-3 col-sm-4">
+				<div class="row third-column">
+				<div class="image-holder">
+						<img src="images/circle-yellow.png" >
+					</div>
+					<div class="text-holder">
+						<p class="heading-text">Third column</p>
+						<hr class="turquoise-hr"/>
+						<p>
+							Storing more than three third-columns within a third-column holder row is unpredictable unless each third-column has the same height.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row splash-header bg-color-yellow-7 height-xs-700 height-sm-750">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-holder section-start ssection-end">
+				<p class="heading-text">.splash-header</p>
+				<p class="medium">Splash header is for the most part similar to a single element full-column entry but with everything centered by default</p>
+				<p>This element uses height-xs-500 to set the height at 500 on mobiles, height-sm-350 overrides this on desktop. See height classes in styles for further options.
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="square-box bg-color-white">
+						<p>This box is used for email input, it has text-aligned centrally and a variety of width % and min specifications.</p>
+						<input type="email" placeholder="Email Address"><br>
+						<button class="btn btn-pill-red">Click</button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row bg-color-teacher-head full-column image-spiller">
+	<div class="container">
+		<div class="row height-sm-700">
+			<div class="col-sm-6 image-spill-left">
+				<img src="images/teachers-hero.svg"  alt="teachers-hero">
+			</div>
+
+			<div class="col-sm-5 text-holder vertical-center-solo">
+				<p class="heading-text">..full-column .image-spiller</p>
+				<hr class="transparent-hr"/>
+				<p>
+					<ul>
+						<li>This is a full column element with some overrides to remove default padding and margins so the image will touch the bottom of the row and any overflow beyond its element will be visible.</li>
+						<li>The full column row needs to not allow overflow-x for images which spill to the right as that will disrupt the page width otherwise. The internal row within the container element, however, must allow overflow-x.</li>
+						<li>As the image is set up to fill the element, the height is set to 100% and the containing row has a fixed height.</li>
+						<li>The mobile version of image-spiller rows overrides the background color of the text-holder column to avoid the image looking weird. In this case, the class bg-teacher-head handles this change.</li>
+						<li>Height of the row containining the image and text columns needs a fixed height on desktop must exceed the height of the text column.
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="row bg-introducing-academy full-column image-spiller">
+	<div class="container">
+		<div class="row height-sm-450">
+			<div class="col-sm-offset-1  col-sm-5 text-holder vertical-center-solo">
+				<p class="heading-text">Background center offset effect</p>
+				<hr class="green-hr">
+				<p>By containing the image within an image-spill module, setting the z-index of the text-holder to 1 and giving the image-spill-_ element a negative margin to pull it closer to the middle. This effect is achieved. The current class name is specific to the case in the website but two more generic names could be used for a slight offset from the left and right (or the offset could be specified using bootstrap push and pull classes.</p>
+			</div>
+			<div class="col-sm-6 image-spill-right hidden-xs">
+				<img src="images/academy-bg-intro_bg.svg"  alt="academy-bg-intro">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row grid-of-squares bg-color-gray-9">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"With a variety of restrictions on these boxes and hidden overflow, bootstrap effectively creates new rows dynamically"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback ">
+						<p>"Boxes have fixed height and width"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"This text occupies a fixed portion of the box, with the overflow hidden"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"Images have a set are and any overflow is hidden"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 ">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"No provisions to deal with long names and positions, but I can't see it being needed either"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 col-xs-12 hidden-xs">
+				<div class= "grid-square">
+					<div class="feedback">
+						<p>"fewer boxers display on mobile, each occuying a full row"</p>
+					</div>
+					<div class="details">
+						<div class="avatar">
+							<img src="images/logo-academy.svg">
+						</div>
+						<div class="text">
+							<p class="name">Name</p>
+							<p class="title">Position</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

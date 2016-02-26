@@ -6,18 +6,9 @@ body{
 	text-align: center;
 	color: @gray-5;
 }
-.heading-text-sm-h2{
-	font-size: @font-size-h3 !important;
-	font-weight: bold;
-	color: @gray-5;
-	padding-top: 16px;
 
-	@media (min-width:768px){
-		padding-top: 0;
-		font-size: @font-size-h1 !important;
-	}
-}
 
+//see media query section below for sm heights to override these on larger screens
 .height-xs-750{
 	height: 750px;
 }
@@ -45,6 +36,9 @@ body{
 .height-xs-320{
 	height: 320px;
 }
+.height-xs-vh{
+	height: 100vh;
+}
 .xs-margin-top-48{
 	margin-top: 48px;
 }
@@ -53,72 +47,27 @@ body{
 }
 
 
+
+.heading-text-sm-h2{
+	//see media queries below for override //important
+	font-size: @font-size-h3 !important;
+	font-weight: bold;
+	color: @gray-5;
+	padding-top: 16px;
+	/*//
+	@media (min-width:768px){
+		padding-top: 0;
+		font-size: @font-size-h1 !important;
+	}*/
+}
+
+
+//sm-lg override to this within media query below
 .vertical-center-xs {
   display: inline-block;
   vertical-align: middle;
   float: none;
-
-  @media (min-width:768px){
-  	display: inherit;
-    vertical-align: top;
-    float: left;
-  }
 }
-
-@media only screen and (min-width:768px){
-
-
-	.sm-margin-top-48{
-		margin-top: 48px;
-	}
-	.sm-margin-top-72{
-		margin-top: 72px;
-	}
-
-	.height-sm-750{
-		height: 750px;
-	}
-	.height-sm-700{
-		height: 700px;
-	}
-	.height-sm-650{
-		height: 670px;
-	}
-	.height-sm-600{
-		height: 600px;
-	}
-	.height-sm-550{
-		height: 560px;
-	}
-	.height-sm-500{
-		height: 500px;
-	}
-	.height-sm-450{
-		height: 450px;
-	}
-	.height-sm-400{
-		height: 400px;
-	}
-	.height-sm-350{
-		height: 350px;
-	}
-	.height-sm-300{
-		height: 300px;
-	}
-	.height-sm-250{
-		height: 250px;
-	}
-
-	.vertical-center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-	}
-	body{
-		text-align: left;
-	}
-}
-
 
 .splash-header{
 	min-height: 80px;
@@ -126,7 +75,7 @@ body{
 	//	padding: @font-size-base 0;
 
 	//<<FLAG>> not sure this should apply everywhere
-	a{
+	a.red-link{
 		color: @red-5;
 	}
 
@@ -135,7 +84,7 @@ body{
 	}
 
 	.heading-text{
-		font-size: @font-size-h2;
+		font-size: 1.70rem;
 		font-weight: bold;
 		padding: 16px 0;
 
@@ -144,14 +93,14 @@ body{
 			float: left;
 
 		}
-
+	/*//
 		@media only screen and (min-width:768px){
 
 			img{
 				float: none;
 			}
 			font-size: @font-size-h1;
-		}
+		}*/
 	}
 	.image-holder{
 		text-align: center;
@@ -162,7 +111,7 @@ body{
 		}
 	}
 
-	button{
+	.btn{
 		margin: 16px;
 	}
 
@@ -172,15 +121,17 @@ body{
 		padding: 32px 16px;
 		border-radius: 8px;
 		margin: 16px auto;
+
+		font-weight: normal;
 		.avatar-container{
 			margin: 0 auto;
 
 			img{
 				height: 96px;
 				margin: 8px 0px;
-				@media (min-width: 768px){
+	/*				@media (min-width: 768px){
 					height: 112px;
-				}
+				}*/
 			}
 		}
 		input[type=email]{
@@ -192,6 +143,8 @@ body{
 			border-style: none;
 			background-color: @gray-9;
 			margin: 8px 0;
+
+			//font-weight: normal;
 
 			&:focus{
 				border: none;
@@ -210,6 +163,7 @@ body{
 		margin-left: -30px;
 		margin-right: -30px;
 		padding: 16px;
+		/*
 		@media (min-width: 768px){
 			margin-left: 0px;
 			margin-right: 0px;
@@ -219,7 +173,7 @@ body{
 			&.section-end{
 				margin-bottom: 48px;
 			}
-		}
+		}*/
 	}
 
 	.section-start{
@@ -235,33 +189,32 @@ body{
 		padding-left: 0px;
 		padding-right: 0px;
 
+
 		>a{
 			position: relative;
 			display: block;
 			width: 100%;
 			text-decoration: none;
+			transition: all ease-out 500ms;
 
 		  padding: 16px 0px;
 			&:hover{
-				background-color: @lake-8;
+				background-color: @lake-7;
 				text-decoration: none;
 			}
 			img{
 		    max-height: 70px;
 		    float: none;
 
-				@media only screen and (min-width:768px){
-				}
 			}
 		}
 		p{
 			display: block;
+		/*//
 			@media only screen and (min-width:768px){
-				display: inline;
-			}
+				display: inline;*/
 		}
 	}
-
 }
 
 .full-column{
@@ -274,7 +227,7 @@ body{
 	}
 
 	//<<FLAG>> All elements in row must have this class to align vertically
-	@media (min-width:768px){
+	/*//@media (min-width:768px){
 		.vertical-center-solo{
 		  position: relative;
 		  top: 50%;
@@ -285,7 +238,7 @@ body{
 			padding-right: 15px;
 			padding-left: 15px;
 		}
-	}
+	}*/
 
 	//text and image holder to both be col-XX-6, but can be flexible
 	.text-holder{
@@ -295,16 +248,16 @@ body{
 			line-height: 1;
 		}
 		padding: 8px 16px;
-
+		/**..
 		@media (min-width:768px){
 			.heading-text{
 				font-size: @font-size-h1;
 			}
 			padding: 0px 0px;
-		}
+		}*/
 	}
 	.image-holder{
-
+		/*..
 		@media (min-width:768px){
 			&.image-align-left{
 				text-align: left;
@@ -314,37 +267,25 @@ body{
 				text-align: right;
 				margin-right: -7px;
 			}
-		}
+		}*/
 		img{
 			max-width: 100%;
 		}//no overflow
 	}
 
-	@media only screen and (max-width:767px){
-		[class*="col-"]:nth-child(odd).image-holder{
-				text-align: center;
-				&:extend(.pull-right);
-		}
-		[class*="col-"]:nth-child(even).image-holder{
-				text-align: center;
-				&:extend(.pull-right);
-		}
-	}
+	// @media only screen and (max-width:767px){
+	// 	[class*="col-"]:nth-child(odd).image-holder{
+	// 			text-align: center;
+	// 			&:extend(.pull-right);
+	// 	}
+	// 	[class*="col-"]:nth-child(even).image-holder{
+	// 			text-align: center;
+	// 			&:extend(.pull-right);
+	// 	}
+	// }
 
 	//use bootstrap column standards for two column
 
-
-	//<<FLAG>> Remove this <<FLAG>> needs to know image size, dynamic repositioning...
-	&.background-middle-left-spill{
-		background-image: url('/images/grid.png');
-		background-repeat: no-repeat;
-		.position-background-left(750);//<<FLAG>> do these work?
-	}
-	&.background-middle-right-spill{
-		background-image: url('/images/grid.png');
-		background-repeat: no-repeat;
-		background-position: bottom 0% left 50%;
-	}
 
 
 	//define spiller in outer row
@@ -354,7 +295,7 @@ body{
 		padding: 0;
 		overflow-y: hidden;
 	}
-
+	/*//
 	@media only screen and (min-width:768px){
 		.image-spill-right{
 			img{
@@ -377,42 +318,42 @@ body{
 				height: 100%;
 			}
 		}
+	}*/
+
+
+	&.bg-introducing-academy{
+		overflow-x: hidden;
+		[class*="col-"]:nth-child(2){
+			.make-bg-color(@green-4);
+			p{
+				color:white;
+			}
+		}
+	/*//
+	@media only screen and (min-width: 768px){
+		.make-bg-color(@green-7);
+		[class*="col-"]:nth-child(1){
+			.make-bg-color(@green-7);
+			background-color: rgba(0,0,0,0.0);
+			z-index: 1;
+			p{
+				color: @gray-7;
+			}
+			p.heading-text{
+				color:@gray-5;
+			}
+		}
+		[class*="col-"]:nth-child(2){
+			.make-bg-color(@green-7);
+			margin-left: -100px;
+			img{
+				width:800px;
+			}
+		}
+	}*/
+
+
 	}
-
-
-&.bg-introducing-academy{
-			overflow-x: hidden;
-			[class*="col-"]:nth-child(1){
-					.make-bg-color(@green-4);
-					p{
-						color:white;
-					}
-			}
-
-			@media only screen and (min-width: 768px){
-				.make-bg-color(@green-7);
-				[class*="col-"]:nth-child(1){
-						.make-bg-color(@green-7);
-						background-color: rgba(0,0,0,0.0);
-						z-index: 1;
-						p{
-							color: @gray-7;
-						}
-						p.heading-text{
-							color:@gray-5;
-						}
-				}
-				[class*="col-"]:nth-child(2){
-						.make-bg-color(@green-7);
-						margin-left: -100px;
-						img{
-							width:800px;
-						}
-				}
-			}
-
-
-}
 
 
 	//override of general use section end
@@ -448,20 +389,41 @@ body{
 
 //<<FLAG>> vertical border needs to span full row length
 .half-column-holder{
+	a:hover, a:focus, a:active{
+		text-decoration: none;
+	}
+
+	margin-right: -15px;
+	margin-left: -15px;
 	//image takes first 33% of module
 	//content takes other 67%
 	border-bottom: 2px solid @gray-8;
 
+	>.container >.row > a{
+		> [class*="col-"]{
+			padding: 16px;
+			margin-right: 0px;
+			//margin-left: 0px;
+		}
+		&:not(:last-child) {
+			> [class*="col-"]{
+			    border-bottom: 2px solid @gray-8;
+			    border-left: none;
+				//margin-left: 0px;
+			}
+  		}
+	}
 	>.container >.row > [class*="col-"]{
 		padding: 16px;
 		margin-right: 0px;
 		//margin-left: 0px;
-
 		&:not(:last-child) {
-	    border-bottom: 2px solid @gray-8;
-	    border-left: none;
-  	}
+		    border-bottom: 2px solid @gray-8;
+		    border-left: none;
+			//margin-left: 0px;
+		}
 	}
+
 
 	>.container{
 		padding-left: 0px;
@@ -474,41 +436,46 @@ body{
 		position: relative;
 		&.half-column-home{
 			button{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 			p.medium{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 			hr{
-				&:extend(.hidden-xs);
+				display: none;
 			}
 
 			.text-holder{
 				padding-left: 0px;
 			}
-
+			/*..
 			@media (min-width: 768px){
 				.text-holder{
 					padding-left: 24px;
 				}
+
+				button{
+					display: inline-block;
+				}
+				p.medium{
+					display: inline-block;
+				}
+				hr{
+					display: inline-block;
+				}*/
+
 			}
 		}
 
 		.arrow{
-
 	    font-weight: normal;
 	    position: absolute;
 	    right: -8px;
 	    top: 30%;
 	    font-size: 3rem;
 	    color: @gray-8;
-
-
 		}
 
-
-		margin-left: 0px;
-		margin-right: 0px;
 
 		hr{
 			margin-left: 0px;
@@ -525,13 +492,13 @@ body{
 
 			}
 
-
+			/*//
 			@media (min-width:768px){
 				img{
 					width: 96px;
 					margin-top: 0px;
 				}
-			}
+			}*/
 		}
 
 	.text-holder{
@@ -541,25 +508,22 @@ body{
 			line-height: 1;
 		}
 		padding: 8px 16px;
-
+		/*
 		@media (min-width:768px){
 			.heading-text{
 				font-size: @font-size-h2;
 			}
 			padding: 0px 0px;
-		}
-	}
-		.text-holder{
-			text-align: left;
+		}*/
+		text-align: left;
 
 
-			p{
-				margin: 16px 0;
-			}
+		p{
+			margin: 16px 0;
 		}
 	}
 
-
+	/*
 	@media (min-width:768px){
 		//the resolution to having the negative margin on both of these is to include a fixed row height for the row just outside the columns
 		//and set the column heights to be fixed at 100%
@@ -582,7 +546,7 @@ body{
 				padding-left: 15px;
 			}
 		}
-	}
+	}*/
 }
 .third-column-holder{
 	//three per row unless fixed height (dynamic padding?)
@@ -591,14 +555,14 @@ body{
 	.third-column{
 		padding: @font-size-base;
 		.image-holder{
-			.make-md-column(12);
+			width: 100%;
 			img{
 				padding: @font-size-base 0;
 				width: 128px;
 			}
 		}
 		.text-holder{
-			.make-md-column(12);
+			width: 100%;
 			.heading-text{
 				font-size: @font-size-h4;
 				font-weight: bold;
@@ -621,11 +585,11 @@ body{
 			height: 112px;
 			text-align: center;
 			float: none;
-
+			/*//
 			@media (min-width: 768px){
 				float: left;
 				display: inline;
-			}
+			}*/
 		}
 	}
 	.heading-text{
@@ -633,13 +597,11 @@ body{
 		font-weight: bold;
 		line-height: 1;
 		padding: 8px 16px;
-
+		/*//
 		@media (min-width:768px){
-			.heading-text{
-				font-size: @font-size-h1;
-			}
-			padding: 0px 0px;
-		}
+			font-size: @font-size-h1;
+			padding: 16px 16px;
+		}*/
 	}
 
 	.grid-square{
@@ -677,14 +639,16 @@ body{
 			position: absolute;
 			bottom: 0;
 			min-height: 76px;
-			margin-bottom: 24px;
+			margin-bottom: 28px;
 
 			.avatar{
-				height: 60px;
-				width: 60px;
+				height: 64px;
+				width: 64px;
 				float: left;
 				overflow: hidden;
+				border-radius: 4px;
 				img{
+					height: 100%;
 					//square icon, crop?
 				}
 				margin-right: 24px;
@@ -741,7 +705,6 @@ body{
 .third-column-holder,
 .splash-header,
 .grid-of-squares{
-
 	.container > .row{
 		margin-left: 0px;
 		margin-right: 0px;
@@ -799,8 +762,301 @@ body{
 		background-size: 0 0;
 	}
 
+	&.bg-evaluate-adapt{
+		background-image: url('images/resource-room-standards-bg.svg');
+	}
 
+	/*
 	@media (min-width: 768px){
+		&.bg-sm-cover{
+			background-size: cover;
+		}
+		&.bg-sm-contain{
+			background-size: contain;
+		}
+	}*/
+
+}
+
+
+
+
+@media only screen and (min-width:768px){
+
+
+	.sm-margin-top-48{
+		margin-top: 48px;
+	}
+	.sm-margin-top-72{
+		margin-top: 72px;
+	}
+
+	.height-sm-750{
+		height: 750px;
+	}
+	.height-sm-700{
+		height: 700px;
+	}
+	.height-sm-650{
+		height: 650px;
+	}
+	.height-sm-600{
+		height: 600px;
+	}
+	.height-sm-550{
+		height: 560px;
+	}
+	.height-sm-500{
+		height: 500px;
+	}
+	.height-sm-450{
+		height: 450px;
+	}
+	.height-sm-400{
+		height: 400px;
+	}
+	.height-sm-350{
+		height: 350px;
+	}
+	.height-sm-300{
+		height: 300px;
+	}
+	.height-sm-250{
+		height: 250px;
+	}
+	.vertical-center-xs{
+  	display: inherit;
+    vertical-align: top;
+    float: left;
+	}
+	.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+	}
+	body{
+		text-align: left;
+	}
+	////heres where you started last night
+	.splash-header{
+		.heading-text{
+			img{
+				float: none;
+			}
+			font-size: @font-size-h1;
+		}
+		.row-link{
+
+			p{
+				display: inline;
+			}
+		}
+		.square-box{
+			.avatar-container{
+				img{
+					height:112px;
+				}
+			}
+		}
+		.full-row-spread{
+			margin-left: 0px;
+			margin-right: 0px;
+			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			padding: 32px;
+
+			&.section-end{
+				margin-bottom: 48px;
+			}
+		}
+
+	}
+	.full-column{
+		.vertical-center-solo{
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+		}
+
+		>.container{
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		.text-holder{
+			.heading-text{
+				font-size: @font-size-h1;
+			}
+			padding: 0px 0px;
+		}
+		.image-holder{
+			&.image-align-left{
+				text-align: left;
+				margin-left: -7px;
+			}
+			&.image-align-right{
+				text-align: right;
+				margin-right: -7px;
+			}
+		}
+		.image-spill-right{
+			img{
+				position: absolute;
+	    	bottom: 0px;
+	    	left: 0px;
+			}
+			overflow-y: visible;
+			height: 100%;
+		}
+		.image-spill-left{
+			img{
+				position: absolute;
+	    	bottom: 0px;
+	    	right: 0px;
+			}
+			overflow-y: visible;
+			height: 100%;
+			img{
+				height: 100%;
+			}
+		}
+		&.bg-introducing-academy{
+			.make-bg-color(@green-7);
+			[class*="col-"]:nth-child(2){
+				.make-bg-color(@green-7);
+				background-color: rgba(0,0,0,0.0);
+				p{
+					color: @gray-7;
+				}
+				p.heading-text{
+					color:@gray-5;
+				}
+			}
+			[class*="col-"]:nth-child(1){
+				.make-bg-color(@green-7);
+				img{
+					width:800px;
+				}
+			}
+		}
+	}
+	.half-column-holder{
+		a{
+			&:hover{
+				text-decoration: none;
+
+
+				    //background: -webkit-linear-gradient(left,white,#f0f2f3 95%);
+				>div{
+					background-color: #f0f2f3;
+				}
+
+
+				/* gradient approach, looks too much like a page opening
+				&:nth-child(odd){
+					>div{
+						@darkerdark: darken(#f0f2f3,10%);
+						background: -webkit-linear-gradient(left,white 5%, #f0f2f3 50%, #f0f2f3 10%, @darkerdark);
+					}
+				}
+				&:nth-child(even){
+					>div{
+						background-color: #f0f2f3;
+						background: -webkit-linear-gradient(right,white 3%,#f0f2f3 27%, #f0f2f3 70%);
+					}
+				}
+				*/
+			}
+		}
+		.half-column{
+			&.half-column-home{
+				.text-holder{
+					padding-left: 24px;
+				}
+				button{
+					display: inline-block;
+				}
+				p.medium{
+					display: inline-block;
+					padding-top: 0px;
+					margin-top: 0px;
+				}
+				.heading-text{
+					padding-bottom: 0px;
+					margin-bottom: 0px;
+				}
+				hr{
+					display: inline-block;
+				}
+			}
+			.image-holder{
+				img{
+					width: 96px;
+					margin-top: 0px;
+				}
+			}
+			.text-holder{
+				.heading-text{
+					font-size: @font-size-h2;
+				}
+				padding: 0px 0px;
+				hr{
+					padding: 0px auto;
+				}
+			}
+		}
+		//the resolution to having the negative margin on both of these is to include a fixed row height for the row just outside the columns
+		//and set the column heights to be fixed at 100%
+		//some kind of provision to fix buttons to the bottom of the rows so they align nicely could be worth implementing
+
+		>.container >.row > a:nth-child(odd) > [class*="col-"] {
+	    	border-right: 2px solid @gray-8;
+	   		border-bottom: none;
+			padding-top: 32px;
+			padding-bottom: 32px;
+	    	margin-right: -1px;
+		}
+
+		>.container >.row > a:nth-child(even) > [class*="col-"] {
+	    	padding-top: 32px;
+	   	 	padding-bottom: 32px;
+	    	border-bottom: none;
+		}
+
+
+		>.container >.row >  [class*="col-"]:nth-child(odd){
+	    	border-right: 2px solid @gray-8;
+	   		border-bottom: none;
+			padding-top: 32px;
+			padding-bottom: 32px;
+	    	margin-right: -1px;
+		}
+
+		>.container >.row > [class*="col-"]:nth-child(even) {
+	    	padding-top: 32px;
+	   	 	padding-bottom: 0px;
+	    	border-bottom: none;
+		}
+
+		.half-column{//<<FLAG>> put above
+			.image-holder{
+				padding-left: 15px;
+			}
+		}
+	}
+
+	.grid-of-squares{
+		.grid-heading{
+			text-align: center;
+			>img{
+			}
+			.heading-text{
+				vertical-align: middle;;
+				font-size: @font-size-h1;
+				padding: 16px 16px;
+			}
+		}
+
+	}
+	.background{
 		&.bg-sm-cover{
 			background-size: cover;
 		}
@@ -809,5 +1065,19 @@ body{
 		}
 	}
 
+	.heading-text-sm-h2{
+		padding-top: 0;
+		font-size: @font-size-h1 !important;
+		line-height: 1;
+	}
 }
 
+.bg-img-home{
+	background-image: url('/images/homepage-hero.svg');
+}
+
+.IExplorer{
+	.bg-img-home{
+		background-image: asset-url('homepage-hero-ie.jpg');
+	}
+}

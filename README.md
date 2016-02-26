@@ -46,6 +46,10 @@ Learn about [--save vs --save-dev](http://stackoverflow.com/a/31358981/311901)
 
     npm run develop
 
+## Also Try (if npm run develop fails)
+
+		grunt serve
+
 This simultaniously starts a webserver at localhost:$PORT serving
 from `dist/app/`, and watches for changes to `app/assets` and `app/views`.
 

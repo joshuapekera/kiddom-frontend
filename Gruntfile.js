@@ -31,9 +31,9 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
-  	
-  	// Override "newer" disabling partial updates. 
-  	// Rebuild everything every time. 
+
+  	// Override "newer" disabling partial updates.
+  	// Rebuild everything every time.
   	newer: {
 	    options: {
 	      override: function(details, include) {
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
         ignorePath: '../../../',
         src: ['<%= config.app %>/templates/layouts/base.hbs'],
         exclude: [
-        'bower_components/modernizr/modernizr.js'
+        'bower_components/modernizr/dist/modernizr-build.js'
         ]
       },
       less: {
@@ -440,7 +440,7 @@ module.exports = function (grunt) {
     // reference in your app
     modernizr: {
       dist: {
-        devFile: 'bower_components/modernizr/modernizr.js',
+        devFile: 'bower_components/modernizr/dist/modernizr-build.js',
         outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
         files: {
           src: [

@@ -1,0 +1,29 @@
+
+
+.kiddom-forms{
+
+	input[type='checkbox']:hover{
+		// <<TODO>> switch this style over for hover and apply it to one checkbox for display purposes
+		box-shadow: inset 0px 0px 3px 3px @blue-5;
+	}
+	label&{
+		font-weight: normal;
+	}
+	input[type='radio']{
+		font-weight: normal;
+		:hover&{
+			box-shadow: inset 0px 0px 3px 3px @blue-5;
+		}
+	}
+
+}
+
+//for display purposes
+.invalids{
+	border-color: @red-5;
+
+	span&{//using span
+		font-size: .5rem;
+		color: @red-5;
+	}
+}

@@ -1,23 +1,33 @@
 
+//including bootstrap overrides here to avoid unreferenced variables in other parts of main.less
+@font-size-base:  1rem;
+
+@font-size-h1:            2.625rem; // ~42px
+@font-size-h2:            1.75rem; // ~30px
+@font-size-h3:            1.5rem; // ~24px
+@font-size-h4:            1.5rem; // ~18px
+@font-size-h5:            1.125rem;
+// @font-size-h6:            ceil((@font-size
+
 
 
 h1, .header-1{
-	.font_gen(@font-size-h1, 1.143, -0.3px, bold);
+	.font_gen(2.625rem, 1.143, -0.3px, bold);
 }
 h2, .header-2{
-	.font_gen(@font-size-h2, 1.125, -0.3px, bold);
+	.font_gen(1.75rem, 1.125, -0.3px, bold);
 }
 
 h3, .header-3{
-	.font_gen(@font-size-h3, 1.125, -0.3px, bold);
+	.font_gen(1.5rem, 1.125, -0.3px, bold);
 }
 
 h4, .header-4{
-	.font_gen(@font-size-h4, 1.3, -0.3px, bold);
+	.font_gen(1.25rem, 1.3, -0.3px, bold);
 }
 
 h5, .header-5{
-	.font_gen(@font-size-h5, 1.111, -0.3px, bold);
+	.font_gen(1rem, 1.111, -0.3px, bold);
 }
 
 h1,h2,h3,h4,h5{
@@ -59,7 +69,7 @@ p{
 	color: @red-5;
 }
 .subtitle-line{
-	.font_gen(@font-size-h1, 1.1, 0.1px);
+	.font_gen(1.21, 1.1, 0.1px);
 }
 .paragraph-display{
 		margin-bottom: 0;
@@ -67,7 +77,7 @@ p{
 
 //the text describing the attribute of each text
 .typography-descriptor{
-	.font_gen(@font-size-h5, 1.111, -0.3px);
+	.font_gen(1.25, 1.111, -0.3px);
 	color: @gray-7;
 	text-transform: uppercase;
 	margin-top: 0px;
@@ -91,22 +101,22 @@ p{
 	margin-bottom: 2rem;
 }
 .typography-alphabet{
-	.font_gen(@font-size-h1, 1.1, 0.1px);
+	.font_gen(1.21, 1.1, 0.1px);
 	display: block;
 	margin-bottom: 1rem;
 }
 
 .row-buffer{
-	margin-top: @font-size-base;
+	margin-top: 1rem;
 }
 
 /*
 .dl-horizontal dd{
-	margin-left: @font-size-h3*2;
+	margin-left: 1.23*2;
 	min-width: 90%;
 }
 .dl-horizontal dt{
-		font-size: @font-size-h5;
+		font-size: 1.25;
 		text-align: left;
 }
 

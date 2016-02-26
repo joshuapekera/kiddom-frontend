@@ -37,84 +37,141 @@ body{
 	padding-top: 80px;
 }
 ////using 768px instead of 760px and 768 is the bootstrap standard
-@media only screen and (max-width:767px){
+a{
+	&:focus{
+		outline: none;
+	}
+	img:focus{
+		outline:none;
+	}
+}
 
 
+.kiddom-head{
+	height: 80px;
+	.container{
+		padding: 0px;
+	}
 
-	.kiddom-head{
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	text-align: center;
+	background-color: #3F4C4C;
+  	z-index: 1030;//bootstrap standard
+
+	.navbar .navbar-nav {
+	  display: inline-block;
+	  float: none;
+	  background-color: #3F4C4C;
+	}
+	.navbar-nav{
+		margin: auto -15px;
+
+	}
+	.navbar-header{
+		background-color: @white-1;
+		margin-right: 0px;
+		margin-left: 0px;
+		z-index: 1;
+	}
+	.navbar-toggle{
+		//margin-top: 15px;
+		//margin-right: 15px;
+
+		padding: 25px;
+		margin: 3px;
+		color:  @gray-7;
+		/*
+		outline-color: @gray-8;
+		outline-width: 1px;
+		outline-style: solid;*/
+	}
+	.navbar-brand{
+		padding-top: 20px;
+		padding-left: 0px;
 		height: 80px;
-		.container{
-			padding: 0px;
+		z-index: 1;
+		>.navbar-brand-link{
+			padding: 24px 8px;
 		}
-
-		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
-		position: fixed;
-		text-align: center;
+	}
+	.navbar .navbar-collapse {
+	  padding: 0 0 0 0;
+	}
+	.navbar-collapse{
+	  text-align: center;
+	  z-index: 1;
+	  border-top: none;
 		background-color: #3F4C4C;
-    z-index: 1;
+	  max-height: 400px;
+	  //* additions to hide search bar on drop down are below*//
+	  position: absolute;
+	  top: 80px;
+	  width: 100%;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	}
+	.nav > li{
+	  	vertical-align: center;
+    	box-shadow: 0px 25px 0px -24px @gray-6;
+    	margin-top: 1px;
+    	span{
+    		display: block;
+    		width: 100%;
+    		>a{
+    			width:100%;
+    		}
+    	}
 
-		.navbar .navbar-nav {
-		  display: inline-block;
-		  float: none;
-		  background-color: #3F4C4C;
-		}
-		.navbar-nav{
-			margin: auto -15px;
-
-		}
-		.navbar-header{
-			background-color: @white-1;
-			margin-right: 0px;
-			margin-left: 0px;
-		}
-		.navbar-toggle{
-			//margin-top: 15px;
-			//margin-right: 15px;
-
-			padding: 25px;
-			margin: 3px;
-			color:  @gray-7;
-			outline-color: @gray-8;
-			outline-width: 1px;
-			outline-style: solid;
-		}
-		.navbar-brand{
-			padding: 22px 40px 22px 22px;
-			height: 80px;
-		}
-		.navbar .navbar-collapse {
-		  padding: 0 0 0 0;
-		}
-		.navbar-collapse{
-		  text-align: center;
-		  position: relative;
-		  z-level: 1;
-		  border-top: none;
-			background-color: #3F4C4C;
-		  max-height: 400px;
-		}
-		.nav > li{
-		  vertical-align: center;
-	    box-shadow: 0px 25px 0px -24px @gray-6;
-	    margin-top: 1px;
-		}
-		.nav > li > a{
+		> a, span>a{
 		  font-weight: bold;
 		  color: @white-1;
 		  padding-top: 14px;
 		  padding-bottom: 14px;
 			background-color: #3F4C4C;
+			&:hover{
+				&.teacher-link, &.student-link, &.admin-link, &.login-link, &.btn-pill-register{
+					background-color: #293333;
+					color: @white-1;
+				}
+			}
 		}
-		.nav > li > a:hover{
-			background-color: #293333;
-			color: @white-1;
-		}
-
-
 	}
-
-
+	.kiddom-search{
+    position: absolute;
+    width: 100%;
+    /* min-width: 48%; */
+    /* margin: 24px 180px; */
+    z-index: 1;
+    >div{
+    	position: relative;
+	    input[type=text]{
+		    width: 100%;
+		    height: 40px;
+		    border-radius: 0px;
+		    border-style: solid;
+		    border-width: 1px;
+		    border-color: @gray-8;
+		    padding: 8px;
+	    }
+	    .close-search{
+	    	position: absolute;
+	    	top: 0px;
+	    	right: 0px;
+	    	border-radius: 50%;
+	    	padding-top: 6px;
+	    	height: 24px;
+	    	width: 24px;
+	    	margin: 8px;
+	    	background-color: @gray-8;
+	    	color: @gray-9;
+	    	font-size: 12px;
+	    }
+	  }
+	}
 }
+
+
 
 /*
 //overrides for landscape on older phones
@@ -184,15 +241,115 @@ body{
 		padding-left: 0px;
 		padding-right: 0px;
 
+
+		//rewrite this patch to compensate for differences from above and you should be sorted
+		.nav > li{
+			box-shadow: none;
+			> a{
+			  font-weight: bold;
+			  color: #3F4C4C;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			    margin-left: 5px;
+			    margin-right:5px;
+			    padding-top: 0px;
+			    padding-bottom: 0px;
+				background-color: rgba(0,0,0,0);
+				transition: all linear 150ms;
+				&:hover{
+					background-color: @white-1;
+					&.teacher-link{
+						color: #1DBAFF;
+					background-color: @white-1;
+					}
+					&.student-link{
+						color: #8F80FF;
+					background-color: @white-1;
+					}
+					&.admin-link{
+						color: #28E88C;
+					background-color: @white-1;
+					}
+					&.login-link{
+						color: @red-5;
+					background-color: @white-1;
+					}
+				}
+			}
+			> span{
+				display: inline;
+				width: auto;
+				 > a.btn-pill-register{
+					&:extend(.btn-gen);
+					height: 40px;
+					width: 120px;
+			    	border-radius: 40px;
+			    	font-size: 1rem;
+			    	font-weight: bold;
+					background-color: @white-1;
+					border-color: @gray-8;
+					color: #FF6252;
+					border-style: solid;
+			    	vertical-align: middle;
+			    	display: inline-block;
+			    	margin-top: 20px;
+					margin-right: 16px;
+					padding: 8px 0px;
+					transition: all linear 150ms;
+
+					&:hover, &:focus{
+						outline: none;
+
+						background-color: #FF6252;
+						border-color: #FF6252;
+						color: @white-1;
+					}
+				}
+
+			}
+ 		}
+/*
 		.nav{
 			text-align: center;
 			background-color: @white-1;
 
-			li> a {
-				color: #3F4C4C;
+			> li{
+				box-shadow: none;
+			  vertical-align: center;
+		    //box-shadow: 0px 25px 0px -24px @gray-6;
+		    //margin-top: 1px;
+				> a{
+			    vertical-align: middle;
+			    display: inline-block;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			    margin-left: 12px;
+			    margin-right:12px;
+			    padding: 0px;
+			    color: #3F4C4C;
+			    background-color: @white-1;
+			    transition: all linear 150ms;
+				  font-weight: bold;
+					&:hover{
+						background-color: @white-1;
+
+						&teacher-link{
+							color: #1DBAFF;
+						}
+						&student-link{
+							color: #8F80FF;
+						}
+						&admin-link{
+							color: #28E88C;
+						}
+						&login-link{
+							color: @red-5;
+						}
+					}
+				}
 			}
 		}
-
+		*/
 		.navbar .navbar-nav {
 		  display: inline-block;
 		  float: none;
@@ -218,6 +375,9 @@ body{
 
 
 		.navbar-collapse{
+			position: relative;
+			top: 0px;
+			background-color: inherit;
 			text-align: right;
   		>.navbar-align-center{
   			text-align: center;
@@ -226,12 +386,14 @@ body{
   				display: inline-block;
   			}
   		}
+  		z-index:0;
 		}
 		.nav hr{
 			display: none;
 		}
+		/*
 		.teacher-link{
-				.header-text(#1DBAFF);
+			.header-text(#1DBAFF);
 		}
 		.student-link{
 			.header-text(#8F80FF);
@@ -242,37 +404,7 @@ body{
 
 		.login-link{
 			.header-text(@red-5);
-		}
-		.btn-pill-register{
-			&:extend(.btn-gen);
-
-
-			// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
-			height: 40px;
-			width: 120px;
-	    border-radius: 40px;
-	    font-size: 1rem;
-	    font-weight: bold;
-			background-color: @white-1;
-			border-color: @gray-8;
-			color: #FF6252;
-			border-style: solid;
-	    vertical-align: middle;
-	    display: inline-block;
-	    margin-top: 20px;
-			margin-right: 16px;
-
-			padding: 8px 0px;
-
-			&:hover, &:focus{
-				outline: none;
-
-				background-color: #FF6252;
-				border-color: #FF6252;
-				color: @white-1;
-			}
-
-		}
+		}*/
 
 	/* heree is the most recent anchor attempt
 			.btn-pill-register{
@@ -291,5 +423,30 @@ body{
 					colour: @white-1;
 				}
 			} */
+		.kiddom-search{
+			position:absolute;
+			margin: 0px;
+			left: 180px;
+			right: 220px;
+			width: initial;
+			>div{
+		    text-align: center;
+		    margin: 20px auto;
+		    min-width: 45%;
+		    max-width: 100%;
+		    /* min-width: 48%; */
+		    /* margin: 24px 180px; */
+		    z-index: 1;
+
+		    >input[type=text]{
+		    	width: 100%;
+		    	//width: initial;
+			    height: 40px;
+			    border-radius: 4px;
+			    border-style: solid;
+			    border-color: @gray-8;
+		    }
+	  	}
+		}
 	}
 }

@@ -4,6 +4,9 @@
 
 
 //rename to rows-button-style (as it doesn't have anything to do with buttons in particular)
+
+
+
 .btn-gen{
 	border-radius: 3.75rem;
 	border-width: 2px;
@@ -18,6 +21,7 @@
 	box-sizing: border-box;
 	text-align: center;
   transition: all linear 50ms;
+  border-style: solid;
 
 	/* possible button resize?
   @media (max-width:768px){
@@ -163,6 +167,7 @@
 	border: none;
 	padding: 16px 32px 14px 32px;
 	background-color: @white-1;
+	transition: all linear 75ms;
 
 	&:hover, &:active, &:focus, &:target, .hoverer&{
 		background-color: @button-color;
@@ -230,23 +235,27 @@
 	}
 
 	img{
-
-	margin: -2px 22px -4px 8px;
+		height: 48px;
+		margin: -2px 22px -4px 8px;
 	}
 }
 
 .btn-pill-svg{
 	&:extend(.btn-gen);
 	padding-left: 2px;
-	padding-right: 20px;
+	padding-right: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	.pill-button-tertiary();
+	font-size: 1.125rem;
+
 	// padding-top: 0.25rem;
 	// padding-bottom: 0.25rem;
 	// padding-left: 0.5rem;
 	// padding-right: 1rem;
 	img{
-		padding: 0 12px;
-		height: 22px;
+		padding: 0px 4px 0px 8px;
+    height: 24px;
 	}
 }
 
