@@ -2,6 +2,7 @@
   "name": "kiddom-frontend",
   "private": true,
   "ignore": [
+  	"app/fonts",
   	"app/styles/base",
   	"app/styles/bootstrap",
   	"app/styles/docs",
@@ -13,6 +14,10 @@
   	"**/.*",
   	"Gruntfile.json",
   	"package.json"
+  ],
+  "main": [
+  	"app/scripts/main.js",
+  	"app/styles/main.less"
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
