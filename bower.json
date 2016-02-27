@@ -20,11 +20,11 @@
   	"app/styles/main.less"
   ],
   "dependencies": {
+  },
+  "devDependencies": {
+    "holderjs": "~2.7.1",
     "bootstrap": "~3.3.4",
     "jquery": "~2.1.1",
     "modernizr": "~3.3.1"
-  },
-  "devDependencies": {
-    "holderjs": "~2.7.1"
   }
 }
