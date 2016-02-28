@@ -16,7 +16,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-regex-replace');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -466,19 +465,6 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
-    },
-
-    "regex-replace": {
-        dist: { //specify a target with any name
-            src: ['**/*.less', '**/*.css'],
-            actions: [
-                {
-                    name: 'asset-urls',
-                    search: /asset-url\('?([^\)]+)'?\)/g,
-                    replace: 'url(/images/$1)'
-                }
-            ]
-        }
     }
   });
 
@@ -534,7 +520,6 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
-    'regex-replace',
     'modernizr',
     //'filerev',
     'usemin',
