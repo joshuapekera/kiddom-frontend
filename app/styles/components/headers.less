@@ -53,7 +53,7 @@ a{
 		padding: 0px;
 	}
 
-	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
 	position: fixed;
 	text-align: center;
 	background-color: #3F4C4C;
@@ -127,7 +127,60 @@ a{
 				}
 			}
 		}
+	}
+}
 
+
+
+.kiddom-searchbar{
+	position:fixed;
+	width: 100%;
+	top: 80px;
+	z-index: 1020;//to allow collapsible menu
+	.kiddom-search{
+    position: absolute;
+    width: 100%;
+    /* min-width: 48%; */
+    /* margin: 24px 180px; */
+    z-index: 1;
+    >div{
+    	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+    	position: relative;
+	    input[type=text]{
+		    width: 100%;
+		    height: 40px;
+		    border-radius: 0px;
+		    border-style: solid;
+		    border-width: 1px;
+		    border-color: @gray-8;
+		    padding: 8px;
+		    border:none;
+	    }
+	    .close-search{
+	    	position: absolute;
+	    	top: 0px;
+	    	right: 0px;
+	    	border-radius: 50%;
+	    	padding-top: 6px;
+	    	height: 24px;
+	    	width: 24px;
+	    	margin: 8px;
+	    	background-color: @gray-8;
+	    	color: @gray-9;
+	    	font-size: 12px;
+	    }
+	  }
+	}
+	.kiddom-search-options{
+		position: absolute;
+		top: 40px;
+		width: 100%;
+		text-align: left;
+		>div{
+			padding: 8px;
+			background-color: white;
+			box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+		}
 	}
 }
 
@@ -268,7 +321,7 @@ a{
 			}
 
  		}
-/*
+		/*
 		.nav{
 			text-align: center;
 			background-color: @white-1;
@@ -363,7 +416,7 @@ a{
 		.login-link{
 			.header-text(@red-5);
 		}*/
-		
+
 	/* heree is the most recent anchor attempt
 			.btn-pill-register{
 				.btn-pill-login;
@@ -381,5 +434,54 @@ a{
 					colour: @white-1;
 				}
 			} */
+	}
+
+	.kiddom-searchbar{
+		>.container{
+			position:relative;
+		}
+		position:fixed;
+		width: 100%;
+		z-index: 1030;
+		.kiddom-search{
+			position:absolute;
+			margin: 0px auto;
+			top: -80px;
+			left: 220px;
+			right: 220px;
+			width: initial;
+			max-width: 700px;
+			>div{
+		    text-align: center;
+		    margin: 20px auto;
+		    min-width: 45%;
+		    width: 100%;
+		    max-width: 700px;
+		    min-width: 240px;
+		    /* min-width: 48%; */
+		    /* margin: 24px 180px; */
+		    z-index: 1;
+		    box-shadow: none;
+
+		    >input[type=text]{
+		    	width: 100%;
+		    	//width: initial;
+			    height: 40px;
+			    border-radius: 4px;
+			    box-shadow: 0px 0px 0px 1px @gray-8;
+			    border-color: transparent;
+		    }
+	  	}
+	  }
+		.kiddom-search-options{
+			position: absolute;
+			top: 0px;
+			text-align: left;
+			width: inherit;
+			>.row >div{
+				padding: 8px;
+				background-color: white;
+			}
+		}
 	}
 }
