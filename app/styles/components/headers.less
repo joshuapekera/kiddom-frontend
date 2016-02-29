@@ -57,7 +57,7 @@ a{
 	position: fixed;
 	text-align: center;
 	background-color: #3F4C4C;
-  z-index: 1;
+  	z-index: 1030;//bootstrap standard
 
 	.navbar .navbar-nav {
 	  display: inline-block;
@@ -100,20 +100,29 @@ a{
 	}
 	.navbar-collapse{
 	  text-align: center;
-	  position: relative;
-	  z-level: 1;
+	  z-index: 1;
 	  border-top: none;
 		background-color: #3F4C4C;
 	  max-height: 400px;
+	  //* additions to hide search bar on drop down are below*//
+	  position: absolute;
+	  top: 80px;
+	  width: 100%;
+	  margin-left: 0px;
+	  margin-right: 0px;
 	}
 	.nav > li{
-	  vertical-align: center;
-    box-shadow: 0px 25px 0px -24px @gray-6;
-    margin-top: 1px;
-    	span>a{
-    		display:block;
+	  	vertical-align: center;
+    	box-shadow: 0px 25px 0px -24px @gray-6;
+    	margin-top: 1px;
+    	span{
+    		display: block;
     		width: 100%;
+    		>a{
+    			width:100%;
+    		}
     	}
+
 		> a, span>a{
 		  font-weight: bold;
 		  color: @white-1;
@@ -137,6 +146,7 @@ a{
 	width: 100%;
 	top: 80px;
 	z-index: 1020;//to allow collapsible menu
+
 	.kiddom-search{
     position: absolute;
     width: 100%;
@@ -261,12 +271,12 @@ a{
 			> a{
 			  font-weight: bold;
 			  color: #3F4C4C;
-		      margin-top: 30px;
-		      margin-bottom: 30px;
-		      margin-left: 5px;
-		      margin-right:5px;
-		      padding-top: 0px;
-		      padding-bottom: 0px;
+			    margin-top: 30px;
+			    margin-bottom: 30px;
+			    margin-left: 5px;
+			    margin-right:5px;
+			    padding-top: 0px;
+			    padding-bottom: 0px;
 				background-color: rgba(0,0,0,0);
 				transition: all linear 150ms;
 				&:hover{
@@ -289,37 +299,37 @@ a{
 					}
 				}
 			}
-			> span > a.btn-pill-register{
-				&:extend(.btn-gen);
-				// <<FLAG>> <<TODO>> This button ideally needs to be styled to work with an anchor tag, currently only works for a button and therefore requires some messy solution(see xs-hidden in html)
-				height: 40px;
-				width: 120px;
-		    	border-radius: 40px;
-		    	font-size: 1rem;
-		    	font-weight: bold;
-				background-color: @white-1;
-				border-color: @gray-8;
-				color: #FF6252;
-				border-style: solid;
-		    	vertical-align: middle;
-		    	display: inline-block;
-		    	margin-top: 20px;
-				margin-right: 16px;
+			> span{
+				display: inline;
+				width: auto;
+				 > a.btn-pill-register{
+					&:extend(.btn-gen);
+					height: 40px;
+					width: 120px;
+			    	border-radius: 40px;
+			    	font-size: 1rem;
+			    	font-weight: bold;
+					background-color: @white-1;
+					border-color: @gray-8;
+					color: #FF6252;
+					border-style: solid;
+			    	vertical-align: middle;
+			    	display: inline-block;
+			    	margin-top: 20px;
+					margin-right: 16px;
+					padding: 8px 0px;
+					transition: all linear 150ms;
 
-				padding: 8px 0px;
+					&:hover, &:focus{
+						outline: none;
 
-				transition: all linear 150ms;
-
-				&:hover, &:focus, &:active{
-					outline: none;
-
-					background-color: #FF6252;
-					border-color: #FF6252;
-					color: @white-1;
+						background-color: #FF6252;
+						border-color: #FF6252;
+						color: @white-1;
+					}
 				}
 
 			}
-
  		}
 		/*
 		.nav{
@@ -388,6 +398,8 @@ a{
 
 
 		.navbar-collapse{
+			position: relative;
+			top: 0px;
 			background-color: inherit;
 			text-align: right;
   		>.navbar-align-center{
@@ -434,6 +446,31 @@ a{
 					colour: @white-1;
 				}
 			} */
+		.kiddom-search{
+			position:absolute;
+			margin: 0px;
+			left: 180px;
+			right: 220px;
+			width: initial;
+			>div{
+		    text-align: center;
+		    margin: 20px auto;
+		    min-width: 45%;
+		    max-width: 100%;
+		    /* min-width: 48%; */
+		    /* margin: 24px 180px; */
+		    z-index: 1;
+
+		    >input[type=text]{
+		    	width: 100%;
+		    	//width: initial;
+			    height: 40px;
+			    border-radius: 4px;
+			    border-style: solid;
+			    border-color: @gray-8;
+		    }
+	  	}
+		}
 	}
 
 	.kiddom-searchbar{
