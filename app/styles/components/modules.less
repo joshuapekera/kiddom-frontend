@@ -119,50 +119,9 @@ body{
 		margin: 16px;
 	}
 
-	.square-box{
-		width: 60%;
-		min-width: 280px;
-		padding: 32px 16px;
-		border-radius: 8px;
-		margin: 16px auto;
-
-		font-weight: normal;
-		.avatar-container{
-			margin: 0 auto;
-
-			img{
-				height: 96px;
-				margin: 8px 0px;
-		/*				@media (min-width: 768px){
-					height: 112px;
-				}*/
-			}
-		}
-		input[type=email]{
-			text-align: center;
-			font-size: 1.25rem;
-			height: 48px;
-			width: 70%;
-			min-width: 250px;
-			border-style: none;
-			background-color: @gray-9;
-			margin: 8px 0;
-
-			//font-weight: normal;
-
-			&:focus{
-				border: none;
-				outline-color: @gray-8;
-			}
-		}
-		&.section-end{
-			margin-bottom: 80px;
-		}
-	}
-
 	&.initial-search{
 		&:extend(.bg-color-blue-5);
-		padding-top: 25vh;
+		padding-top: 30vh;
 		.heading-text{
 			padding: 0px;
 			color: white;
@@ -491,6 +450,48 @@ body{
 	//for where p tags need more prominent spacing
 	.paragraph-padding{
 		padding: 16px 0;
+	}
+}
+
+
+.square-box{
+	width: 60%;
+	min-width: 280px;
+	padding: 32px 16px;
+	border-radius: 8px;
+	margin: 16px auto;
+
+	font-weight: normal;
+	.avatar-container{
+		margin: 0 auto;
+
+		img{
+			height: 96px;
+			margin: 8px 0px;
+	/*				@media (min-width: 768px){
+				height: 112px;
+			}*/
+		}
+	}
+	input[type=email]{
+		text-align: center;
+		font-size: 1.25rem;
+		height: 48px;
+		width: 70%;
+		min-width: 250px;
+		border-style: none;
+		background-color: @gray-9;
+		margin: 8px 0;
+
+		//font-weight: normal;
+
+		&:focus{
+			border: none;
+			outline-color: @gray-8;
+		}
+	}
+	&.section-end{
+		margin-bottom: 80px;
 	}
 }
 
@@ -991,13 +992,14 @@ body{
 				margin-bottom: 48px;
 			}
 		}
-		.initial-search{
-			margin-top: 160px;
+		&.initial-search{
+			margin-top: 0px;
+			padding-top: 20vh;
 			.heading-text{
 				padding: 16px;
 			}
 			.btn{
-				width: inherit;
+				width: 160px;
 			}
 		}
 
