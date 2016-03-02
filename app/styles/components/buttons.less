@@ -281,3 +281,26 @@
 		}
 	}
 }
+
+.btn-pill-sign-up{
+	&:extend(.btn-pill-red);
+	border-color: @gray-8;
+	font-color: @red-5;
+	transition: all linear 75ms;
+
+
+	&:hover, &:active, &:focus{
+		color: @white-1;
+		border-color: @red-5;
+		background-color: @red-5;
+		outline: none;
+
+		&:hover, &:active, &:focus{
+			color: @white-1;
+			border-color: @red-5;
+			background-color: @red-5;
+			outline: none;
+
+		}
+	}
+}
