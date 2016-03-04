@@ -859,19 +859,6 @@ body{
 					margin-bottom: 16px;
 					overflow: hidden;
 				}
-				.linker{
-					a{
-						transition: all linear 50ms;
-						.glyphicon{
-							font-size: 14px;
-						}
-
-						&:hover{
-							text-decoration: none;
-							color: @gray-6;
-						}
-					}
-				}
 			}
 			&:hover{
 				box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
@@ -905,6 +892,22 @@ body{
 
 }
 
+//for handling "read more >" hyperlinks and the like
+.linker{
+	a{
+		transition: all linear 50ms;
+		color: @gray-7;
+		font-weight: bold;
+		.glyphicon{
+			font-size: 14px;
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: @gray-6;
+		}
+	}
+}
 
 //for all cases of inline image placement in a text field
 .text-holder{
