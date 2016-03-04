@@ -9,11 +9,7 @@ layout: container-fluid-with-header.hbs
 <div class="row full-column">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 image-holder vertical-center">
-
-						<img src="images/resource-room-hero.svg" >
-			</div>
-			<div class="col-sm-6 col-md-4 text-holder vertical-center">
+			<div class="col-sm-6 col-md-5 col-sm-push-5 text-holder vertical-center">
 				<p class="heading-text">Resource Room</p>
 				<p class="subheading-text font-color-red-5">
 					By educators, for educators
@@ -21,6 +17,9 @@ layout: container-fluid-with-header.hbs
 				<p>
 				A resource by Kiddom to help you make better-informed decisions in the classroom.
 				</p>
+			</div>
+			<div class="col-sm-5 col-sm-pull-6 col-md-4 col-md-pull-4 image-holder vertical-center hidden-xs">
+						<img src="images/resource-room-hero.svg" >
 			</div>
 		</div>
 	</div>
@@ -57,7 +56,7 @@ layout: container-fluid-with-header.hbs
 <div class="row grid-of-squares teacher-voice bg-color-gray-9">
   <div class="container">
     <div class="row section-start">
-      <div class="col-sm-12 grid-heading margin-bottom-24">
+      <div class="col-sm-12 grid-heading">
         <p class="heading-text" style="font-size: 3rem; text-align: center; display: inline-block">
           Teacher Voice
         </p>
@@ -67,7 +66,7 @@ layout: container-fluid-with-header.hbs
       </div>
     </div>
     <div class="row section-end">
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-6 teacher-voice-entry">
         <div class="grid-square">
           <div class="image-holder">
             <img src="images/resource-room-methodologies-bg.svg">
@@ -90,21 +89,21 @@ layout: container-fluid-with-header.hbs
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-6  teacher-voice-entry">
         <div class="grid-square">
           <div class="image-holder">
             <img src="images/resource-room-methodologies-bg.svg">
           </div>
           <div class="text-holder">
             <div class="title">
-
+            Title
             </div>
             <div class="subtitle">
             MM/DD/YYY
             </div>
             <hr class="yellow-hr">
             <div class="content">
-
+            and the text
             </div>
             <div class="linker">
             	<a href="#">Read more <span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -113,7 +112,7 @@ layout: container-fluid-with-header.hbs
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 col-xs-12">
+      <div class="col-md-4 col-sm-6  teacher-voice-entry">
         <div class="grid-square">
           <div class="image-holder">
             <img src="images/resource-room-methodologies-bg.svg">
@@ -138,15 +137,11 @@ layout: container-fluid-with-header.hbs
       </div>
     </div>
     <div class="row splash-header">
-    	<a href="#">
-	      <div class="col-sm-12">
-	        <div class="full-row-spread bg-color-white section-end">
-	          <h5>
-	            Load more
-	          </h5>
-	        </div>
-	      </div>
-      </a>
+      <div class="col-sm-12">
+				<a class="load-more bg-color-white" href="#">
+       		<span>Load more</span>
+ 				</a>
+      </div>
     </div>
   </div>
 </div>

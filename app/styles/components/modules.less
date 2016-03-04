@@ -814,14 +814,23 @@ body{
 
 
 	&.teacher-voice{
+		.teacher-voice-entry{
+			float: none;
+			max-width: 420px;
+			margin: 0 auto;
+		}
+
+
 		.grid-square{
 			border-radius: 8px;
-			height: 560px;
 			padding:0px;
+			height: initial;
 			overflow: hidden;
 			.image-holder{
 				text-align: center;
-				height: 192px;
+				width:100%;
+				max-width: 420px;
+				max-height: 420px;
 				overflow: hidden;
 				img{
 					height:100%;
@@ -830,7 +839,11 @@ body{
 				}
 			}
 			div.text-holder{
+				width:100%;
 				padding: 24px;
+				hr{
+					margin-left: 0px;
+				}
 				.title{
 					height: 40px;
 					font-size: 1.25rem;
@@ -842,15 +855,50 @@ body{
 					font-style: italic;
 				}
 				.content{
-					height:192px;
+					max-height: 192px;
+					margin-bottom: 16px;
+					overflow: hidden;
 				}
 				.linker{
+					a{
+						transition: all linear 50ms;
+						.glyphicon{
+							font-size: 14px;
+						}
 
+						&:hover{
+							text-decoration: none;
+							color: @gray-6;
+						}
+					}
 				}
-				.full-row-spread{
-					padding: 8px;
-					border-radius: 12px;
+			}
+			&:hover{
+				box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
+				.linker{
+					a{
+						text-decoration: none;
+						color: @gray-6;
+					}
 				}
+			}
+		}
+		.load-more{
+			display: block;
+			width: 100%;
+			max-width: 420px;
+			border-radius: 32px;
+			margin: 0 auto;
+			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			padding: 12px;
+
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 0px;
+
+			&:hover{
+				box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.35);
+				text-decoration: none;
 			}
 		}
 	}
@@ -1323,6 +1371,71 @@ body{
 			}
 		}
 
+		&.teacher-voice{
+			.grid-heading{
+				padding: 24px;
+				text-align: left;
+				.heading-text{
+					padding:0px;
+					font-size: 2.25rem;
+				}
+				.subheading-text{
+					margin-top: -8px;
+					font-size: 1.125rem;
+					color: #99a2a2;;
+				}
+			}
+
+
+			.teacher-voice-entry{
+				margin: auto;
+				max-width: 100%;
+				float: left;
+			}
+			.grid-square{
+				border-radius: 8px;
+				height: 560px;
+				padding:0px;
+				overflow: hidden;
+				.image-holder{
+					float:none;
+					text-align: center;
+					height: 192px;
+					overflow: hidden;
+					width: 100%;
+					img{
+						height:100%;
+						margin: 0px 0px 0px 0px;
+						padding: 0px;
+					}
+				}
+				div.text-holder{
+					float: none;
+					padding: 24px;
+					width: 100%;
+					.title{
+						height: 56px;
+						font-size: 1.25rem;
+						font-weight: bold;
+						overflow: hidden;
+					}
+					.subtitle{
+						height: 20px;
+						font-size: .875rem;
+						font-style: italic;
+						overflow: hidden;
+					}
+					.content{
+						height:180px;
+						margin-bottom: 8px;
+						overflow: hidden;
+					}
+					.linker{
+
+					}
+				}
+			}
+		}
 	}
 	.background{
 		&.bg-sm-cover{
