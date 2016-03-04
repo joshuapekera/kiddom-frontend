@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class=no-js>
+
+	<head>
+		<meta charset=UTF-8>
+		<!-- the title from the page -->
+		<title>Academy</title>
+		<meta charset="utf-8">
+		<meta name=description content="Another HBS Page">
+		<meta name=keywords content="kiddom, studentss">
+		<meta name=author content="Not Joshua Pekera">
+		<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+		<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name=apple-mobile-web-app-capable content=yes>
+		<meta name=p:domain_verify content="61709158361710c1aea4ee86ac5f6630">
+		<link rel="shortcut icon" href=/favicon.ico>
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,900italic,900,700italic,700,500italic,500|Roboto+Condensed:300italic,400italic,700italic,400,300,700|Roboto+Slab:400,700,300,100|Roboto+Mono:400,100,300,500,700,100italic,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'> -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel=stylesheet type=text/css>
+
+
+		<link rel=stylesheet href=styles/bootstrap.css>
+
+		<link rel=stylesheet href=styles/main.css>
+
+		<link rel=stylesheet href=styles/docs.css>
+
+		<script src=scripts/vendor/modernizr.js></script>
+		<!-- analytics -->
+
+		<script src=scripts/holder.js></script>
+	
+
+	<body>
+
+		<!-- Include a nav from partials -->
+		
+
+
+
+
+
+
+<nav class="kiddom-head navbar-fixed-top nav-shadow">
+	<div class=container>
+  	<div class=navbar-header>
+      <button href=# type=button class="navbar-toggle header-toggle-spacing" data-toggle=collapse data-target=.navbar-collapse>
+      	<!-- TODO - JavaScript change glyphicon when opened -->
+        <span class="glyph-flip glyphicon glyphicon-chevron-down"></span>
+      </button>
+      <div class=navbar-brand>
+	      <a class=navbar-brand-link href=./home.html><img src=images/logo-kiddom@2x.png alt=KIDDOM></a>
+	    </div>
+  	</div>
+  	<div class="collapse navbar-collapse">
+  		<div class=navbar-align-center>
+	      <ul class="nav navbar-nav">
+		      <li><a class=teacher-link href=./teachers.html>Teacher</a> </li>
+		      <li><a class=student-link href=./students.html>Student</a> </li>
+		      <li><a class=admin-link href=./academy.html>Admin</a></li>
+		    </ul>
+	    </div>
+	    <div class=navbar-align-right>
+	      <ul class="nav navbar-nav">
+		      <li> <a class=login-link href=#>Log in
+		      	</a></li>
+		      <!-- <<FLAG>>
+		      	Difficulty styling the register button as an anchor tag resulted in this awkward solution
+		      -->
+					<li>
+		      	<span><a href=# class="btn btn-pill-register">Sign Up</a></span></li>
+	      </ul>
+      </div>
+    </div>
+	</div><!--/.nav-collapse-->
+</nav>
+<nav class=kiddom-searchbar>
+	<div class=container>
+		<div class="row kiddom-search">
+			<div>
+		    <input type=text placeholder="What do you want to search?">
+		    <a href=#>
+		    <div class=close-search>
+		    	<span class="glyphicon glyphicon glyphicon-remove"></span>
+		    </div>
+		    </a>
+		  </div>
+		</div>
+	  <div class="row kiddom-search-options">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+
+		  	<div class="dropdown btn-group">
+			  	<div class="dropdown btn-group">
+			  		<button class="btn btn-default dropdown-toggle" type=button id=dropdownMenu1 data-toggle=dropdown aria-haspopup=true aria-expanded=true> Grade <span class=caret></span> </button>
+			  		<ul class=dropdown-menu aria-labelledby=dropdownMenu1>
+			  			<li><a href=#>Action</a></li>
+			  			<li><a href=#>Another action</a></li>
+			  			<li><a href=#>Something else here</a></li>
+			  		</ul>
+			  	</div>
+			  	<div class="dropdown btn-group">
+			  		<button class="btn btn-default dropdown-toggle" type=button id=dropdownMenu2 data-toggle=dropdown aria-haspopup=true aria-expanded=true> Subject <span class=caret></span> </button>
+			  		<ul class=dropdown-menu aria-labelledby=dropdownMenu2>
+			  			<li><a href=#>Action</a></li>
+			  			<li><a href=#>Another action</a></li>
+			  			<li><a href=#>Something else here</a></li>
+			  		</ul>
+		  		</div>
+			  </div>
+		  </div>
+	  </div>
+	</div>
+</nav>
+
+
+	<div class=container-fluid>
+		
+<div class="row splash-header height-xs-vh vh-head height-sm-650 initial-search">
+	<div class=container>
+		<div class=row>
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+
+				<div>
+					<p class=heading-text>
+						What do you want to teach?
+					</p>
+		  		<p><input type=text></p>
+		  		<p class=tiny>	Example: How to multiply and divide fractions</p>
+		  		<p><a href=# class="btn btn-pill-emph-orange">Search</a></p>
+
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- search result template -->
+<div class="row splash-header search-results bg-color-gray-8">
+	<div class=container>
+		<div class=row>
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+
+				<div class="row search-result">
+					<div class=col-sm-10>
+						<p class=heading-text>
+							How to Multiply and Divide Fractions in Algebra For Dummies
+						</p>
+						<p class=content>This video shows how to multiply and divide fractions by multiplying the numerators and denominators — even if the fractions have unlike denominators. In alg...</p>
+						<p class=tags>Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1 from CK-12</p>
+					</div>
+					<div class="col-sm-2 assigner">
+						<a href=##>
+							Assign <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+
+				<div class="row search-result">
+					<div class=col-sm-10>
+						<p class=heading-text>
+							How to Multiply and Divide Fractions in Algebra For Dummies
+						</p>
+						<p class=content>This video shows how to multiply and divide fractions by multiplying the numerators and denominators — even if the fractions have unlike denominators. In alg...</p>
+						<p class=tags>Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1 from CK-12</p>
+					</div>
+					<div class="col-sm-2 assigner">
+						<a href=##>
+							Assign <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+
+				<div class="row search-result">
+					<div class=col-sm-10>
+						<p class=heading-text>
+							How to Multiply and Divide Fractions in Algebra For Dummies
+						</p>
+						<p class=content>This video shows how to multiply and divide fractions by multiplying the numerators and denominators — even if the fractions have unlike denominators. In alg...</p>
+						<p class=tags>Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1 from CK-12</p>
+					</div>
+					<div class="col-sm-2 assigner">
+						<a href=##>
+							Assign <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+
+				<div class="row search-result">
+					<div class=col-sm-10>
+						<p class=heading-text>
+							How to Multiply and Divide Fractions in Algebra For Dummies
+						</p>
+						<p class=content>This video shows how to multiply and divide fractions by multiplying the numerators and denominators — even if the fractions have unlike denominators. In alg...</p>
+						<p class=tags>Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1, Math.CC.1.G.A.1 from CK-12</p>
+					</div>
+					<div class="col-sm-2 assigner">
+						<a href=##>
+							Assign <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+
+
+					<!-- no results page -->
+				<div class="row no-results">
+					<div class=col-sm-12>
+						<p class=heading-text>
+							We couldn't find anything like that
+						</p>
+						<p class=subheading>
+							Try searching for something different or simplify your search.
+						</p>
+						<img src=#>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+<div class="row splash-header one-result bg-color-white">
+	<div class=container>
+		<div class=row>
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+					<p class=heading-text>
+						Forms of Ratios Examples
+					</p>
+					<hr class=blue-hr>
+					<p class=large>
+						This video shows how to work step-by-step through one or more of the examples in Forms of Ratios.
+					</p>
+					<p class=heading-source>
+						Grade 8 Material from <a href=#>CK-12</a>
+					</p>
+					<span>
+						<a href=# class="btn btn-pill-blue">Preview</a>
+						<a href=# class="btn btn-pill-emph-blue">Assign</a>
+					</span>
+					<hr>
+					<div class=standards>
+						<p class=heading-text>
+							Standards
+						</p>
+						<p class=subheading-text>
+							6.RP.3.a
+						</p>
+						<p class=medium>
+							Make tables of equivalent rations relating quantities with whole-number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.
+						</p>
+
+						<p class=subheading-text>
+							G.SRT.1.a
+						</p>
+						<p class=medium>
+							A dilation takes a line not passing through the center of the dilation to a parallel line, and leaves a line passing through the center unchanged.
+						</p>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+	<div class="row footer" id=footers>
+		<div class=container>
+			<div class=row>
+				<div class="col-sm-3 col-sm-push-3">
+			 		<div class=footer-list>
+						<p class=guide-titles>Company</p>
+						<ul>
+							<li><a href=#>About</a></li>
+							<li><a href=#>Contact</a></li>
+							<li><a href=#>Terms of use</a></li>
+							<li><a href=#>Privacy</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3 col-sm-push-3">
+					<div class=footer-list>
+						<p class=guide-titles>Resource Room</p>
+						<ul>
+							<li><a href=#>Teacher Voice Blog</a></li>
+							<li><a href=#>Standards-Based Grading</a></li>
+							<li><a href=#>Teaching Methodologies</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3 col-sm-push-3">
+					<div class=footer-list>
+						<p class=guide-titles>Support</p>
+						<ul>
+							<li><a href=#>Teacher Guides</a></li>
+							<li><a href=#>Help Desk</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3 col-sm-pull-9 logo-column">
+			 		<!-- LOGO -->
+			 		<div class=row>
+			 			<div class="col-xs-12 footer-logo">
+			 				<img src=images/logo-kiddom@2x.png alt=kiddom-logo>
+			 			</div>
+			 			<div class="col-xs-12 social-media">
+			 				<a href=https://twitter.com/kiddomapp target=_blank><img src=images/footer-twitter.svg alt=twitter-link></a>
+			 				<a href=https://facebook.com/kiddomapp target=_blank><img src=images/footer-facebook.svg alt=facebook-link></a>
+			 			</div>
+			 		</div>
+				</div>
+			</div>
+			<div class="row copyright">
+				<div class=col-sm-12>
+				<!-- <<FLAG>> Seems more correct for this to be below all other content in the footer than just the left column-->
+				©2015 Kiddom, Inc
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+		<script src=scripts/main.js></script>
+
+	
+
