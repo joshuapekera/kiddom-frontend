@@ -30,7 +30,11 @@
 	p{	color: contrast(@bg-color, @gray-7, @white-1);}
 
   //<<FLAG>> copying the above, for links
-  a{  color: contrast(@bg-color, @gray-7, @white-1);}
+  a{
+  	&:not(.btn){
+  		color: contrast(@bg-color, @gray-7, @white-1);
+  	}
+  }
 
 
 	[class*="heading-"]{
