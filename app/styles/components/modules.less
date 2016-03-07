@@ -1027,6 +1027,9 @@ body{
 
 @media only screen and (min-width:768px){
 
+	.sm-padding-bottom-320{
+		padding-bottom: 320px;//for ensuring a bottom aligned bg-image doesn't clash with texts
+	}
 
 	.sm-margin-top-48{
 		margin-top: 48px;
@@ -1035,6 +1038,12 @@ body{
 		margin-top: 72px;
 	}
 
+	.height-sm-950{
+		height: 950px;
+	}
+	.height-sm-850{
+		height: 750px;
+	}
 	.height-sm-750{
 		height: 750px;
 	}
@@ -1089,6 +1098,12 @@ body{
 			}
 			font-size: @font-size-h1;
 		}
+		.breadcrumbs{
+			font-style: italic;
+			font-size: 18px;
+			margin-top: 32px;
+		}
+
 		.row-link{
 
 			p{
@@ -1474,3 +1489,35 @@ body{
 	}
 }
 
+.typography-teaching-styles{
+
+	&[class*="bg-color-"] a:not(.btn){
+		color: @turq-5;
+
+		.glyphicon{
+			color: @gray-8;
+		}
+	}
+}
+
+.typography-teaching-standards{
+
+	&.bg-color-white{
+		a:not(.btn){
+			color: @lake-5;
+
+			.glyphicon{
+				color: @gray-8;
+			}
+		}
+	}
+	&.bg-color-lake-5{
+		a:not(.btn){
+			color: @yellow-5;
+
+			.glyphicon{
+				color: @gray-8;
+			}
+		}
+	}
+}
