@@ -9,6 +9,9 @@ body{
 
 
 //see media query section below for sm heights to override these on larger screens
+.height-xs-950{
+	height: 950px;
+}
 .height-xs-750{
 	height: 750px;
 }
@@ -119,50 +122,9 @@ body{
 		margin: 16px;
 	}
 
-	.square-box{
-		width: 60%;
-		min-width: 280px;
-		padding: 32px 16px;
-		border-radius: 8px;
-		margin: 16px auto;
-
-		font-weight: normal;
-		.avatar-container{
-			margin: 0 auto;
-
-			img{
-				height: 96px;
-				margin: 8px 0px;
-		/*				@media (min-width: 768px){
-					height: 112px;
-				}*/
-			}
-		}
-		input[type=email]{
-			text-align: center;
-			font-size: 1.25rem;
-			height: 48px;
-			width: 70%;
-			min-width: 250px;
-			border-style: none;
-			background-color: @gray-9;
-			margin: 8px 0;
-
-			//font-weight: normal;
-
-			&:focus{
-				border: none;
-				outline-color: @gray-8;
-			}
-		}
-		&.section-end{
-			margin-bottom: 80px;
-		}
-	}
-
 	&.initial-search{
 		&:extend(.bg-color-blue-5);
-		padding-top: 25vh;
+		padding-top: 30vh;
 		.heading-text{
 			padding: 0px;
 			color: white;
@@ -197,7 +159,7 @@ body{
 
 			&:extend(.shadow-outline);
 
-			background-color: @white-1;
+			background-color: @gray-9;
 			margin: 8px  0px;
 			max-height: 256px;
 			text-align: left;
@@ -227,13 +189,25 @@ body{
 				bottom: 0px;
 				height: 48px;
 				font-size: 18px;
-				color: @gray-6;
+				padding: 0px;
+				margin: 0px;
+				color: @gray-7;
 				border-top: 1px solid @gray-8;
 				a{
+					font-weight: bold;
 					padding: 12px;
 					display: block;
 					height:100%;
 					width: 100%;
+
+					&:hover{
+						text-decoration: none;
+						color: @white-1;
+						background-color: @blue-5;
+					}
+					span{
+						font-size: 14px;
+					}
 				}
 			}
 		}
@@ -265,9 +239,13 @@ body{
 			padding: 0px;
 		}
 		.heading-source{
-			color: @gray-5;
+			color: @gray-7;
 			font-size: 1rem;
 			font-style: italic;
+			a{
+				font-weight: bold;
+				font-style: normal;
+			}
 		}
 		.standards{
 			.heading-text{
@@ -277,6 +255,7 @@ body{
 			}
 			.subheading-text{
 				font-size: 1rem;
+				margin-top: 8px;
 				font-weight: bold;
 				color: @gray-5;
 			}
@@ -374,6 +353,11 @@ body{
 			font-weight: bold;
 			line-height: 1;
 		}
+		.subheading-text{
+			font-size: 1.125rem;
+			margin-top: -12px;
+			font-style: italic;
+		}
 		padding: 8px 16px;
 		/**..
 		@media (min-width:768px){
@@ -421,6 +405,12 @@ body{
 	&.image-spiller{
 		padding: 0;
 		overflow-y: hidden;
+	}
+	.image-spill-left, .image-spill-right{
+		img{
+			width: 100%;
+			height: auto;
+		}
 	}
 	/*//
 	@media only screen and (min-width:768px){
@@ -491,6 +481,48 @@ body{
 	//for where p tags need more prominent spacing
 	.paragraph-padding{
 		padding: 16px 0;
+	}
+}
+
+
+.square-box{
+	width: 60%;
+	min-width: 280px;
+	padding: 32px 16px;
+	border-radius: 8px;
+	margin: 16px auto;
+
+	font-weight: normal;
+	.avatar-container{
+		margin: 0 auto;
+
+		img{
+			height: 96px;
+			margin: 8px 0px;
+	/*				@media (min-width: 768px){
+				height: 112px;
+			}*/
+		}
+	}
+	input[type=email]{
+		text-align: center;
+		font-size: 1.25rem;
+		height: 48px;
+		width: 70%;
+		min-width: 250px;
+		border-style: none;
+		background-color: @gray-9;
+		margin: 8px 0;
+
+		//font-weight: normal;
+
+		&:focus{
+			border: none;
+			outline-color: @gray-8;
+		}
+	}
+	&.section-end{
+		margin-bottom: 80px;
 	}
 }
 
@@ -797,13 +829,113 @@ body{
 			}
 		}
 
+
 		&:hover{
 			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);
 		}
 	}
 
+
+	&.teacher-voice{
+		.teacher-voice-entry{
+			float: none;
+			max-width: 420px;
+			margin: 0 auto;
+		}
+
+
+		.grid-square{
+			border-radius: 8px;
+			padding:0px;
+			height: initial;
+			overflow: hidden;
+			.image-holder{
+				text-align: center;
+				width:100%;
+				overflow: hidden;
+				img{
+					min-width: 100%;
+					margin: 0px 0px 0px 0px;
+					padding: 0px;
+				}
+			}
+			div.text-holder{
+				width:100%;
+				padding: 24px;
+				hr{
+					margin-left: 0px;
+				}
+				.title{
+					height: 40px;
+					font-size: 1.25rem;
+					font-weight: bold;
+					a{
+						color: @gray-5;
+					}
+					a:hover{
+						color: @red-4;
+						text-decoration: none;
+					}
+				}
+				.subtitle{
+					height: 20px;
+					font-size: .875rem;
+					font-style: italic;
+				}
+				.content{
+					max-height: 192px;
+					margin-bottom: 16px;
+					overflow: hidden;
+				}
+				.linker{
+					a:hover{
+						text-decoration: none;
+						color: @red-4;
+					}
+				}
+			}
+			&:hover{
+				box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			}
+		}
+		.load-more{
+			display: block;
+			width: 100%;
+			max-width: 420px;
+			border-radius: 32px;
+			margin: 0 auto;
+			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			padding: 12px;
+
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 0px;
+
+			&:hover{
+				box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.35);
+				text-decoration: none;
+			}
+		}
+	}
+
 }
 
+//for handling "read more >" hyperlinks and the like
+.linker{
+	a{
+		transition: all linear 50ms;
+		color: @gray-7;
+		font-weight: bold;
+		.glyphicon{
+			font-size: 14px;
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: @gray-6;
+		}
+	}
+}
 
 //for all cases of inline image placement in a text field
 .text-holder{
@@ -906,6 +1038,9 @@ body{
 
 @media only screen and (min-width:768px){
 
+	.sm-padding-bottom-320{
+		padding-bottom: 320px;//for ensuring a bottom aligned bg-image doesn't clash with texts
+	}
 
 	.sm-margin-top-48{
 		margin-top: 48px;
@@ -914,6 +1049,12 @@ body{
 		margin-top: 72px;
 	}
 
+	.height-sm-950{
+		height: 950px;
+	}
+	.height-sm-850{
+		height: 750px;
+	}
 	.height-sm-750{
 		height: 750px;
 	}
@@ -968,6 +1109,12 @@ body{
 			}
 			font-size: @font-size-h1;
 		}
+		.breadcrumbs{
+			font-style: italic;
+			font-size: 18px;
+			margin-top: 32px;
+		}
+
 		.row-link{
 
 			p{
@@ -991,13 +1138,14 @@ body{
 				margin-bottom: 48px;
 			}
 		}
-		.initial-search{
-			margin-top: 160px;
+		&.initial-search{
+			margin-top: 0px;
+			padding-top: 20vh;
 			.heading-text{
 				padding: 16px;
 			}
 			.btn{
-				width: inherit;
+				width: 160px;
 			}
 		}
 
@@ -1015,7 +1163,6 @@ body{
 
 				&:extend(.shadow-outline);
 
-				background-color: @white-1;
 				//margin: 8px  -16px;
 				//height: 128px;
 				text-align: left;
@@ -1030,7 +1177,8 @@ body{
 					font-size: 14px;
 					line-height: 1.3;
 					overflow: hidden;
-					max-height: 44px;//four lines
+					height: 56px;//four lines
+					margin-bottom: 4px;
 				}
 				.tags{
 					font-style: italic;
@@ -1038,19 +1186,20 @@ body{
 					max-height: 18px;//two lines
 					overflow: hidden;
 					color: @gray-7;
+					margin-bottom: 0px;
 				}
 				.assigner{
 					height: 128px;
-					background-color: @gray-9;
+					//background-color: @gray-9;
 					text-align: center;
 					bottom: 0px;
 					font-size: 18px;
-					color: @gray-6;
-					padding: 12px;
+					padding: 0px;
+					margin: 0px;
 					border-top: none;
 					border-left: 1px solid @gray-8;
 					a{
-						padding-top: 36px;
+						padding-top: 52px;
 					}
 				}
 			}
@@ -1058,6 +1207,9 @@ body{
 				padding: 16px;
 				margin: 0px;
 				&:extend(.bg-color-white);
+				.heading-text{
+					padding-top: 48px;
+				}
 				.subheading{
 					font-size: 20px;
 				}
@@ -1112,6 +1264,8 @@ body{
 				position: absolute;
 	    	bottom: 0px;
 	    	left: 0px;
+	    	height: 100%;
+	    	width: auto;
 			}
 			overflow-y: visible;
 			height: 100%;
@@ -1121,6 +1275,10 @@ body{
 				position: absolute;
 	    	bottom: 0px;
 	    	right: 0px;
+	    	height: 100%;
+	    	width: auto;
+	    	//height 100%, width auto
+	    	//give height auto, width 100% for mobile layout
 			}
 			overflow-y: visible;
 			height: 100%;
@@ -1266,6 +1424,71 @@ body{
 			}
 		}
 
+		&.teacher-voice{
+			.grid-heading{
+				padding: 24px;
+				text-align: left;
+				.heading-text{
+					padding:0px;
+					font-size: 2.25rem;
+				}
+				.subheading-text{
+					margin-top: -8px;
+					font-size: 1.125rem;
+					color: #99a2a2;;
+				}
+			}
+
+
+			.teacher-voice-entry{
+				margin: auto;
+				max-width: 100%;
+				float: left;
+			}
+			.grid-square{
+				border-radius: 8px;
+				height: 560px;
+				padding:0px;
+				overflow: hidden;
+				.image-holder{
+					float:none;
+					text-align: center;
+					height: 192px;
+					overflow: hidden;
+					width: 100%;
+					img{
+						height:100%;
+						margin: 0px 0px 0px 0px;
+						padding: 0px;
+					}
+				}
+				div.text-holder{
+					float: none;
+					padding: 24px;
+					width: 100%;
+					.title{
+						height: 56px;
+						font-size: 1.25rem;
+						font-weight: bold;
+						overflow: hidden;
+					}
+					.subtitle{
+						height: 20px;
+						font-size: .875rem;
+						font-style: italic;
+						overflow: hidden;
+					}
+					.content{
+						height:180px;
+						margin-bottom: 8px;
+						overflow: hidden;
+					}
+					.linker{
+
+					}
+				}
+			}
+		}
 	}
 	.background{
 		&.bg-sm-cover{
@@ -1283,3 +1506,35 @@ body{
 	}
 }
 
+.typography-teaching-styles{
+
+	&[class*="bg-color-"] a:not(.btn){
+		color: @turq-5;
+
+		.glyphicon{
+			color: @gray-8;
+		}
+	}
+}
+
+.typography-teaching-standards{
+
+	&.bg-color-white{
+		a:not(.btn){
+			color: @lake-5;
+
+			.glyphicon{
+				color: @gray-8;
+			}
+		}
+	}
+	&.bg-color-lake-5{
+		a:not(.btn){
+			color: @yellow-5;
+
+			.glyphicon{
+				color: @gray-8;
+			}
+		}
+	}
+}
