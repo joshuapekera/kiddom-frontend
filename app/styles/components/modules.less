@@ -406,6 +406,12 @@ body{
 		padding: 0;
 		overflow-y: hidden;
 	}
+	.image-spill-left, .image-spill-right{
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
 	/*//
 	@media only screen and (min-width:768px){
 		.image-spill-right{
@@ -846,11 +852,9 @@ body{
 			.image-holder{
 				text-align: center;
 				width:100%;
-				height: 240px;
 				overflow: hidden;
 				img{
 					min-width: 100%;
-					height: 200px;
 					margin: 0px 0px 0px 0px;
 					padding: 0px;
 				}
@@ -866,10 +870,10 @@ body{
 					font-size: 1.25rem;
 					font-weight: bold;
 					a{
-						color: @gray-6;
+						color: @gray-5;
 					}
 					a:hover{
-						color: @gray-4;
+						color: @red-4;
 						text-decoration: none;
 					}
 				}
@@ -883,10 +887,10 @@ body{
 					margin-bottom: 16px;
 					overflow: hidden;
 				}
-				.linker:hover{
-					a{
+				.linker{
+					a:hover{
 						text-decoration: none;
-						color: @gray-6;
+						color: @red-4;
 					}
 				}
 			}
@@ -1260,6 +1264,8 @@ body{
 				position: absolute;
 	    	bottom: 0px;
 	    	left: 0px;
+	    	height: 100%;
+	    	width: auto;
 			}
 			overflow-y: visible;
 			height: 100%;
@@ -1269,6 +1275,10 @@ body{
 				position: absolute;
 	    	bottom: 0px;
 	    	right: 0px;
+	    	height: 100%;
+	    	width: auto;
+	    	//height 100%, width auto
+	    	//give height auto, width 100% for mobile layout
 			}
 			overflow-y: visible;
 			height: 100%;
