@@ -168,7 +168,10 @@ body{
 				line-height: 1.2;
 				color: @gray-5;
 				padding-bottom: 0px;
-				max-height: 64px; //two lines
+				height: 36px; //two lines
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 			.content{
 				font-size: 14px;
@@ -1172,7 +1175,6 @@ body{
 					line-height: 1.2;
 					color: @gray-5;
 					padding-bottom: 0px;
-					max-height: 32px; //two lines
 				}
 				.content{
 					font-size: 14px;
@@ -1182,6 +1184,9 @@ body{
 					margin-bottom: 4px;
 				}
 				.tags{
+					display:block;
+					white-space: nowrap;
+					text-overflow: ellipsis;
 					font-style: italic;
 					font-size: 12px;
 					max-height: 18px;//two lines
