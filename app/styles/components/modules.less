@@ -1413,6 +1413,27 @@ body{
 		}
 	}
 
+	.third-column-holder{
+		&.force-image-fit{
+			.third-column{
+				.image-holder{
+					height: 180px;
+					padding: 16px 0px;
+					img{
+						max-width: 102%;
+						min-height: 120px;
+					}
+				}
+			}
+
+			.offset-top-32{
+				margin-top: -32px;
+			}
+		}
+		//overly tall images should use an inline negative margin-top styling in cases where the
+		//content making it tall is unobtrusive (as with the 'custom standards' text) or be redesigned
+	}
+
 	.grid-of-squares{
 		.grid-heading{
 			text-align: center;
