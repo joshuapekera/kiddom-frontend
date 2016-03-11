@@ -168,7 +168,10 @@ body{
 				line-height: 1.2;
 				color: @gray-5;
 				padding-bottom: 0px;
-				max-height: 64px; //two lines
+				height: 36px; //two lines
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 			.content{
 				font-size: 14px;
@@ -867,7 +870,8 @@ body{
 					margin-left: 0px;
 				}
 				.title{
-					min-height: 40px;
+					max-height: 120px;//3 line titles
+					overflow: hidden;
 					font-size: 1.25rem;
 					font-weight: bold;
 					a{
@@ -1035,9 +1039,69 @@ body{
 }
 
 
+.rubrics{
+	background-color: @gray-8;
+	padding:0px;
+
+	&:extend(.shadow-outline);
+
+	>.row{
+		margin: 8px 16px;
+
+		&.title-block{
+			margin: 0px;
+			padding: 0px;
+
+			.col-md-12:nth-child(1){
+				&:extend(.bg-color-white);
+				border-top-right-radius: 4px;
+				border-bottom-left-radius: 0px;
+				font-size: 1.625rem;
+				font-weight: bold;
+				text-align: left;
+				padding: 4px 16px;
+			}
+		}
+
+
+		.numbering{
+			&:extend(.bg-color-blue-5);
+			padding: 12px 0;
+			font-size: 1.625rem;
+			font-weight: bold;
+			text-align: center;
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}//desktop width: 10%, padding top 20%
+
+		.content{
+			&:extend(.bg-color-white);
+			padding: 16px;
+			border-top-right-radius: 4px;
+			min-height: 61px;
+
+			p{
+				margin-bottom: 6px;
+			}
+		}
+	}
+}
+
+
+.xs-fill-row{//for buttons to occupy a full row on mobile where they don't on desktop
+	display: block;
+	width: 200px;
+	margin: 24px auto 8px auto;
+}//for cases where an alternative link is provided in smaller text beside button
 
 
 @media only screen and (min-width:768px){
+
+	.xs-fill-row{
+		display: inline;
+		width: inherit;
+		margin-bottom: auto;
+	}
 
 	.sm-padding-bottom-320{
 		padding-bottom: 320px;//for ensuring a bottom aligned bg-image doesn't clash with texts
@@ -1172,7 +1236,6 @@ body{
 					line-height: 1.2;
 					color: @gray-5;
 					padding-bottom: 0px;
-					max-height: 32px; //two lines
 				}
 				.content{
 					font-size: 14px;
@@ -1182,6 +1245,9 @@ body{
 					margin-bottom: 4px;
 				}
 				.tags{
+					display:block;
+					white-space: nowrap;
+					text-overflow: ellipsis;
 					font-style: italic;
 					font-size: 12px;
 					max-height: 18px;//two lines
